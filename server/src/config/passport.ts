@@ -38,17 +38,18 @@ import { TokenUser } from '../types/jwt';
 
 
 
-const socialLogin = async (provider: 'google' | 'github', profileId: string, name: string): Promise<TokenUser> => {
-    const user = await User.findOne({ [`${provider}id`]: profileId });
+const socialLogin = async (provider: 'google' | 'github', profileid: string, name: string): Promise<TokenUser> => {
+    const user = await User.findOne({ [`${provider}id`]: profileid });
     
     if (!user) {
         const newUser: TokenUser = {
             name: name,
             userid: '202600000',
             admin: false,
+            member: false,
             isnew: true,
             provider: provider,
-            profileId: profileId
+            profileid: profileid
         }
         return newUser;
     }
@@ -56,7 +57,8 @@ const socialLogin = async (provider: 'google' | 'github', profileId: string, nam
     const tokenUser: TokenUser = {
         name: user.name,
         userid: user.userid,
-        admin: user.admin
+        admin: user.admin,
+        member: user.member
     }
     return tokenUser;
 }
@@ -105,7 +107,7 @@ export default () => {
     }
     const jwtVerify = async (payload: TokenUser, done: JwtVerifiedCallback) => {
         try {
-            const user: TokenUser = { userid: payload.userid, name: payload.name, admin: payload.admin }
+            const user: TokenUser = { userid: payload.userid, name: payload.name, admin: payload.admin, member: payload.member }
             return done(null, user);
         } catch (error) {
             return done(error);
