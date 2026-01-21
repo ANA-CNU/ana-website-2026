@@ -54,7 +54,6 @@ const checkMember = async (userid: string): Promise<boolean> => {
 }
 
 
-
 // ========== 가입 및 로그인 ==========
 
 router.post('/refresh', async (req, res) => {
@@ -290,7 +289,7 @@ router.get(
 
 // ========== 아나 회원 관리 ==========
 
-const authJwt = passport.authenticate('jwt', { session: false });
+export const authJwt = passport.authenticate('jwt', { session: false });
 
 router.get('/members', authJwt, async (req, res) => {
     const user = req.user as TokenUser;
