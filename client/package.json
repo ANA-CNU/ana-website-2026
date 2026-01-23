@@ -10,8 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.0.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/dompurify": "^3.0.5",
+    "@types/highlight.js": "^9.12.4",
+    "axios": "^1.13.2",
+    "ckeditor5": "^47.4.0",
+    "daisyui": "^5.5.14",
+    "dompurify": "^3.3.1",
+    "dotenv": "^17.2.3",
+    "heic2any": "^0.0.4",
+    "highlight.js": "^11.11.1",
+    "lucide-react": "^0.562.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router": "^7.12.0",
+    "tailwindcss": "^4.1.18",
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

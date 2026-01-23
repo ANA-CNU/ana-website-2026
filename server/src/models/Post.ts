@@ -6,27 +6,29 @@ export interface IPost extends Document {
     content: string,
     author: IUser | mongoose.Types.ObjectId,
     category: 'notice' | 'free' | 'algorithm' | 'csenotice',
-    urlid: string
+    urlid: string;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 const PostSchema = new Schema({
     title: {
         type: String,
         required: true
-    }, 
+    },
     content: {
         type: String,
         required: true
-    }, 
+    },
     author: {
         type: Schema.ObjectId,
         required: true,
         ref: 'User'
-    }, 
+    },
     category: {
         type: String,
         enum: ['notice', 'free', 'algorithm', 'csenotice']
-    }, 
+    },
     urlid: {
         type: String,
         required: true,

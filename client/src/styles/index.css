@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+@plugin "daisyui/theme" {
+  name: "custom";
+  default: true;
+  prefersdark: true;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: rgb(219, 226, 239);
+  --color-base-300: rgb(229, 236, 249);
+  --color-base-content: rgb(57 78 106);
+  --color-primary: rgb(17, 45, 78);
+  --color-primary-content: rgb(206 228 255);
+  --color-secondary: rgb(63, 114, 175);
+  --color-secondary-content: rgb(213 215 238);
+  --color-accent: oklch(59.939% 0.191 335.171);
+  --color-accent-content: oklch(11.988% 0.038 335.171);
+  --color-neutral: oklch(19.616% 0.063 257.651);
+  --color-neutral-content: oklch(83.923% 0.012 257.651);
+  --color-info: oklch(88.127% 0.085 214.515);
+  --color-info-content: oklch(17.625% 0.017 214.515);
+  --color-success: oklch(80.494% 0.077 197.823);
+  --color-success-content: oklch(16.098% 0.015 197.823);
+  --color-warning: oklch(89.172% 0.045 71.47);
+  --color-warning-content: oklch(17.834% 0.009 71.47);
+  --color-error: oklch(73.092% 0.11 20.076);
+  --color-error-content: oklch(14.618% 0.022 20.076);
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+
+/* Custom styles for CKEditor */
+.ck-editor__editable_inline {
+  min-height: 400px;
+}
+
+/* CKEditor Content Styles */
+
+/* 
+ * CRITICAL: Override Tailwind Typography (prose) styles.
+ * Prose sets its own background, color, and wrapping on pre/code.
+ * We must force reset these to allow highlight.js to work.
+ */
+
+/* 1. Reset 'pre' to be a neutral container */
+.ck-content pre {
+  background-color: transparent !important;
+  /* Let code.hljs set the bg */
+  padding: 0 !important;
+  margin: 1.5em 0 !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  overflow: visible !important;
+  /* Let 'code' handle overflow if display: block */
+  box-shadow: none !important;
+}
+
+/* 2. Style 'code' inside 'pre' (Block Code) */
+/* highlight.js adds .hljs class, but we target pre code generally too */
+.ck-content pre code {
+  display: block !important;
+  /* Essential for block formatting */
+  overflow-x: auto !important;
+  /* Horizontal scrolling */
+  white-space: pre !important;
+  /* NO WRAPPING */
+  padding: 1.5em !important;
+  /* Spacious padding */
+  border-radius: 0.5rem !important;
+
+  /* Fonts */
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace !important;
+  font-size: 0.9em !important;
+  line-height: 1.6 !important;
+  tab-size: 4 !important;
+
+  /* Note: Background and Color are now handled by the imported highlight.js theme (atom-one-dark) */
+}
+
+/* 3. Style Inline Code (outside pre) */
+.ck-content :not(pre)>code {
+  background-color: rgba(135, 131, 120, 0.15) !important;
+  color: #eb5757 !important;
+  /* Distinct color for inline code */
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+  font-weight: normal !important;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* 4. Other Elements */
+.ck-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.ck-content table td,
+.ck-content table th {
+  border: 1px solid #d0d7de;
+  padding: 8px 12px;
+}
+
+.ck-content table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ck-content blockquote {
+  border-left: 4px solid #d0d7de;
+  margin: 1.5em 0;
+  padding-left: 1em;
+  font-style: italic;
+  color: #57606a;
+}
+
+.ck-content .image {
+  margin: 2em auto;
+  clear: both;
+  text-align: center;
+}
+
+.ck-content .image>img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ck-content .image-style-side {
+  float: right;
+  margin-left: 1.5em;
+  max-width: 50%;
+}
+
+.ck-content .image-style-align-left {
+  float: left;
+  margin-right: 1.5em;
+  max-width: 50%;
+}
+
+.ck-content .image-style-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck-content .image-style-align-right {
+  float: right;
+  margin-left: 1.5em;
+}

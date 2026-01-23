@@ -13,7 +13,6 @@ const router: Router = express.Router();
 
 
 const JWT_SECRET: string = process.env.JWT_SECRET as string;
-const CLIENT_URL: string = process.env.CLIENT_URL as string;
 
 
 const generateRegisterToken = (user: TokenUser): string => {
@@ -25,7 +24,7 @@ const generateRegisterToken = (user: TokenUser): string => {
         provider: user.provider,
         profileid: user.profileid
     };
-    return jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+    return jwt.sign(payload, process.env.JWT_SECRET as string, { expiresIn: '1h' });
 }
 
 const generateAccessToken = (user: TokenUser): string => {
@@ -35,7 +34,7 @@ const generateAccessToken = (user: TokenUser): string => {
         admin: user.admin,
         member: user.member
     };
-    return jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+    return jwt.sign(payload, process.env.JWT_SECRET as string, { expiresIn: '1h' });
 }
 
 const generateRefreshToken = (user: TokenUser): string => {
@@ -45,7 +44,7 @@ const generateRefreshToken = (user: TokenUser): string => {
         admin: user.admin,
         member: user.member
     };
-    return jwt.sign(payload, JWT_SECRET, { expiresIn: '14d' });
+    return jwt.sign(payload, process.env.JWT_SECRET as string, { expiresIn: '14d' });
 }
 
 const checkMember = async (userid: string): Promise<boolean> => {
@@ -60,15 +59,15 @@ router.post('/refresh', async (req, res) => {
     const refreshToken = req.cookies.refreshToken;
     if (!refreshToken) { throw new ExpressError(401, 'No Token'); }
 
-    const payload = jwt.verify(refreshToken, JWT_SECRET) as TokenUser;
-    
+    const payload = jwt.verify(refreshToken, process.env.JWT_SECRET as string) as TokenUser;
+
     const isMember = await checkMember(payload.userid);
     if (payload.member != isMember) {
         await User.updateOne({ userid: payload.userid }, { member: isMember });
     }
     const user: TokenUser = {
-        name: payload.name, 
-        userid: payload.userid, 
+        name: payload.name,
+        userid: payload.userid,
         admin: payload.admin,
         member: isMember
     }
@@ -125,22 +124,27 @@ router.post(
     }
 )
 
+router.post('/logout', (req, res) => {
+    res.clearCookie('refreshToken');
+    res.json({ success: true });
+})
+
 router.get('/google', passport.authenticate('google', { session: false, scope: ['profile'] }))
 
 router.get('/google/callback', (req, res, next) => {
     passport.authenticate('google', { session: false }, (error: any, user: TokenUser) => {
-        if (error || !user) { return res.redirect(`${CLIENT_URL}/login?error=${encodeURIComponent(error.message || '로그인 실패')}`); }
+        if (error || !user) { return res.redirect(`${process.env.CLIENT_URL as string}/login?error=${encodeURIComponent(error.message || '로그인 실패')}`); }
 
         if (user.isnew) {
             const registerToken = generateRegisterToken(user);
-            return res.redirect(`${CLIENT_URL}/register/social?registerToken=${registerToken}`);
+            return res.redirect(`${process.env.CLIENT_URL as string}/register/social?registerToken=${registerToken}`);
         }
 
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
         res.cookie('refreshToken', refreshToken, { httpOnly: true });
-        res.redirect(`${CLIENT_URL}/login/success?accessToken=${accessToken}`);
+        res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
 
@@ -148,18 +152,18 @@ router.get('/github', passport.authenticate('github', { session: false, scope: [
 
 router.get('/github/callback', (req, res, next) => {
     passport.authenticate('github', { session: false }, (error: any, user: TokenUser) => {
-        if (error || !user) { return res.redirect(`${CLIENT_URL}/login?error=${encodeURIComponent(error.message || '로그인 실패')}`); }
+        if (error || !user) { return res.redirect(`${process.env.CLIENT_URL as string}/login?error=${encodeURIComponent(error.message || '로그인 실패')}`); }
 
         if (user.isnew) {
             const registerToken = generateRegisterToken(user);
-            return res.redirect(`${CLIENT_URL}/register/social?registerToken=${registerToken}`);
+            return res.redirect(`${process.env.CLIENT_URL as string}/register/social?registerToken=${registerToken}`);
         }
 
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
         res.cookie('refreshToken', refreshToken, { httpOnly: true });
-        res.redirect(`${CLIENT_URL}/login/success?accessToken=${accessToken}`);
+        res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
 
@@ -167,7 +171,7 @@ router.post('/social/register', async (req, res) => {
     const { registerToken, userid, name } = req.body;
     if (!registerToken || !userid || !name) throw new ExpressError(400, '토큰 또는 입력값이 누락되었습니다.');
 
-    const decoded = jwt.verify(registerToken, JWT_SECRET) as TokenUser;
+    const decoded = jwt.verify(registerToken, process.env.JWT_SECRET as string) as TokenUser;
 
     const existUser = await User.findOne({ [`${decoded.provider}id`]: decoded.profileid });
     if (existUser) throw new ExpressError(409, '이미 가입된 계정입니다.');
@@ -294,7 +298,7 @@ export const authJwt = passport.authenticate('jwt', { session: false });
 router.get('/members', authJwt, async (req, res) => {
     const user = req.user as TokenUser;
     if (!user.admin) throw new ExpressError(403, '관리자 권한이 없습니다.');
-    
+
     const members = await Member.find();
     res.json({ success: true, members: members });
 })
@@ -305,7 +309,7 @@ router.post('/member', authJwt, async (req, res) => {
 
     const { name, userid, number, email } = req.body;
     if (!name || !userid || !number) throw new ExpressError(400, '입력값이 누락되었습니다.');
-    
+
     const newMember = new Member({ name: name, userid: userid, number: number, email: email });
     await newMember.save();
     res.json({ success: true, member: newMember });
