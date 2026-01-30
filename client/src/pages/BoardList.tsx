@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link, useSearchParams, useNavigate } from 'react-router';
+import DOMPurify from 'dompurify';
+import { Link, useSearchParams } from 'react-router';
 import { useAuthStore } from '../store/useAuthStore';
 
 interface Author {
@@ -14,15 +15,7 @@ interface Post {
     title: string;
     category: string;
     author: Author;
-    createdAt?: string; // API might not return this in the list based on board.ts, checking again...
-    // board.ts list route maps: urlid, title, category, content, author. 
-    // Wait, existing board.ts doesn't return createdAt in the map? 
-    // line 19: .map(e => { return { urlid: e.urlid, title: e.title, category: e.category, content: e.content, author: e.author } });
-    // It seems createdAt is missing in the list response. I should add it or use content? 
-    // Usually lists show date. I might need to update server side or just show what I have.
-    // For now I will assume I might need to fix server or just not show date. 
-    // I'll check if I can modify server. The user asked to help with client... but if server is missing stuff I should fix it.
-    // Let's stick to client first, maybe I can use content snippet.
+    createdAt: string;
 }
 
 interface BoardListResponse {
@@ -51,7 +44,11 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                     params: { category, page }
                 });
                 if (res.data.success) {
-                    setPosts(res.data.posts);
+                    const posts = res.data.posts.map((e) => ({
+                        ...e,
+                        title: DOMPurify.sanitize(e.title)
+                    }))
+                    setPosts(posts);
                     setTotalPage(res.data.totalPage);
                 }
             } catch (err) {
@@ -107,7 +104,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                                 <tr key={post.urlid} className="hover">
                                     <td className="text-center">{(page - 1) * 20 + index + 1}</td>
                                     <td>
-                                        <Link to={`/board/post/${post.urlid}`} className="hover:underline font-medium">
+                                        <Link to={`/board/${category}/${post.urlid}`} className="hover:underline font-medium">
                                             {post.title}
                                         </Link>
                                     </td>

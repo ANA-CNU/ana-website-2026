@@ -4,7 +4,7 @@ import { IUser } from './User';
 export interface IPost extends Document {
     title: string,
     content: string,
-    author: IUser | mongoose.Types.ObjectId,
+    author: IUser | mongoose.Types.ObjectId | { name: string },
     category: 'notice' | 'free' | 'algorithm' | 'csenotice',
     urlid: string;
     createdAt: Date;

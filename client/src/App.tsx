@@ -36,7 +36,7 @@ function App() {
                     <Route path='/board/csenotice' element={<BoardList category="csenotice" />} />
                     <Route path='/board/write' element={<PostWrite />} />
                     <Route path='/board/edit/:urlid' element={<PostWrite />} />
-                    <Route path='/board/post/:urlid' element={<PostDetail />} />
+                    <Route path='/board/:category/:urlid' element={<PostDetail />} />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -35,7 +35,7 @@ interface PostDetailResponse {
 }
 
 const PostDetail: React.FC = () => {
-    const { urlid } = useParams<{ urlid: string }>();
+    const { urlid, category } = useParams<{ urlid: string, category: string }>();
     const navigate = useNavigate();
     const { user } = useAuthStore();
     const [post, setPost] = useState<Post | null>(null);
@@ -56,10 +56,18 @@ const PostDetail: React.FC = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get<PostDetailResponse>(`/api/board/post/${urlid}`);
+                const res = await axios.get<PostDetailResponse>(`/api/board/${category}/${urlid}`);
                 if (res.data.success) {
-                    setPost(res.data.post);
-                    setComments(res.data.comments);
+                    const post = res.data.post;
+                    post.title = DOMPurify.sanitize(post.title);
+                    post.content = DOMPurify.sanitize(post.content);
+                    
+                    const comments = res.data.comments.map((com) => ({
+                        ...com,
+                        content: DOMPurify.sanitize(com.content)
+                    }))
+                    setPost(post);
+                    setComments(comments);
                 }
             } catch (err) {
                 console.error(err);
@@ -92,15 +100,7 @@ const PostDetail: React.FC = () => {
             const res = await axios.post(`/api/board/comment/${urlid}`, { content: commentContent });
             if (res.data.success) {
                 setCommentContent('');
-                // Refresh comments or append new one
-                // Since server returns the new comment object in `res.data.comment`, we can append it:
-                // const newComment = res.data.comment;
-                // Wait, server returns populated author? Let's assume server returns full object or we need to refresh.
-                // Checking server route: router.post('/comment/:urlid', ...) returns { success: true, comment: comment }. 
-                // The comment object has author populated? No, the code says:
-                // const comment = new Comment({ ... }); await comment.save(); res.json({ success: true, comment: comment });
-                // It's NOT populated in the response immediately after save unless population logic is added or frontend handles it.
-                // For simplicity, let's just re-fetch the post details or comments to get populated data.
+
                 const refreshRes = await axios.get<PostDetailResponse>(`/api/board/post/${urlid}`);
                 if (refreshRes.data.success) {
                     setComments(refreshRes.data.comments);
@@ -145,7 +145,7 @@ const PostDetail: React.FC = () => {
                 <div
                     ref={contentRef}
                     className="prose max-w-none min-h-[200px] mb-8 ck-content"
-                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+                    dangerouslySetInnerHTML={{ __html: post.content }}
                 >
                 </div>
 

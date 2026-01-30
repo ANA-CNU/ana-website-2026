@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router';
 import { useAuthStore } from '../store/useAuthStore';
+import DOMPurify from 'dompurify';
 
 interface Image {
     _id: string;
@@ -49,6 +50,7 @@ const GalleryDetail: React.FC = () => {
         axios.get<AlbumDetailResponse>(`/api/gallery/album/${urlid}`)
             .then(res => {
                 if (res.data.success) {
+                    res.data.album.content = DOMPurify.sanitize(res.data.album.content);
                     setAlbum(res.data.album);
                 }
             })
