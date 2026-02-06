@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
                     <li><NavLink to="/" className={navLinkClass}>홈</NavLink></li>
                     <li><NavLink to="/about" className={navLinkClass}>동아리소개</NavLink></li>
                     <li><NavLink to="/board/notice" className={navLinkClass}>공지사항</NavLink></li>
-                    <li><NavLink to="/board/csenotice" className={navLinkClass}>학과공지</NavLink></li>
+                    <li><NavLink to="/board/cnunotice" className={navLinkClass}>학과공지</NavLink></li>
                     <li><NavLink to="/board/algorithm" className={navLinkClass}>알고리즘 꿀팁</NavLink></li>
                     <li><NavLink to="/board/free" className={navLinkClass}>자유게시판</NavLink></li>
                     <li><NavLink to="/gallery" className={navLinkClass}>갤러리</NavLink></li>
