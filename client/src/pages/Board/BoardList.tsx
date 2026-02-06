@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 import { Link, useSearchParams } from 'react-router';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 
 interface Author {
-    _id: string;
+    _id?: string;
     name: string;
-    userid: string;
+    userid?: string;
 }
 
 interface Post {
@@ -24,8 +24,21 @@ interface BoardListResponse {
     totalPage: number;
 }
 
+interface CnuNotice {
+    id: string;
+    title: string;
+    writer: string;
+    created_at: string;
+}
+
+interface CnuNoticeResponse {
+    success: boolean;
+    posts: CnuNotice[];
+    totalPage: number;
+}
+
 interface BoardListProps {
-    category: 'notice' | 'free' | 'algorithm' | 'csenotice';
+    category: 'notice' | 'free' | 'algorithm' | 'cnunotice';
 }
 
 const BoardList: React.FC<BoardListProps> = ({ category }) => {
@@ -38,19 +51,28 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            setLoading(true);
             try {
-                const res = await axios.get<BoardListResponse>(`/api/board/posts`, {
-                    params: { category, page }
-                });
-                if (res.data.success) {
-                    const posts = res.data.posts.map((e) => ({
-                        ...e,
-                        title: DOMPurify.sanitize(e.title)
-                    }))
-                    setPosts(posts);
-                    setTotalPage(res.data.totalPage);
+                let res;
+                if (category === 'cnunotice') {
+                    res = await axios.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
+                        params: { page: 1 }
+                    });
+
+                    setPosts(res.data.posts.map((e) => ({
+                        urlid: e.id,
+                        title: e.title,
+                        createdAt: e.created_at,
+                        category: 'cnunotice',
+                        author: { name: e.writer }
+                    })));
+                } else {
+                    res = await axios.get<BoardListResponse>('/api/board/posts', {
+                        params: { category, page: 1 }
+                    });
+
+                    setPosts(res.data.posts.slice(0, 4).map( (post) => ({ ...post, title: DOMPurify.sanitize(post.title) }) ));
                 }
+                setTotalPage(res.data.totalPage);
             } catch (err) {
                 console.error(err);
             } finally {
@@ -64,7 +86,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
         'notice': '공지사항',
         'free': '자유게시판',
         'algorithm': '알고리즘 꿀팁',
-        'csenotice': '학과 공지'
+        'cnunotice': '학과 공지'
     }[category];
 
     return (
@@ -72,8 +94,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold text-gray-800">{categoryName}</h1>
                 {user && (
-                    user.admin ||
-                    (user.member && category === 'free')
+                    (user.admin || (user.member && category === 'free')) && category !== 'cnunotice'    
                 ) && (
                         <Link to="/board/write" className="btn btn-primary btn-sm">글쓰기</Link>
                     )}
@@ -81,13 +102,12 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
 
             <div className="overflow-x-auto bg-base-100 shadow-md">
                 <table className="table w-full">
-                    {/* head */}
                     <thead className="bg-base-200">
                         <tr>
                             <th className="w-16 text-center">번호</th>
                             <th>제목</th>
-                            <th className="w-32 text-center">작성자</th>
-                            {/* <th className="w-32 text-center">날짜</th> */}
+                            <th className="w-24 text-center">작성자</th>
+                            <th className="w-24 text-center">날짜</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,12 +124,12 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                                 <tr key={post.urlid} className="hover">
                                     <td className="text-center">{(page - 1) * 20 + index + 1}</td>
                                     <td>
-                                        <Link to={`/board/${category}/${post.urlid}`} className="hover:underline font-medium">
+                                        <Link to={category === 'cnunotice' ? `/board/cnunotice/${post.urlid}` : `/board/${post.urlid}`} className="hover:underline font-medium">
                                             {post.title}
                                         </Link>
                                     </td>
                                     <td className="text-center opacity-70">{post.author?.name || '익명'}</td>
-                                    {/* <td className="text-center text-sm opacity-60">-</td> */}
+                                    <td className="text-center opacity-70">{post.createdAt ? new Date(post.createdAt).toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' }) : ''}</td>
                                 </tr>
                             ))
                         )}
@@ -117,7 +137,6 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                 </table>
             </div>
 
-            {/* Pagination settings */}
             <div className="flex justify-center mt-8 join">
                 {Array.from({ length: totalPage }, (_, i) => i + 1).map((p) => (
                     <Link

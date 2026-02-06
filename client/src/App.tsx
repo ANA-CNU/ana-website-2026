@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
-import BoardList from './pages/BoardList';
-import PostDetail from './pages/PostDetail';
-import PostWrite from './pages/PostWrite';
+
+import BoardList from './pages/Board/BoardList';
+import PostDetail from './pages/Board/PostDetail';
+import PostWrite from './pages/Board/PostWrite';
+import CnuNoticeDetail from './pages/Board/CnuNoticeDetail';
 
 import About from './pages/About';
 
@@ -24,19 +26,25 @@ function App() {
                 <Route path='/register' element={<Register />} />
                 <Route path='/register/social' element={<SocialRegister />} />
                 <Route path='/login/success' element={<LoginSuccess />} />
+
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
+
                     <Route path='/about' element={<About />} />
+
                     <Route path='/gallery' element={<GalleryList />} />
                     <Route path='/gallery/write' element={<AlbumWrite />} />
                     <Route path='/gallery/:urlid' element={<GalleryDetail />} />
+
                     <Route path='/board/notice' element={<BoardList category="notice" />} />
                     <Route path='/board/free' element={<BoardList category="free" />} />
                     <Route path='/board/algorithm' element={<BoardList category="algorithm" />} />
-                    <Route path='/board/csenotice' element={<BoardList category="csenotice" />} />
+                    <Route path='/board/cnunotice' element={<BoardList category="cnunotice" />} />
+                    
                     <Route path='/board/write' element={<PostWrite />} />
                     <Route path='/board/edit/:urlid' element={<PostWrite />} />
-                    <Route path='/board/:category/:urlid' element={<PostDetail />} />
+                    <Route path='/board/cnunotice/:urlid' element={<CnuNoticeDetail />} />
+                    <Route path='/board/:urlid' element={<PostDetail />} />
                 </Route>
             </Routes>
         </BrowserRouter>

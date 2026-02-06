@@ -10,7 +10,7 @@ import {
     Link, AutoLink, MediaEmbed, PasteFromOffice, Table, TableToolbar, TextTransformation, Alignment
 } from 'ckeditor5';
 import 'ckeditor5/ckeditor5.css';
-import CustomUploadAdapter from '../Utils/CustomUploadAdapter';
+import CustomUploadAdapter from '../../Utils/CustomUploadAdapter';
 
 function MyCustomUploadAdapterPlugin(editor: any) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {

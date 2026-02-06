@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, Link } from 'react-router';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 import DOMPurify from 'dompurify';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
@@ -35,7 +35,7 @@ interface PostDetailResponse {
 }
 
 const PostDetail: React.FC = () => {
-    const { urlid, category } = useParams<{ urlid: string, category: string }>();
+    const { urlid } = useParams<{ urlid: string }>();
     const navigate = useNavigate();
     const { user } = useAuthStore();
     const [post, setPost] = useState<Post | null>(null);
@@ -56,7 +56,7 @@ const PostDetail: React.FC = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get<PostDetailResponse>(`/api/board/${category}/${urlid}`);
+                const res = await axios.get<PostDetailResponse>(`/api/board/post/${urlid}`);
                 if (res.data.success) {
                     const post = res.data.post;
                     post.title = DOMPurify.sanitize(post.title);
@@ -85,7 +85,7 @@ const PostDetail: React.FC = () => {
         try {
             await axios.delete(`/api/board/post/${urlid}`);
             alert('삭제되었습니다.');
-            navigate('/board/free'); // Default redirect to free board, logically should go back to list
+            navigate(`/board/${post ? post.category : 'free'}`);
         } catch (err: any) {
             console.error(err);
             alert(err.response?.data?.message || '삭제 실패');
