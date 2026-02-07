@@ -116,6 +116,14 @@ router.post(
     passport.authenticate('local', { session: false }),
     async (req, res) => {
         const user = req.user as TokenUser;
+
+        const isMember = await checkMember(user.userid);
+        if (user.member != isMember) {
+            await User.updateOne({ userid: user.userid }, { $set: { member: isMember }});
+            user.member = isMember;
+        }
+
+
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
@@ -312,6 +320,9 @@ router.post('/member', authJwt, async (req, res) => {
 
     const newMember = new Member({ name: name, userid: userid, number: number, email: email });
     await newMember.save();
+
+    await User.updateOne({ userid: userid }, { $set: { member: true }});
+    
     res.json({ success: true, member: newMember });
 })
 
@@ -324,6 +335,8 @@ router.delete('/member/:userid', authJwt, async (req, res) => {
 
     const deletedMember = await Member.findOneAndDelete({ userid: userid });
     if (!deletedMember) throw new ExpressError(404, '회원이 존재하지 않습니다.');
+
+    await User.updateOne({ userid: userid }, { $set: { member: false }});
 
     res.json({ success: true, member: deletedMember });
 })
