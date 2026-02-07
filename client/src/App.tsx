@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Layout from './pages/Layout';
+import Layout from './pages/Layout/Layout';
 import Home from './pages/Home';
 
 import BoardList from './pages/Board/BoardList';
@@ -9,14 +9,14 @@ import CnuNoticeDetail from './pages/Board/CnuNoticeDetail';
 
 import About from './pages/About';
 
-import GalleryList from './pages/GalleryList';
-import AlbumDetail from './pages/AlbumDetail';
-import AlbumWrite from './pages/AlbumWrite';
+import GalleryList from './pages/Gallery/GalleryList';
+import AlbumDetail from './pages/Gallery/AlbumDetail';
+import AlbumWrite from './pages/Gallery/AlbumWrite';
 
-import Login from './pages/Login';
-import Register from './pages/Register';
-import SocialRegister from './pages/SocialRegister';
-import LoginSuccess from './pages/LoginSuccess';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import SocialRegister from './pages/Auth/SocialRegister';
+import LoginSuccess from './pages/Auth/LoginSuccess';
 
 function App() {
     return (
