@@ -10,7 +10,7 @@ import CnuNoticeDetail from './pages/Board/CnuNoticeDetail';
 import About from './pages/About';
 
 import GalleryList from './pages/GalleryList';
-import GalleryDetail from './pages/GalleryDetail';
+import AlbumDetail from './pages/AlbumDetail';
 import AlbumWrite from './pages/AlbumWrite';
 
 import Login from './pages/Login';
@@ -34,7 +34,7 @@ function App() {
 
                     <Route path='/gallery' element={<GalleryList />} />
                     <Route path='/gallery/write' element={<AlbumWrite />} />
-                    <Route path='/gallery/:urlid' element={<GalleryDetail />} />
+                    <Route path='/gallery/:urlid' element={<AlbumDetail />} />
 
                     <Route path='/board/notice' element={<BoardList category="notice" />} />
                     <Route path='/board/free' element={<BoardList category="free" />} />

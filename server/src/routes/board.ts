@@ -16,58 +16,77 @@ const supabase = createClient(process.env.SUPABASE_URL as string, process.env.SU
 const router = Router();
 
 
-// 게시글 crud
+// ========== 게시글 ==========
+
+// 일반 게시글 R
 router.get('/posts', async (req, res) => {
     const page = Number(req.query.page || 1);
-    const category = req.query.category || 'free';
+    const category = (req.query.category as string) || 'free';
 
-    let posts, totalPage;
+    if (!['free', 'notice', 'algorithm'].includes(category)) throw new ExpressError(404, '그런 카테고리 없습니다');
 
-    if (category === 'csenotice') {
-        const { data, count, error } = await supabase.from('notice')
-            .select('id, title, writer, created_at, updated_at', { count: 'exact' })
-            .eq('ignore_flag', false)
-            .order('publish_date', { ascending: false })
-            .order('id', { ascending: false })
-            .range(20 * (page - 1), 20 * page - 1);
+    const posts = (await Post.find({ category: category }).sort({ createdAt: -1 }).skip(20 * (page - 1)).limit(20).populate('author', 'name userid'))
+        .map(e => { return { urlid: e.urlid, title: e.title, category: e.category, author: e.author, createdAt: e.createdAt } }) as IPost[];
 
-        if (error) throw error;
-
-        posts = (data as Array<any>).map(e => ({
-            urlid: e.id,
-            title: e.title,
-            author: {
-                name: e.writer
-            }, 
-            createdAt: e.created_at,
-            category: 'csenotice'
-        }))
-
-        totalPage = Math.ceil((count || 20) / 20);
-    } else {
-        posts = (await Post.find({ category: category }).sort({ createdAt: -1 }).skip(20 * (page - 1)).limit(20).populate('author', 'name userid'))
-            .map(e => { return { urlid: e.urlid, title: e.title, category: e.category, author: e.author, createdAt: e.createdAt } }) as IPost[];
-
-        const totalPost = await Post.countDocuments({ category: category });
-        totalPage = Math.ceil(totalPost / 20);
-    }
+    const totalPost = await Post.countDocuments({ category: category });
+    const totalPage = Math.ceil(totalPost / 20);
 
 
     res.json({ success: true, posts: posts, totalPage: totalPage });
 })
 
+router.get('/post/:urlid', async (req, res) => {
+    const urlid = req.params.urlid;
+
+    const post = await Post.findOne({ urlid: urlid }).populate('author', 'name userid');
+    if (!post) throw new ExpressError(404, '그런 게시물 없습니다..');
+    const comments = await Comment.find({ post: post._id }).sort({ createdAt: -1 }).populate('author', 'name userid');
+
+    res.json({ success: true, post: post, comments: comments });
+})
+
+// 학과 공지 게시글 R
+router.get('/posts/cnunotice', async (req, res) => {
+    const page = Number(req.query.page || 1);
+
+    const { data, count, error } = await supabase.from('notice')
+        .select('id, title, writer, created_at', { count: 'exact' })
+        .eq('ignore_flag', false)
+        .order('publish_date', { ascending: false })
+        .order('id', { ascending: false })
+        .range(20 * (page - 1), 20 * page - 1);
+
+    if (error) throw error;
+
+    const totalPage = Math.ceil((count || 20) / 20);
+
+    res.json({ success: true, posts: data, totalPage: totalPage });
+})
+
+router.get('/post/cnunotice/:urlid', async (req, res) => {
+    const urlid = req.params.urlid;
+
+    const { data, error } = await supabase.from('notice')
+        .select('id, title, publish_date, writer, markdown_content, original_url, created_at, updated_at')
+        .eq('id', urlid).eq('ignore_flag', 'false');
+    if (error) throw error;
+    if (data.length == 0) throw new ExpressError(404, '그런 게시글 없습니다');
+
+    res.json({ success: true, post: data[0] });
+})
+
+// 일반 게시글 CUD
 router.post('/post', authJwt, async (req, res) => {
     const { title, content, category } = req.body;
     if (!title || !content || !category) throw new ExpressError(400, '입력 값이 필요합니다.');
 
-    if (!['notice', 'free', 'algorithm', 'csenotice'].includes(category)) throw new ExpressError(400, '존재하지 않는 카테고리입니다.');
+    if (!['notice', 'free', 'algorithm'].includes(category)) throw new ExpressError(400, '존재하지 않는 카테고리입니다.');
 
     const tokenUser = req.user as TokenUser;
     const user = await User.findOne({ userid: tokenUser.userid }) as IUser;
 
     if (!user.member) throw new ExpressError(401, '아나 회원이어야 합니다.');
-    if (!user.admin && ['notice', 'algorithm', 'csenotice'].includes(category)) throw new ExpressError(401, '관리자 권한이 없습니다.');
-    if (category === 'csenotice') throw new ExpressError(401, '학과공지는 작성하실 수 없습니다.');
+    if (!user.admin && ['notice', 'algorithm'].includes(category)) throw new ExpressError(401, '관리자 권한이 없습니다.');
 
     const post: IPost = new Post({
         title: title,
@@ -117,7 +136,9 @@ router.delete('/post/:urlid', authJwt, async (req, res) => {
 })
 
 
-// 댓글
+// ========== 댓글 ==========
+
+// 일반 댓글 CD
 router.post('/comment/:urlid', authJwt, async (req, res) => {
     const tokenUser = req.user as TokenUser;
     const user = await User.findOne({ userid: tokenUser.userid }) as IUser;
@@ -153,43 +174,6 @@ router.delete('/comment/:id', authJwt, async (req, res) => {
 
     await comment.deleteOne();
     res.json({ success: true });
-})
-
-
-// 게시글 상세 조회인데 params때문에 url 꼬여서 맨 아래에 둠
-router.get('/:category/:urlid', async (req, res) => {
-    const urlid = req.params.urlid;
-    const category = req.params.category;
-
-    let post, comments: any;
-
-    if (category === 'csenotice') {
-        const { data, error } = await supabase.from('notice')
-            .select('id, title, publish_date, writer, markdown_content, original_url, created_at, updated_at')
-            .eq('id', urlid).eq('ignore_flag', 'false');
-        if (error) throw error;
-        if (data.length == 0) throw new ExpressError(404, '게시글이 존재하지 않습니다.');
-        
-        post = {
-            title: data[0].title,
-            author: {
-                name: data[0].writer
-            },
-            category: 'csenotice',
-            content: (await marked.parse(data[0].markdown_content)),
-            urlid: urlid,
-            createdAt: data[0].created_at,
-            updatedAt: data[0].updated_at
-        }
-        comments = [];
-    } else {
-        post = await Post.findOne({ urlid: urlid }).populate('author', 'name userid');
-        if (!post) throw new ExpressError(404, '게시글이 존재하지 않습니다.');
-        comments = await Comment.find({ post: post._id }).sort({ createdAt: -1 }).populate('author', 'name userid');
-    }
-    
-
-    res.json({ success: true, post: post, comments: comments });
 })
 
 

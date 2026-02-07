@@ -7,12 +7,14 @@ import authRouter from './auth';
 import imageRouter from './image';
 import boardRouter from './board';
 import galleryRouter from './gallery';
+import siteConfigRouter from './siteConfig';
 
 
 router.use('/auth', authRouter);
 router.use('/image', imageRouter);
 router.use('/board', boardRouter);
 router.use('/gallery', galleryRouter);
+router.use('/siteConfig', siteConfigRouter);
 
 const imagesRoot = path.join(__dirname, '../../images');
 try {

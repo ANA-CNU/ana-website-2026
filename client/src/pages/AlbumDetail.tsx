@@ -74,25 +74,18 @@ const GalleryDetail: React.FC = () => {
         }
     };
 
-    if (loading) return <div className="text-center py-10">로딩 중...</div>;
+    if (loading ) return <div className="text-center py-10">로딩 중...</div>;
     if (!album) return null;
 
     return (
         <div className="container mx-auto max-w-2xl px-4 py-8">
             <div className="bg-base-100 shadow-lg overflow-hidden border border-base-200">
-                {/* Header */}
+
                 <div className="p-4 border-b border-base-200 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="avatar placeholder">
-                            <div className="bg-neutral-focus text-neutral-content rounded-full w-8 h-8 flex items-center justify-center">
-                                <span className="text-xs">{album.author.name[0]}</span>
-                            </div>
-                        </div>
                         <span className="font-bold text-sm">{album.author.name}</span>
                     </div>
-                    {/* <button className="btn btn-ghost btn-circle btn-sm">
-                        ...
-                    </button> */}
+
                     {user && album && (user.admin || user.userid === album.author.userid) && (
                         <button onClick={handleDelete} className="btn btn-ghost btn-circle btn-sm text-error" title="삭제">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,7 +95,6 @@ const GalleryDetail: React.FC = () => {
                     )}
                 </div>
 
-                {/* Images Carousel */}
                 <div className="relative w-full aspect-square bg-black flex items-center justify-center overflow-hidden group">
                     {album.images.length > 0 && (
                         <img
@@ -112,7 +104,6 @@ const GalleryDetail: React.FC = () => {
                         />
                     )}
 
-                    {/* Navigation Buttons */}
                     {album.images.length > 1 && (
                         <>
                             {currentIndex > 0 && (
@@ -131,7 +122,7 @@ const GalleryDetail: React.FC = () => {
                                     ❯
                                 </button>
                             )}
-                            {/* Pagination Dots */}
+
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
                                 {album.images.map((_, idx) => (
                                     <div
@@ -144,10 +135,9 @@ const GalleryDetail: React.FC = () => {
                     )}
                 </div>
 
-                {/* Content */}
+
                 <div className="p-4">
                     <p className="whitespace-pre-wrap text-sm mb-2">
-                        <span className="font-bold mr-2">{album.author.name}</span>
                         {album.content}
                     </p>
                     <div className="text-xs text-gray-500 uppercase tracking-wide">
