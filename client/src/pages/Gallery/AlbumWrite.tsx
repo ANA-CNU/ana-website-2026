@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import type { ChangeEvent, FormEvent, DragEvent } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 import { Upload, X, Image as ImageIcon, Loader2 } from 'lucide-react';
 import heic2any from 'heic2any';
 

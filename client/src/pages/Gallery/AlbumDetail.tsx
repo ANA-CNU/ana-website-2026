@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 import DOMPurify from 'dompurify';
 
 interface Image {

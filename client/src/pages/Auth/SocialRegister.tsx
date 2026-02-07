@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router';
 import axios from 'axios';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 
 const SocialRegister: React.FC = () => {
     const [searchParams] = useSearchParams();
