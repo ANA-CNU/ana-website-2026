@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { Link } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
 
@@ -32,7 +32,7 @@ const GalleryList: React.FC = () => {
     useEffect(() => {
         const fetchAlbums = async () => {
             try {
-                const res = await axios.get<GalleryListResponse>('/api/gallery/albums');
+                const res = await api.get<GalleryListResponse>('/api/gallery/albums');
                 if (res.data.success) {
                     setAlbums(res.data.albums);
                 }
@@ -69,7 +69,7 @@ const GalleryList: React.FC = () => {
                         <Link to={`/gallery/${album.urlid}`} key={album.urlid} className="group relative aspect-square bg-gray-200 overflow-hidden cursor-pointer block">
                             {album.images && album.images.length > 0 ? (
                                 <img
-                                    src={`/api/images/${album.images[0].name}`}
+                                    src={`${import.meta.env.VITE_SERVER_URL}/api/images/${album.images[0].name}`}
                                     alt="Album Cover"
                                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-103 group-hover:brightness-90"
                                 />

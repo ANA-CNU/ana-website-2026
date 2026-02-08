@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useParams, useNavigate, Link } from 'react-router';
 import DOMPurify from 'dompurify';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
+import useToastStore from '../../store/useToastStore';
 
 // 'id, title, publish_date, writer, markdown_content, original_url, created_at, updated_at'
 interface Post {
@@ -28,6 +29,7 @@ const PostDetail: React.FC = () => {
     const navigate = useNavigate();
     const [post, setPost] = useState<Post | null>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+    const { showToast } = useToastStore();
 
     useEffect(() => {
         if (post && contentRef.current) {
@@ -41,7 +43,7 @@ const PostDetail: React.FC = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get<PostDetailResponse>(`/api/board/post/cnunotice/${urlid}`);
+                const res = await api.get<PostDetailResponse>(`/api/board/post/cnunotice/${urlid}`);
                 const post = res.data.post;
                 post.title = DOMPurify.sanitize(post.title);
                 post.markdown_content = DOMPurify.sanitize(post.markdown_content);
@@ -49,7 +51,7 @@ const PostDetail: React.FC = () => {
                 setPost(post);
             } catch (err) {
                 console.error(err);
-                alert('게시글을 불러오는데 실패했습니다.');
+                showToast('게시글을 불러오는데 실패했습니다.', 'error');
                 navigate(-1);
             } finally {
                 setLoading(false);

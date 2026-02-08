@@ -143,12 +143,12 @@ export default About;
 
 const Intro = () => {
     return <section id="intro" className="min-h-[50vh]">
-        <h2 className="text-6xl font-extrabold mb-10 ml-10 text-teal-600">동아리 소개</h2>
+        <h2 className="text-5xl font-extrabold mb-10 ml-10 text-teal-600">동아리 소개</h2>
 
         <div id='intro-ana' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
             <h3 className="text-5xl font-bold underline decoration-teal-600 decoration-10">ANA</h3>
             <p className="text-2xl mt-8">
-                알고리즘(Algorithm)과 문제 해결(Problem Solving) 능력으로 <br></br> 세상의 실제 문제를 해결하는 동아리 (Application)
+                알고리즘(Algorithm)과 문제 해결(Problem Solving) 능력으로 <br /> 세상의 실제 문제를 해결하는 동아리 (Application)
             </p>
             <p className="text-4xl font-bold mt-8">
                 어떤 동아리인가요?
@@ -441,7 +441,7 @@ const Activities = () => {
 
     return <section id="activities" className="min-h-[50vh]">
 
-        <h2 className="text-6xl font-extrabold mb-10 ml-10 text-indigo-600">활동</h2>
+        <h2 className="text-5xl font-extrabold mb-10 ml-10 text-indigo-600">활동</h2>
 
         <div id='act-contest' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
 
@@ -458,13 +458,13 @@ const Activities = () => {
                     </div>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
-                    <h4 className='text-3xl text-indigo-600 font-extrabold'>ANAGETDON</h4>
+                    <h4 className='text-3xl text-indigo-800 font-extrabold'>ANAGETDON</h4>
                     <p className='text-xl font-bold'>ANA 자체 프로그래밍 대회</p>
                     <p className='text-xl text-center font-bold'>div_1 (1학년)<br />div_2 (2,3,4학년)<br />나눠서 진행</p>
                 </div>
 
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
-                    <h4 className='text-3xl text-indigo-600 font-extrabold'>SW-IT CONTEST</h4>
+                    <h4 className='text-3xl text-indigo-800 font-extrabold'>SW-IT CONTEST</h4>
                     <p className='text-xl font-bold'>ANA 알고리즘 대회</p>
                     <p className='text-xl text-center font-bold'>Baekjoon Online Judge에 동아리원들이 직접 만든 문제를 올려 개최</p>
                 </div>
@@ -552,13 +552,13 @@ const Activities = () => {
                     </div>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
-                    <h4 className='text-3xl text-indigo-600 font-extrabold text-center'>멘토 멘티</h4>
+                    <h4 className='text-3xl text-indigo-800 font-extrabold text-center'>멘토 멘티</h4>
                     <p className='text-xl text-center font-bold'>신입생과 선배들간의 교류 목적 프로그램</p>
                     <p className='text-xl text-center font-bold'>밥약, 공부, 축제 방문 등 다양한 활동 진행</p>
                 </div>
 
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
-                    <h4 className='text-3xl text-indigo-600 font-extrabold text-center '>MT, 개강총회, 종강총회, 막동</h4>
+                    <h4 className='text-3xl text-indigo-800 font-extrabold text-center '>MT, 개강총회, 종강총회, 막동</h4>
                     <p className='text-xl text-center font-bold'>저희 잘 놀고 잘 마셔요!!</p>
                 </div>
                 <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
@@ -582,7 +582,7 @@ const Activities = () => {
                     </div>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
-                    <h4 className='text-3xl text-indigo-600 font-extrabold text-center'>풋살 모임</h4>
+                    <h4 className='text-3xl text-indigo-800 font-extrabold text-center'>풋살 모임</h4>
                     <p className='text-xl text-center font-bold'>저희 풋살도 잘해요~</p>
                 </div>
 
@@ -605,7 +605,7 @@ const Activities = () => {
                     </div>
                 </div>
 
-                <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="하루하나 챌린지" defaultChecked />
+                <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="하루하나 챌린지" />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
                         <div className="carousel-item">
@@ -617,7 +617,7 @@ const Activities = () => {
                     </div>
                 </div>
 
-                <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="ICPC&UCPC 스터디" />
+                <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="ICPC&UCPC 스터디" defaultChecked />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
                         <div className="carousel-item">
@@ -642,34 +642,72 @@ const Activities = () => {
 }
 
 
+const AvatarCard: React.FC<{ src: string, name: string, role: string, info: string }> = ({ src, name, role, info }) => {
+    return <div className='flex flex-col justify-around items-center rounded-md border border-base-300 shadow-md p-5 gap-3 w-45'>
+        <div className="avatar">
+            <div className="ring-primary ring-offset-base-100 max-w-30 rounded-full ring-2 ring-offset-2">
+                <img src={src} />
+            </div>
+        </div>
+        <h4 className='text-xl text-primary font-bold'>{name}</h4>
+        <p className='text-lg text-rose-800 font-bold'>{role}</p>
+        <p className='hidden md:block text-sm text-primary'>{info}</p>
+    </div>
+}
+
 const Members = () => {
 
     return <section id="members" className="min-h-[50vh]">
 
-        <h2 className="text-6xl font-extrabold mb-10 ml-10 text-rose-600">임원진</h2>
+        <h2 className="text-5xl font-extrabold mb-10 ml-10 text-rose-600">임원진</h2>
 
         <div id='mem-president' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">회장 & 부회장</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">회장 & 부회장</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member1.png' name='황현석' role='회장' info='컴퓨터융합학부 22학번' />
+                <AvatarCard src='/images/member2.png' name='박종현' role='부회장' info='컴퓨터융합학부 22학번' />
+            </div>
         </div>
 
         <div id='mem-manager' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">총무</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">총무</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member3.png' name='장현성' role='총무' info='컴퓨터융합학부 21학번' />
+            </div>
         </div>
 
         <div id='mem-education' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">교육부</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">교육부</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member7.png' name='김동희' role='교육부장' info='컴퓨터융합학부 25학번' />
+                <AvatarCard src='/images/member8.png' name='표강준' role='교육부원' info='컴퓨터융합학부 25학번' />
+                <AvatarCard src='/images/member9.png' name='강민우' role='교육부원' info='컴퓨터융합학부 25학번' />
+            </div>
         </div>
 
         <div id='mem-personnel' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">인사부</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">인사부</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member4.png' name='김기원' role='인사부장' info='컴퓨터융합학부 22학번' />
+                <AvatarCard src='/images/member5.png' name='박찬종' role='인사부원' info='컴퓨터융합학부 22학번' />
+                <AvatarCard src='/images/member6.png' name='전민기' role='인사부원' info='컴퓨터융합학부 22학번' />
+            </div>
         </div>
 
         <div id='mem-promote' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">홍보부</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">홍보부</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member12.png' name='심하은' role='홍보부장' info='경영학부 25학번' />
+                <AvatarCard src='/images/member13.png' name='박정현' role='홍보부원' info='컴퓨터융합학부 25학번' />
+            </div>
         </div>
 
         <div id='mem-planning' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10">기획부</h3>
+            <h3 className="text-4xl font-extrabold underline decoration-rose-600 decoration-10 mb-10">기획부</h3>
+            <div className="flex flex-row justify-evenly items-center">
+                <AvatarCard src='/images/member10.png' name='안소원' role='기획부장' info='컴퓨터융합학부 25학번' />
+                <AvatarCard src='/images/member11.png' name='박준혁' role='기획부원' info='컴퓨터융합학부 25학번' />
+            </div>
         </div>
 
     </section>

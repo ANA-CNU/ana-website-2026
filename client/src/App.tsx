@@ -18,6 +18,8 @@ import Register from './pages/Auth/Register';
 import SocialRegister from './pages/Auth/SocialRegister';
 import LoginSuccess from './pages/Auth/LoginSuccess';
 
+import Toast from './components/Toast';
+
 function App() {
     return (
         <BrowserRouter>
@@ -40,13 +42,15 @@ function App() {
                     <Route path='/board/free' element={<BoardList category="free" />} />
                     <Route path='/board/algorithm' element={<BoardList category="algorithm" />} />
                     <Route path='/board/cnunotice' element={<BoardList category="cnunotice" />} />
-                    
+
                     <Route path='/board/write' element={<PostWrite />} />
                     <Route path='/board/edit/:urlid' element={<PostWrite />} />
                     <Route path='/board/cnunotice/:urlid' element={<CnuNoticeDetail />} />
                     <Route path='/board/:urlid' element={<PostDetail />} />
+
                 </Route>
             </Routes>
+            <Toast />
         </BrowserRouter>
     )
 }
