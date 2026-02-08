@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import axios from 'axios';
+import api from '../lib/axios';
 
 interface User {
     name: string;
@@ -50,7 +50,7 @@ export const useAuthStore = create<AuthState>()(
             },
             logout: async () => {
                 try {
-                    await axios.post('/api/auth/logout');
+                    await api.post('/api/auth/logout');
                 } catch (e) {
                     console.error("Logout failed", e);
                 }

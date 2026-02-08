@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../lib/axios';
 import { Link } from 'react-router';
 
 interface Banner { imageUrl: string; title: string; description: string; linkUrl: string; }
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     useEffect(() => {
         const getSiteConfig = async () => {
             try {
-                const res = await axios.get<SiteConfigResponse>('api/siteConfig/');
+                const res = await api.get<SiteConfigResponse>('/api/siteConfig/');
 
                 const siteConfig = res.data.siteConfig;
                 setBanner(siteConfig.banner);
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 
                 {loading ? (
                     <div className="card-body lg:w-1/3 justify-center">
-                        <h2 className="card-title font-bold skeleton skeleton-text">Loading</h2>
+                        <h2 className="card-title font-extrabold skeleton skeleton-text">Loading</h2>
                         <p className="text-sm skeleton skeleton-text">Loading</p>
                         <div className="card-actions justify-end mt-2">
                             <button className='btn btn-primary btn-sm btn-disabled'><span className="loading loading-spinner loading-md"></span></button>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
                     </div>
                 ) : (
                     <div className="card-body lg:w-1/3 justify-center">
-                        <h2 className="card-title font-bold">{banner?.title}</h2>
+                        <h2 className="card-title font-extrabold">{banner?.title}</h2>
                         <p className="text-sm text-gray-500">{banner?.description}</p>
                         <div className="card-actions justify-end mt-2">
                             <Link to={banner ? banner.linkUrl : ''} className='btn btn-primary btn-sm'>자세히 보기</Link>
@@ -88,12 +88,12 @@ const Home: React.FC = () => {
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
                 {[{
                     name: '아나 동아리 가입', url: 'https://www.naver.com', svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="size-6 fill-none stroke-current stroke-2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                     </svg>
                 },
                 {
                     name: '공지사항', url: '/board/notice', svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="size-6 fill-none stroke-current stroke-2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                     </svg>
                 },
                 {
@@ -204,7 +204,7 @@ const Board: React.FC<{ title: string, category: string }> = ({ title, category 
             try {
                 let res;
                 if (category === 'cnunotice') {
-                    res = await axios.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
+                    res = await api.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
                         params: { page: 1 }
                     });
 
@@ -214,7 +214,7 @@ const Board: React.FC<{ title: string, category: string }> = ({ title, category 
                         createdAt: e.created_at
                     })));
                 } else {
-                    res = await axios.get<BoardResponse>('/api/board/posts', {
+                    res = await api.get<BoardResponse>('/api/board/posts', {
                         params: { category, page: 1 }
                     });
 

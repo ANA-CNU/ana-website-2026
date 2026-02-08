@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useAuthStore } from '../../store/useAuthStore';
+import useToastStore from '../../store/useToastStore';
 
 const Login: React.FC = () => {
     const [userid, setUserid] = useState('');
@@ -9,16 +10,18 @@ const Login: React.FC = () => {
     const [error, setError] = useState('');
     const { login } = useAuthStore();
     const navigate = useNavigate();
+    const { showToast } = useToastStore()
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/auth/login', {
+            const res = await api.post('/api/auth/login', {
                 userid,
                 password
             });
             if (res.data.success) {
                 login(res.data.accessToken);
+                showToast('로그인 성공', 'success');
                 navigate('/');
             }
         } catch (err: any) {

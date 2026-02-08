@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import axios from 'axios';
+import api from '../../lib/axios';
+import useToastStore from '../../store/useToastStore';
 
 const Register: React.FC = () => {
     const [name, setName] = useState('');
@@ -9,22 +10,23 @@ const Register: React.FC = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { showToast } = useToastStore()
 
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-            setError('비밀번호가 일치하지 않습니다.');
+            setError('비밀번호가 일치하지 않습니다');
             return;
         }
 
         try {
-            const res = await axios.post('/api/auth/register', {
+            const res = await api.post('/api/auth/register', {
                 name,
                 userid,
                 password
             });
             if (res.data.success) {
-                alert('회원가입이 완료되었습니다. 로그인해주세요.');
+                showToast('회원가입 성공! 로그인 해주세요', 'success');
                 navigate('/login');
             }
         } catch (err: any) {
@@ -53,7 +55,7 @@ const Register: React.FC = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">학번 / 아이디</span>
+                                <span className="label-text">학번</span>
                             </label>
                             <input
                                 type="text"

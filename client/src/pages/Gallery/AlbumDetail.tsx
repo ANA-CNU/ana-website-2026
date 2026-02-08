@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useParams, useNavigate } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
 import DOMPurify from 'dompurify';
+import useToastStore from '../../store/useToastStore';
 
 interface Image {
     _id: string;
@@ -33,6 +34,7 @@ const GalleryDetail: React.FC = () => {
     const [album, setAlbum] = useState<Album | null>(null);
     const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const { showToast } = useToastStore();
 
     const nextImage = () => {
         if (album && currentIndex < album.images.length - 1) {
@@ -47,7 +49,7 @@ const GalleryDetail: React.FC = () => {
     };
 
     useEffect(() => {
-        axios.get<AlbumDetailResponse>(`/api/gallery/album/${urlid}`)
+        api.get<AlbumDetailResponse>(`/api/gallery/album/${urlid}`)
             .then(res => {
                 if (res.data.success) {
                     res.data.album.content = DOMPurify.sanitize(res.data.album.content);
@@ -56,7 +58,7 @@ const GalleryDetail: React.FC = () => {
             })
             .catch(err => {
                 console.error(err);
-                alert('앨범을 불러오는데 실패했습니다.');
+                showToast('앨범을 불러오는데 실패했습니다.', 'error');
                 navigate('/gallery');
             })
             .finally(() => setLoading(false));
@@ -65,12 +67,12 @@ const GalleryDetail: React.FC = () => {
     const handleDelete = async () => {
         if (!window.confirm('정말 삭제하시겠습니까?')) return;
         try {
-            await axios.delete(`/api/gallery/album/${urlid}`);
-            alert('삭제되었습니다.');
+            await api.delete(`/api/gallery/album/${urlid}`);
+            showToast('삭제되었습니다.', 'success');
             navigate('/gallery');
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '삭제 실패');
+            showToast(err.response?.data?.message || '삭제 실패', 'error');
         }
     };
 
@@ -98,7 +100,7 @@ const GalleryDetail: React.FC = () => {
                 <div className="relative w-full aspect-square bg-black flex items-center justify-center overflow-hidden group">
                     {album.images.length > 0 && (
                         <img
-                            src={`/api/images/${album.images[currentIndex].name}`}
+                            src={`${import.meta.env.VITE_SERVER_URL}/api/images/${album.images[currentIndex].name}`}
                             alt={`Album Content ${currentIndex + 1}`}
                             className="w-full h-full object-contain"
                         />

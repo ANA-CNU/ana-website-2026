@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useAuthStore } from '../../store/useAuthStore';
 
 const SocialRegister: React.FC = () => {
@@ -17,7 +17,7 @@ const SocialRegister: React.FC = () => {
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/auth/social/register', {
+            const res = await api.post('/api/auth/social/register', {
                 registerToken,
                 name,
                 userid

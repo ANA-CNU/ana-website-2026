@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import DOMPurify from 'dompurify';
 import { Link, useSearchParams } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
@@ -54,7 +54,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
             try {
                 let res;
                 if (category === 'cnunotice') {
-                    res = await axios.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
+                    res = await api.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
                         params: { page: 1 }
                     });
 
@@ -66,7 +66,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                         author: { name: e.writer }
                     })));
                 } else {
-                    res = await axios.get<BoardListResponse>('/api/board/posts', {
+                    res = await api.get<BoardListResponse>('/api/board/posts', {
                         params: { category, page: 1 }
                     });
 

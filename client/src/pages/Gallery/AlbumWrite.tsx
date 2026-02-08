@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useRef } from 'react';
 import type { ChangeEvent, FormEvent, DragEvent } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
 import { Upload, X, Image as ImageIcon, Loader2 } from 'lucide-react';
 import heic2any from 'heic2any';
+import useToastStore from '../../store/useToastStore';
 
 const AlbumWrite: React.FC = () => {
     const navigate = useNavigate();
@@ -16,11 +17,11 @@ const AlbumWrite: React.FC = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [processing, setProcessing] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const { showToast } = useToastStore();
 
-    // Redirect if not authorized
     React.useEffect(() => {
         if (!user) {
-            alert('로그인이 필요합니다.');
+            showToast('로그인이 필요합니다.', 'error');
             navigate('/login');
         }
     }, [user, navigate]);
@@ -33,7 +34,6 @@ const AlbumWrite: React.FC = () => {
             const convertedFiles: File[] = [];
 
             for (const file of files) {
-                // Check if file is HEIC
                 const isHeic = file.name.toLowerCase().endsWith('.heic') || file.type === 'image/heic';
 
                 if (isHeic) {
@@ -44,7 +44,6 @@ const AlbumWrite: React.FC = () => {
                             quality: 0.8
                         });
 
-                        // Handler array result if multiple (heic2any might return array for gif-like heic, usually single)
                         const blob = Array.isArray(blobOrBlobs) ? blobOrBlobs[0] : blobOrBlobs;
 
                         const convertedFile = new File(
@@ -55,7 +54,7 @@ const AlbumWrite: React.FC = () => {
                         convertedFiles.push(convertedFile);
                     } catch (e) {
                         console.error('HEIC conversion failed', e);
-                        alert(`HEIC 변환 실패: ${file.name}`);
+                        showToast(`HEIC 변환 실패: ${file.name}`, 'error');
                     }
                 } else {
                     convertedFiles.push(file);
@@ -66,14 +65,14 @@ const AlbumWrite: React.FC = () => {
             const remainingSlots = 10 - currentCount;
 
             if (remainingSlots <= 0) {
-                alert('최대 10장까지만 업로드 가능합니다.');
+                showToast('최대 10장까지만 업로드 가능합니다.', 'warning');
                 setProcessing(false);
                 return;
             }
 
             const filesToAdd = convertedFiles.slice(0, remainingSlots);
             if (convertedFiles.length > remainingSlots) {
-                alert(`최대 10장까지만 가능하여 ${convertedFiles.length - remainingSlots}장은 제외되었습니다.`);
+                showToast(`최대 10장까지만 가능하여 ${convertedFiles.length - remainingSlots}장은 제외되었습니다.`, 'warning');
             }
 
             const newImages = [...images, ...filesToAdd];
@@ -91,7 +90,7 @@ const AlbumWrite: React.FC = () => {
     const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0) {
             await processFiles(Array.from(e.target.files));
-            // Reset input so same file selection triggers change again if needed
+
             if (fileInputRef.current) fileInputRef.current.value = '';
         }
     };
@@ -110,13 +109,10 @@ const AlbumWrite: React.FC = () => {
         e.preventDefault();
         setIsDragging(false);
         if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-            // Filter image types (including heic)
-            // Note: DataTransferItem.type might be empty for some files, but checking extension fallback is handled in processFiles somewhat.
-            // Let's filter basically.
             const files = Array.from(e.dataTransfer.files);
             await processFiles(files);
         }
-    }, [images]); // Depend on images to know current count
+    }, [images]);
 
     const removeImage = (index: number) => {
         const newImages = [...images];
@@ -124,7 +120,7 @@ const AlbumWrite: React.FC = () => {
         setImages(newImages);
 
         const newPreviews = [...previews];
-        URL.revokeObjectURL(newPreviews[index]); // Cleanup memory
+        URL.revokeObjectURL(newPreviews[index]);
         newPreviews.splice(index, 1);
         setPreviews(newPreviews);
     };
@@ -132,7 +128,7 @@ const AlbumWrite: React.FC = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (images.length === 0) {
-            alert('최소 1장의 사진을 업로드해주세요.');
+            showToast('최소 1장의 사진을 업로드해주세요.', 'warning');
             return;
         }
 
@@ -144,7 +140,7 @@ const AlbumWrite: React.FC = () => {
         formData.append('content', content);
 
         try {
-            const res = await axios.post('/api/gallery/album', formData, {
+            const res = await api.post('/api/gallery/album', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -154,7 +150,7 @@ const AlbumWrite: React.FC = () => {
             }
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '앨범 업로드 실패');
+            showToast(err.response?.data?.message || '앨범 업로드 실패', 'error');
         } finally {
             setSubmitting(false);
         }
@@ -170,12 +166,11 @@ const AlbumWrite: React.FC = () => {
                             새 앨범 만들기
                         </h1>
                         <p className="mt-1 text-sm text-base-content/60">
-                            멋진 사진들을 앨범으로 만들어 공유해보세요.
+                            멋진 사진들을 공유해보세요
                         </p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="p-8 space-y-8">
-                        {/* Drag & Drop Zone */}
                         <div className="space-y-4">
                             <label className="text-sm font-semibold text-base-content flex justify-between">
                                 <span>사진 업로드 <span className="text-primary">({images.length}/10)</span></span>
@@ -222,7 +217,6 @@ const AlbumWrite: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Image Previews */}
                             {previews.length > 0 && (
                                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-6 animate-fade-in">
                                     {previews.map((src, idx) => (
@@ -239,7 +233,6 @@ const AlbumWrite: React.FC = () => {
                                                     <X className="w-5 h-5" />
                                                 </button>
                                             </div>
-                                            {/* Badge */}
                                             <div className="absolute top-1 left-1 px-2 py-0.5 bg-black/50 backdrop-blur-md rounded text-[10px] text-white font-medium">
                                                 #{idx + 1}
                                             </div>
@@ -249,20 +242,18 @@ const AlbumWrite: React.FC = () => {
                             )}
                         </div>
 
-                        {/* Content Input */}
                         <div className="form-control w-full space-y-2">
                             <label className="text-sm font-semibold text-base-content">
                                 앨범 설명
                             </label>
                             <textarea
                                 className="textarea textarea-bordered w-full h-40 resize-none focus:outline-hidden focus:ring-2 focus:ring-primary/20 transition-all text-base"
-                                placeholder="이 앨범에 담긴 추억에 대해 이야기해주세요..."
+                                placeholder="내용을 입력해주세요"
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                             ></textarea>
                         </div>
 
-                        {/* Actions */}
                         <div className="flex items-center justify-end gap-3 pt-6 border-t border-base-200">
                             <button
                                 type="button"

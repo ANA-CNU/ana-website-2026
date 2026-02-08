@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useParams, useNavigate, Link } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
 import DOMPurify from 'dompurify';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
+import useToastStore from '../../store/useToastStore';
 
 interface Author {
     _id: string;
@@ -40,6 +41,7 @@ const PostDetail: React.FC = () => {
     const { user } = useAuthStore();
     const [post, setPost] = useState<Post | null>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+    const { showToast } = useToastStore();
 
     useEffect(() => {
         if (post && contentRef.current) {
@@ -56,7 +58,7 @@ const PostDetail: React.FC = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get<PostDetailResponse>(`/api/board/post/${urlid}`);
+                const res = await api.get<PostDetailResponse>(`/api/board/post/${urlid}`);
                 if (res.data.success) {
                     const post = res.data.post;
                     post.title = DOMPurify.sanitize(post.title);
@@ -71,7 +73,7 @@ const PostDetail: React.FC = () => {
                 }
             } catch (err) {
                 console.error(err);
-                alert('게시글을 불러오는데 실패했습니다.');
+                showToast('게시글을 불러오는데 실패했습니다.', 'error');
                 navigate(-1);
             } finally {
                 setLoading(false);
@@ -83,12 +85,12 @@ const PostDetail: React.FC = () => {
     const handleDelete = async () => {
         if (!window.confirm('정말 삭제하시겠습니까?')) return;
         try {
-            await axios.delete(`/api/board/post/${urlid}`);
-            alert('삭제되었습니다.');
+            await api.delete(`/api/board/post/${urlid}`);
+            showToast('삭제되었습니다.', 'success');
             navigate(`/board/${post ? post.category : 'free'}`);
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '삭제 실패');
+            showToast(err.response?.data?.message || '삭제 실패', 'error')
         }
     };
 
@@ -97,18 +99,18 @@ const PostDetail: React.FC = () => {
         if (!commentContent.trim()) return;
         setSubmitting(true);
         try {
-            const res = await axios.post(`/api/board/comment/${urlid}`, { content: commentContent });
+            const res = await api.post(`/api/board/comment/${urlid}`, { content: commentContent });
             if (res.data.success) {
                 setCommentContent('');
 
-                const refreshRes = await axios.get<PostDetailResponse>(`/api/board/post/${urlid}`);
+                const refreshRes = await api.get<PostDetailResponse>(`/api/board/post/${urlid}`);
                 if (refreshRes.data.success) {
                     setComments(refreshRes.data.comments);
                 }
             }
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '댓글 작성 실패');
+            showToast(err.response?.data?.message || '댓글 작성 실패', 'error');
         } finally {
             setSubmitting(false);
         }
@@ -117,11 +119,11 @@ const PostDetail: React.FC = () => {
     const handleCommentDelete = async (commentId: string) => {
         if (!window.confirm('댓글을 삭제하시겠습니까?')) return;
         try {
-            await axios.delete(`/api/board/comment/${commentId}`);
+            await api.delete(`/api/board/comment/${commentId}`);
             setComments(comments.filter(c => c._id !== commentId));
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '댓글 삭제 실패');
+            showToast(err.response?.data?.message || '댓글 삭제 실패', 'error');
         }
     }
 

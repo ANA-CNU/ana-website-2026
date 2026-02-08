@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/axios';
 import { useNavigate, useParams } from 'react-router';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import {
@@ -11,6 +11,7 @@ import {
 } from 'ckeditor5';
 import 'ckeditor5/ckeditor5.css';
 import CustomUploadAdapter from '../../Utils/CustomUploadAdapter';
+import useToastStore from '../../store/useToastStore';
 
 function MyCustomUploadAdapterPlugin(editor: any) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
@@ -19,8 +20,7 @@ function MyCustomUploadAdapterPlugin(editor: any) {
 }
 
 const PostWrite: React.FC = () => {
-    // ... (rest of the component state etc. remains same - wait, I'm replacing from imports)
-    const { urlid } = useParams(); // If present, it's edit mode
+    const { urlid } = useParams();
     const navigate = useNavigate();
     const isEdit = !!urlid;
 
@@ -28,11 +28,11 @@ const PostWrite: React.FC = () => {
     const [content, setContent] = useState('');
     const [category, setCategory] = useState('free');
     const [loading, setLoading] = useState(false);
+    const { showToast } = useToastStore();
 
     useEffect(() => {
         if (isEdit) {
-            // Fetch existing post data
-            axios.get(`/api/board/post/${urlid}`)
+            api.get(`/api/board/post/${urlid}`)
                 .then(res => {
                     if (res.data.success) {
                         const { title, content, category } = res.data.post;
@@ -43,7 +43,7 @@ const PostWrite: React.FC = () => {
                 })
                 .catch(err => {
                     console.error(err);
-                    alert('게시글 정보를 불러오지 못했습니다.');
+                    showToast('게시글 정보를 불러오지 못했습니다.', 'error');
                     navigate(-1);
                 });
         }
@@ -54,17 +54,17 @@ const PostWrite: React.FC = () => {
         setLoading(true);
         try {
             if (isEdit) {
-                await axios.patch(`/api/board/post/${urlid}`, { title, content });
-                alert('수정되었습니다.');
+                await api.patch(`/api/board/post/${urlid}`, { title, content });
+                showToast('수정되었습니다.', 'success');
                 navigate(`/api/board/post/${urlid}`);
             } else {
-                await axios.post('/api/board/post', { title, content, category });
-                alert('등록되었습니다.');
+                await api.post('/api/board/post', { title, content, category });
+                showToast('등록되었습니다.', 'success');
                 navigate(`/board/${category}`);
             }
         } catch (err: any) {
             console.error(err);
-            alert(err.response?.data?.message || '작성 실패');
+            showToast(err.response?.data?.message || '작성 실패', 'error');
         } finally {
             setLoading(false);
         }
