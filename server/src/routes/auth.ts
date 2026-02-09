@@ -1,7 +1,8 @@
-import express, { Router } from 'express';
+import express, { NextFunction, Request, Response, Router } from 'express';
 import jwt from 'jsonwebtoken';
 import passport, { authenticate } from 'passport';
 import bcrypt from 'bcrypt';
+import { body, validationResult } from 'express-validator';
 
 import User, { IUser } from '../models/User';
 import Member from '../models/Member';
@@ -53,6 +54,32 @@ const checkMember = async (userid: string): Promise<boolean> => {
 }
 
 
+
+const validate = (req: Request, res: Response, next: NextFunction) => {
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+        return next();
+    } else {
+        return next(new ExpressError(400, errors.array()[0].msg))
+    }
+}
+const validateUserid = body('userid')
+    .trim()
+    .notEmpty().withMessage('학번을 입력해주세요')
+    .matches(/^[0-9]{9}$/).withMessage('학번은 9자리 숫자여야 합니다')
+const validateName = body('name')
+    .trim()
+    .notEmpty().withMessage('이름을 입력해주세요')
+    .matches(/^[가-힣]{2,4}$/).withMessage('이름은 한글 2~4글자여야 합니다. (혹시 이름이 이 조건에 해당하지 않으시다면 문의바랍니다ㅜㅜ)')
+const validatePassword = body('password')
+    .trim()
+    .notEmpty().withMessage('비밀번호를 입력해주세요')
+    .matches(/^[A-Za-z0-9!@#$%^&*]+$/).withMessage('비밀번호는 영어 대소문자, 숫자, 일부 기호만 됩니다.')
+
+const validateLocalRegister = [validateUserid, validateName, validatePassword, validate];
+const validateSocialRegister = [validateUserid, validateName, validate]
+
+
 // ========== 가입 및 로그인 ==========
 
 router.post('/refresh', async (req, res) => {
@@ -75,27 +102,9 @@ router.post('/refresh', async (req, res) => {
     res.json({ success: true, accessToken: newAccessToken });
 })
 
-router.post('/testregister', async (req, res) => {
-    const name = req.body.name;
-    const userid = req.body.userid;
-    const password = await bcrypt.hash(req.body.password, 10);
 
-    const isMember = await checkMember(userid);
-    const admin = new User({
-        name: name,
-        userid: userid,
-        password: password,
-        admin: true,
-        member: isMember
-    });
-
-    await admin.save();
-    res.json({ success: true });
-})
-
-router.post('/register', async (req, res) => {
+router.post('/register', validateLocalRegister, async (req: Request, res: Response) => {
     const { name, userid, password } = req.body;
-    if (!name || !userid || !password) throw new ExpressError(400, '잘못된 입력입니다.');
 
     const bcryptPassword = await bcrypt.hash(password, 10);
     const isMember = await checkMember(userid);
@@ -119,7 +128,7 @@ router.post(
 
         const isMember = await checkMember(user.userid);
         if (user.member != isMember) {
-            await User.updateOne({ userid: user.userid }, { $set: { member: isMember }});
+            await User.updateOne({ userid: user.userid }, { $set: { member: isMember } });
             user.member = isMember;
         }
 
@@ -175,7 +184,7 @@ router.get('/github/callback', (req, res, next) => {
     })(req, res, next);
 })
 
-router.post('/social/register', async (req, res) => {
+router.post('/social/register', validateSocialRegister, async (req: Request, res: Response) => {
     const { registerToken, userid, name } = req.body;
     if (!registerToken || !userid || !name) throw new ExpressError(400, '토큰 또는 입력값이 누락되었습니다.');
 
@@ -321,8 +330,8 @@ router.post('/member', authJwt, async (req, res) => {
     const newMember = new Member({ name: name, userid: userid, number: number, email: email });
     await newMember.save();
 
-    await User.updateOne({ userid: userid }, { $set: { member: true }});
-    
+    await User.updateOne({ userid: userid }, { $set: { member: true } });
+
     res.json({ success: true, member: newMember });
 })
 
@@ -336,10 +345,44 @@ router.delete('/member/:userid', authJwt, async (req, res) => {
     const deletedMember = await Member.findOneAndDelete({ userid: userid });
     if (!deletedMember) throw new ExpressError(404, '회원이 존재하지 않습니다.');
 
-    await User.updateOne({ userid: userid }, { $set: { member: false }});
+    await User.updateOne({ userid: userid }, { $set: { member: false } });
 
     res.json({ success: true, member: deletedMember });
 })
 
+// ========== 어드민 관리 ==========
+
+router.get('/users', authJwt, async (req, res) => {
+    const user = req.user as TokenUser;
+    if (!user.admin) throw new ExpressError(403, '관리자 권한이 없습니다.');
+
+    const users = await User.find();
+    res.json({ success: true, users: users });
+})
+router.patch('/admin/on', authJwt, async (req, res) => {
+    const user = req.user as TokenUser;
+    if (!user.admin) throw new ExpressError(403, '관리자 권한이 없습니다.');
+
+    const { userid } = req.body;
+    if (!userid) throw new ExpressError(400, '입력값이 누락되었습니다.');
+
+    const admin = await User.findOneAndUpdate({ userid: userid }, { $set: { admin: true } });
+    if (!admin) throw new ExpressError(404, '유저를 찾을 수 없습니다');
+
+    res.json({ success: true, user: admin });
+})
+
+router.patch('/admin/off', authJwt, async (req, res) => {
+    const user = req.user as TokenUser;
+    if (!user.admin) throw new ExpressError(403, '관리자 권한이 없습니다.');
+
+    const { userid } = req.body;
+    if (!userid) throw new ExpressError(400, '입력값이 누락되었습니다.');
+
+    const admin = await User.findOneAndUpdate({ userid: userid }, { $set: { admin: false } });
+    if (!admin) throw new ExpressError(404, '유저를 찾을 수 없습니다');
+
+    res.json({ success: true, user: admin });
+})
 
 export default router;
