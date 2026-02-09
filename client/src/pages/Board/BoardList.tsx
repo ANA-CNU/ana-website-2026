@@ -55,7 +55,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                 let res;
                 if (category === 'cnunotice') {
                     res = await api.get<CnuNoticeResponse>('/api/board/posts/cnunotice', {
-                        params: { page: 1 }
+                        params: { page: page }
                     });
 
                     setPosts(res.data.posts.map((e) => ({
@@ -67,10 +67,10 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                     })));
                 } else {
                     res = await api.get<BoardListResponse>('/api/board/posts', {
-                        params: { category, page: 1 }
+                        params: { category, page: page }
                     });
 
-                    setPosts(res.data.posts.slice(0, 4).map( (post) => ({ ...post, title: DOMPurify.sanitize(post.title) }) ));
+                    setPosts(res.data.posts.map( (post) => ({ ...post, title: DOMPurify.sanitize(post.title) }) ));
                 }
                 setTotalPage(res.data.totalPage);
             } catch (err) {
