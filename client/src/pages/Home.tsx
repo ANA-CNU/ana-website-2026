@@ -136,15 +136,6 @@ const Home: React.FC = () => {
                 {/* ========== Etc ========== */}
                 <div className="space-y-5 h-fit lg:col-span-1">
 
-                    <div className="card bg-base-100 shadow-md p-4 h-fit">
-                        <h3 className="font-bold text-gray-700 mb-2 border-b pb-2 text-sm">회원 현황</h3>
-                        <div className="flex justify-between text-center text-sm">
-                            <div><div className="font-bold text-lg">48</div><span className="text-xs text-gray-400">전체</span></div>
-                            <div><div className="font-bold text-lg text-blue-500">32</div><span className="text-xs text-gray-400">활동</span></div>
-                            <div><div className="font-bold text-lg text-red-500">+5</div><span className="text-xs text-gray-400">신규</span></div>
-                        </div>
-                    </div>
-
                     <div className="card bg-base-100 shadow-md h-fit overflow-hidden">
                         <div className="bg-success text-success-content p-2 px-4 text-sm font-bold">
                             오늘의 문제
@@ -162,6 +153,15 @@ const Home: React.FC = () => {
                                 <Link to={todayProblem ? todayProblem.linkUrl : ''} className='btn btn-primary btn-block btn-sm mt-3'>도전하기</Link>
                             </div>
                         )}
+                    </div>
+
+                    <div className="card bg-base-100 shadow-md p-4 h-fit">
+                        <h3 className="font-bold text-gray-700 mb-2 border-b pb-2 text-sm">회원 현황</h3>
+                        <div className="flex justify-between text-center text-sm">
+                            <div><div className="font-bold text-lg">48</div><span className="text-xs text-gray-400">전체</span></div>
+                            <div><div className="font-bold text-lg text-blue-500">32</div><span className="text-xs text-gray-400">활동</span></div>
+                            <div><div className="font-bold text-lg text-red-500">+5</div><span className="text-xs text-gray-400">신규</span></div>
+                        </div>
                     </div>
 
                 </div>
