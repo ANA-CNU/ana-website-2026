@@ -29,7 +29,7 @@ const SiteConfigSchema = new Schema({
         imageUrl: {
             type: String,
             required: true,
-            default: 'https://anacnu.kr/images/Activities-algorithm-study.jpeg'
+            default: 'https://anacnu.kr/images/Activities-python-java.jpeg'
         },
         title: {
             type: String,
