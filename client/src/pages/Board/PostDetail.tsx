@@ -63,7 +63,7 @@ const PostDetail: React.FC = () => {
                     const post = res.data.post;
                     post.title = DOMPurify.sanitize(post.title);
                     post.content = DOMPurify.sanitize(post.content);
-                    
+
                     const comments = res.data.comments.map((com) => ({
                         ...com,
                         content: DOMPurify.sanitize(com.content)
@@ -165,16 +165,18 @@ const PostDetail: React.FC = () => {
             <div className="bg-base-100 shadow-md p-6">
                 <h3 className="text-xl font-bold mb-4">댓글 ({comments.length})</h3>
 
-                <form onSubmit={handleCommentSubmit} className="mb-6 flex gap-2">
-                    <input
-                        type="text"
-                        className="input input-bordered w-full"
-                        placeholder="댓글을 작성하세요..."
-                        value={commentContent}
-                        onChange={(e) => setCommentContent(e.target.value)}
-                    />
-                    <button type="submit" className="btn btn-primary" disabled={submitting}>등록</button>
-                </form>
+                {user?.member &&
+                    <form onSubmit={handleCommentSubmit} className="mb-6 flex gap-2">
+                        <input
+                            type="text"
+                            className="input input-bordered w-full"
+                            placeholder="댓글을 작성하세요..."
+                            value={commentContent}
+                            onChange={(e) => setCommentContent(e.target.value)}
+                        />
+                        <button type="submit" className="btn btn-primary" disabled={submitting}>등록</button>
+                    </form>
+                }
 
                 <div className="space-y-4">
                     {comments.map(comment => (

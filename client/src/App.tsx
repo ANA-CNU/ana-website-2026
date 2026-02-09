@@ -17,6 +17,7 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import SocialRegister from './pages/Auth/SocialRegister';
 import LoginSuccess from './pages/Auth/LoginSuccess';
+import Admin from './pages/Admin/Admin';
 
 import Toast from './components/Toast';
 
@@ -28,6 +29,8 @@ function App() {
                 <Route path='/register' element={<Register />} />
                 <Route path='/register/social' element={<SocialRegister />} />
                 <Route path='/login/success' element={<LoginSuccess />} />
+
+                <Route path='/admin' element={<Admin />} />
 
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
