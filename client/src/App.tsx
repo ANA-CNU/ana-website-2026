@@ -1,22 +1,24 @@
+import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Layout from './pages/Layout/Layout';
+
 import Home from './pages/Home';
+const LazyAbout = lazy(() => import('./pages/About'));
 
 import BoardList from './pages/Board/BoardList';
 import PostDetail from './pages/Board/PostDetail';
-import PostWrite from './pages/Board/PostWrite';
+const LazyPostWrite = lazy(() => import('./pages/Board/PostWrite'));
 import CnuNoticeDetail from './pages/Board/CnuNoticeDetail';
-
-import About from './pages/About';
 
 import GalleryList from './pages/Gallery/GalleryList';
 import AlbumDetail from './pages/Gallery/AlbumDetail';
-import AlbumWrite from './pages/Gallery/AlbumWrite';
+const LazyAlbumWrite = lazy(() => import('./pages/Gallery/AlbumWrite'));
 
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import SocialRegister from './pages/Auth/SocialRegister';
 import LoginSuccess from './pages/Auth/LoginSuccess';
+
 import Admin from './pages/Admin/Admin';
 
 import Toast from './components/Toast';
@@ -35,10 +37,10 @@ function App() {
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
 
-                    <Route path='/about' element={<About />} />
+                    <Route path='/about' element={<LazyAbout />} />
 
                     <Route path='/gallery' element={<GalleryList />} />
-                    <Route path='/gallery/write' element={<AlbumWrite />} />
+                    <Route path='/gallery/write' element={<LazyAlbumWrite />} />
                     <Route path='/gallery/:urlid' element={<AlbumDetail />} />
 
                     <Route path='/board/notice' element={<BoardList category="notice" />} />
@@ -46,10 +48,11 @@ function App() {
                     <Route path='/board/algorithm' element={<BoardList category="algorithm" />} />
                     <Route path='/board/cnunotice' element={<BoardList category="cnunotice" />} />
 
-                    <Route path='/board/write' element={<PostWrite />} />
-                    <Route path='/board/edit/:urlid' element={<PostWrite />} />
+                    <Route path='/board/write' element={<LazyPostWrite />} />
+                    <Route path='/board/edit/:urlid' element={<LazyPostWrite />} />
                     <Route path='/board/cnunotice/:urlid' element={<CnuNoticeDetail />} />
                     <Route path='/board/:urlid' element={<PostDetail />} />
+
 
                 </Route>
             </Routes>

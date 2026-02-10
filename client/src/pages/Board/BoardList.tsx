@@ -112,9 +112,9 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                     </thead>
                     <tbody>
                         {loading ? (
-                            <tr>
-                                <td colSpan={3} className="text-center py-10">로딩 중...</td>
-                            </tr>
+                            Array.from({ length: 10 }, (_, k) => `tr-skeleton-${k}`).map(e => <tr key={e}>
+                                <td colSpan={4}><div className='skeleton h-4 w-full' /></td>
+                            </tr>)
                         ) : posts.length === 0 ? (
                             <tr>
                                 <td colSpan={3} className="text-center py-10">게시글이 없습니다.</td>

@@ -4,7 +4,6 @@ import api from '../../lib/axios';
 import { useNavigate } from 'react-router';
 import { useAuthStore } from '../../store/useAuthStore';
 import { Upload, X, Image as ImageIcon, Loader2 } from 'lucide-react';
-import heic2any from 'heic2any';
 import useToastStore from '../../store/useToastStore';
 
 const AlbumWrite: React.FC = () => {
@@ -38,6 +37,7 @@ const AlbumWrite: React.FC = () => {
 
                 if (isHeic) {
                     try {
+                        const heic2any = (await import('heic2any')).default
                         const blobOrBlobs = await heic2any({
                             blob: file,
                             toType: 'image/jpeg',
