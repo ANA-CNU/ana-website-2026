@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../lib/axios';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams, useSearchParams } from 'react-router';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import {
     ClassicEditor,
     Bold, Essentials, Italic, Paragraph, Undo, Heading, List, Font,
     FileRepository, Image, ImageUpload, ImageResize, ImageToolbar, ImageStyle, ImageCaption,
     Autoformat, BlockQuote, Code, CodeBlock, HtmlEmbed, HorizontalLine, Indent, IndentBlock,
-    Link, AutoLink, MediaEmbed, PasteFromOffice, Table, TableToolbar, TextTransformation, Alignment
+    Link, AutoLink, MediaEmbed, PasteFromOffice, Table, TableToolbar, TextTransformation, Alignment, Strikethrough
 } from 'ckeditor5';
 import 'ckeditor5/ckeditor5.css';
 import CustomUploadAdapter from '../../Utils/CustomUploadAdapter';
 import useToastStore from '../../store/useToastStore';
+import { useAuthStore } from '../../store/useAuthStore';
 
 function MyCustomUploadAdapterPlugin(editor: any) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
@@ -29,6 +30,9 @@ const PostWrite: React.FC = () => {
     const [category, setCategory] = useState('free');
     const [loading, setLoading] = useState(false);
     const { showToast } = useToastStore();
+    const { user } = useAuthStore();
+
+    const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         if (isEdit) {
@@ -46,6 +50,11 @@ const PostWrite: React.FC = () => {
                     showToast('게시글 정보를 불러오지 못했습니다.', 'error');
                     navigate(-1);
                 });
+        } else {
+            const categoryParams = searchParams.get('category') || 'free';
+            if (!['free', 'notice', 'algorithm'].includes(categoryParams)) setCategory('free');
+            else setCategory(categoryParams);
+            setSearchParams({}, { replace: true });
         }
     }, [isEdit, urlid, navigate]);
 
@@ -56,12 +65,11 @@ const PostWrite: React.FC = () => {
             if (isEdit) {
                 await api.patch(`/api/board/post/${urlid}`, { title, content });
                 showToast('수정되었습니다.', 'success');
-                navigate(`/api/board/post/${urlid}`);
             } else {
                 await api.post('/api/board/post', { title, content, category });
                 showToast('등록되었습니다.', 'success');
-                navigate(`/board/${category}`);
             }
+            navigate(`/board/${category}`);
         } catch (err: any) {
             console.error(err);
             showToast(err.response?.data?.message || '작성 실패', 'error');
@@ -84,9 +92,10 @@ const PostWrite: React.FC = () => {
                         disabled={isEdit}
                     >
                         <option value="free">자유게시판</option>
-                        <option value="notice">공지사항</option>
-                        <option value="algorithm">알고리즘 꿀팁</option>
-                        <option value="csenotice">학과 공지</option>
+                        {user && user.admin && <>
+                            <option value="notice">공지사항</option>
+                            <option value="algorithm">알고리즘 꿀팁</option>
+                        </>}
                     </select>
                 </div>
 
@@ -113,7 +122,7 @@ const PostWrite: React.FC = () => {
                                     Essentials, Bold, Italic, Paragraph, Undo, Heading, List, Font,
                                     FileRepository, Image, ImageUpload, ImageResize, ImageToolbar, ImageStyle, ImageCaption,
                                     Autoformat, BlockQuote, Code, CodeBlock, HtmlEmbed, HorizontalLine, Indent, IndentBlock,
-                                    Link, AutoLink, MediaEmbed, PasteFromOffice, Table, TableToolbar, TextTransformation, Alignment
+                                    Link, AutoLink, MediaEmbed, PasteFromOffice, Table, TableToolbar, TextTransformation, Alignment, Strikethrough
                                 ],
                                 toolbar: [
                                     'undo', 'redo', '|',
@@ -139,6 +148,8 @@ const PostWrite: React.FC = () => {
                                 },
                                 image: {
                                     toolbar: [
+                                        'resizeImage',
+                                        '|',
                                         'imageStyle:inline',
                                         'imageStyle:block',
                                         'imageStyle:side',

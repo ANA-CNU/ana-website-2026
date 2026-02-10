@@ -1,5 +1,5 @@
 export default function Footer() {
-    return <footer className="footer footer-center p-10 bg-base-300 text-base-content mt-10 shadow border-t border-base-200">
+    return <footer className="footer footer-center p-10 bg-base-300 text-base-content mt-10 shadow border-t border-base-200 font-mulmaru">
         <aside>
             <p className="font-bold text-lg">
                 ANA (Algorithm & Application)

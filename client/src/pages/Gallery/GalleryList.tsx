@@ -66,10 +66,10 @@ const GalleryList: React.FC = () => {
             ) : (
                 <div className="grid grid-cols-3 gap-1 md:gap-4">
                     {albums.map((album) => (
-                        <Link to={`/gallery/${album.urlid}`} key={album.urlid} className="group relative aspect-square bg-gray-200 overflow-hidden cursor-pointer block">
+                        <Link to={`/gallery/${album.urlid}`} key={album.urlid} className="group relative aspect-square bg-gray-200 overflow-hidden cursor-pointer block rounded-sm">
                             {album.images && album.images.length > 0 ? (
                                 <img
-                                    src={`${import.meta.env.VITE_SERVER_URL}/api/images/${album.images[0].name}`}
+                                    src={`${import.meta.env.VITE_SERVER_URL || ''}/api/images/${album.images[0].name}`}
                                     alt="Album Cover"
                                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-103 group-hover:brightness-90"
                                 />

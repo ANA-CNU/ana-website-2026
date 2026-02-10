@@ -6,7 +6,7 @@ import Footer from './Footer.tsx';
 const Layout: React.FC = () => {
     return (
         <>
-            <div className='min-h-screen bg-base-200 font-sans flex flex-col'>
+            <div className='min-h-screen bg-base-200 font-pretendard flex flex-col'>
                 <Navbar />
                 <div className="flex-grow pb-10">
                     <Outlet />

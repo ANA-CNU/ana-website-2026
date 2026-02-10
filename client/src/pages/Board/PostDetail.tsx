@@ -182,10 +182,12 @@ const PostDetail: React.FC = () => {
                     {comments.map(comment => (
                         <div key={comment._id} className="border-b border-base-200 pb-2 last:border-0">
                             <div className="flex justify-between items-center mb-1">
-                                <span className="font-semibold text-sm">{comment.author?.name || '알 수 없음'}</span>
+                                <span className="font-semibold text-sm">{comment.author.name || '알 수 없음'}</span>
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs opacity-50">{new Date(comment.createdAt).toLocaleDateString()}</span>
-                                    <button onClick={() => handleCommentDelete(comment._id)} className="text-xs text-error hover:underline">삭제</button>
+                                    {user && (user.userid == comment.author.name || user.admin) && 
+                                        <button onClick={() => handleCommentDelete(comment._id)} className="text-xs text-error hover:underline">삭제</button>
+                                    }
                                 </div>
                             </div>
                             <p className="text-sm">{comment.content}</p>

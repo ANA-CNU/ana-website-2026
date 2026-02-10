@@ -76,7 +76,7 @@ const GalleryDetail: React.FC = () => {
         }
     };
 
-    if (loading ) return <div className="text-center py-10">로딩 중...</div>;
+    if (loading) return <div className="text-center py-10">로딩 중...</div>;
     if (!album) return null;
 
     return (
@@ -100,7 +100,7 @@ const GalleryDetail: React.FC = () => {
                 <div className="relative w-full aspect-square bg-black flex items-center justify-center overflow-hidden group">
                     {album.images.length > 0 && (
                         <img
-                            src={`${import.meta.env.VITE_SERVER_URL}/api/images/${album.images[currentIndex].name}`}
+                            src={`${import.meta.env.VITE_SERVER_URL || ''}/api/images/${album.images[currentIndex].name}`}
                             alt={`Album Content ${currentIndex + 1}`}
                             className="w-full h-full object-contain"
                         />

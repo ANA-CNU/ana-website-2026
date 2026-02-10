@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const sections = [
     {
@@ -75,7 +80,7 @@ const About = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <div className="container mx-auto px-4 py-12 max-w-6xl font-mulmaru">
             <div className="flex flex-col lg:flex-row gap-10 relative">
 
                 <div className="w-full lg:w-3/4 space-y-20">
@@ -447,15 +452,22 @@ const Activities = () => {
 
             <h3 className="text-4xl font-extrabold underline decoration-indigo-600 decoration-10 mb-10">대회</h3>
 
-            <div className="grid grid-rows-1 grid-cols-5 gap-y-7">
+            <div className="grid grid-cols-5 gap-y-7">
 
-                <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                    <div className="carousel-item">
-                        <img src="/images/anagetdon1.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/anagetdon2.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
+                <div className='flex justify-center items-center col-span-3 aspect-[5/4] rounded-md'>
+                    <Swiper
+                        slidesPerView={1.35}
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{ delay: 3000, disableOnInteraction: true }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className=''
+                    >
+                        <SwiperSlide><img src="/images/anagetdon1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/anagetdon2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
                     <h4 className='text-3xl text-indigo-800 font-extrabold'>ANAGETDON</h4>
@@ -468,22 +480,23 @@ const Activities = () => {
                     <p className='text-xl font-bold'>ANA 알고리즘 대회</p>
                     <p className='text-xl text-center font-bold'>Baekjoon Online Judge에 동아리원들이 직접 만든 문제를 올려 개최</p>
                 </div>
-                <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                    <div className="carousel-item">
-                        <img src="/images/swit2.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/swit1.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/swit5.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/swit3.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/swit4.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
+                <div className='flex justify-center items-center col-span-3 aspect-[5/4] rounded-md'>
+                    <Swiper
+                        slidesPerView={1.35}
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{ delay: 3000, disableOnInteraction: true }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className=''
+                    >
+                        <SwiperSlide><img src="/images/swit4.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/swit5.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/swit1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/swit2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/swit3.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                    </Swiper>
                 </div>
 
             </div>
@@ -533,23 +546,23 @@ const Activities = () => {
             <h3 className="text-4xl font-extrabold underline decoration-indigo-600 decoration-10 mb-10">친목</h3>
 
             <div className="grid grid-rows-1 grid-cols-5 gap-y-7">
-
-                <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                    <div className="carousel-item">
-                        <img src="/images/mentor1.jpg" className="rounded-md " />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/mentor2.jpg" className="rounded-md" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/mentor3.jpg" className="rounded-md" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/mentor4.jpg" className="rounded-md" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/mentor5.jpg" className="rounded-md" />
-                    </div>
+                <div className='flex justify-center items-center col-span-3 aspect-[5/4] rounded-md overflow-hidden'>
+                    <Swiper
+                        slidesPerView={2.2}
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{ delay: 3000, disableOnInteraction: true }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className=''
+                    >
+                        <SwiperSlide><img src="/images/mentor1.jpg" className="rounded-md" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/mentor2.jpg" className="rounded-md" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/mentor3.jpg" className="rounded-md" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/mentor4.jpg" className="rounded-md" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/mentor5.jpg" className="rounded-md" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
                     <h4 className='text-3xl text-indigo-800 font-extrabold text-center'>멘토 멘티</h4>
@@ -561,25 +574,37 @@ const Activities = () => {
                     <h4 className='text-3xl text-indigo-800 font-extrabold text-center '>MT, 개강총회, 종강총회, 막동</h4>
                     <p className='text-xl text-center font-bold'>저희 잘 놀고 잘 마셔요!!</p>
                 </div>
-                <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                    <div className="carousel-item">
-                        <img src="/images/mt1.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/gaechong.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/jongchong.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
+                <div className='flex justify-center items-center col-span-3 aspect-[5/4] rounded-md'>
+                    <Swiper
+                        slidesPerView={1.35}
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{ delay: 3000, disableOnInteraction: true }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className=''
+                    >
+                        <SwiperSlide><img src="/images/mt1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/gaechong.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/jongchong.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                    </Swiper>
                 </div>
 
-                <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                    <div className="carousel-item">
-                        <img src="/images/soccer.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="/images/soccer2.jpg" className="rounded-md aspect-square object-cover" />
-                    </div>
+                <div className='flex justify-center items-center col-span-3 aspect-[5/4] rounded-md'>
+                    <Swiper
+                        slidesPerView={1.35}
+                        spaceBetween={10}
+                        centeredSlides={true}
+                        autoplay={{ delay: 3000, disableOnInteraction: true }}
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className=''
+                    >
+                        <SwiperSlide><img src="/images/soccer.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        <SwiperSlide><img src="/images/soccer2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 col-span-2'>
                     <h4 className='text-3xl text-indigo-800 font-extrabold text-center'>풋살 모임</h4>
@@ -595,43 +620,61 @@ const Activities = () => {
             <div className="tabs tabs-lift tabs-xl">
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="ANA 세미나" />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
-                    <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                        <div className="carousel-item">
-                            <img src="/images/seminar1.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/images/seminar2.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
+                    <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
+                        <Swiper
+                            slidesPerView={1.35}
+                            spaceBetween={10}
+                            centeredSlides={true}
+                            autoplay={{ delay: 3000, disableOnInteraction: true }}
+                            pagination={{ clickable: true }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            className=''
+                        >
+                            <SwiperSlide><img src="/images/seminar1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                            <SwiperSlide><img src="/images/seminar2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        </Swiper>
                     </div>
                 </div>
 
+
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="하루하나 챌린지" />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
-                    <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                        <div className="carousel-item">
-                            <img src="/images/anabada1.jpg" className="rounded-md aspect-square object-contain bg-gray-700" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/images/anabada2.jpg" className="rounded-md aspect-square object-contain bg-gray-700" />
-                        </div>
+                    <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
+                        <Swiper
+                            slidesPerView={1.35}
+                            spaceBetween={10}
+                            centeredSlides={true}
+                            autoplay={{ delay: 3000, disableOnInteraction: true }}
+                            pagination={{ clickable: true }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            className=''
+                        >
+                            <SwiperSlide><img src="/images/anabada2.jpg" className="rounded-md aspect-square object-contain bg-gray-500" /></SwiperSlide>
+                            <SwiperSlide><img src="/images/anabada1.jpg" className="rounded-md aspect-square object-contain bg-gray-500" /></SwiperSlide>
+                        </Swiper>
                     </div>
                 </div>
 
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="ICPC&UCPC 스터디" defaultChecked />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
-                    <div className="carousel carousel-center bg-neutral rounded-md space-x-4 p-3 aspect-[5/4] col-span-3">
-                        <div className="carousel-item">
-                            <img src="/images/ucpcicpc1.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/images/ucpcicpc2.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/images/ucpcicpc3.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/images/ucpcicpc4.jpg" className="rounded-md aspect-square object-cover" />
-                        </div>
+                    <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
+                        <Swiper
+                            slidesPerView={1.35}
+                            spaceBetween={10}
+                            centeredSlides={true}
+                            autoplay={{ delay: 3000, disableOnInteraction: true }}
+                            pagination={{ clickable: true }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            className=''
+                        >
+                            <SwiperSlide><img src="/images/ucpcicpc1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                            <SwiperSlide><img src="/images/ucpcicpc2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                            <SwiperSlide><img src="/images/ucpcicpc3.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                            <SwiperSlide><img src="/images/ucpcicpc4.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
+                        </Swiper>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router';
 import api from '../../lib/axios';
 import { useAuthStore } from '../../store/useAuthStore';
 import useToastStore from '../../store/useToastStore';
@@ -10,7 +10,16 @@ const Login: React.FC = () => {
     const [error, setError] = useState('');
     const { login } = useAuthStore();
     const navigate = useNavigate();
-    const { showToast } = useToastStore()
+    const { showToast } = useToastStore();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        const errorParams = searchParams.get('error');
+        if (!!errorParams) {
+            showToast(errorParams, 'error');
+            setSearchParams({}, { replace: true });
+        }
+    }, [searchParams])
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
