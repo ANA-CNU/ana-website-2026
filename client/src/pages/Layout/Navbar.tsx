@@ -33,14 +33,17 @@ const Navbar: React.FC = () => {
             </div>
             <div className="border-t border-primary-content/20 mx-4"></div>
             <nav className="navbar min-h-12 px-2 py-2x">
-                <ul className="menu menu-horizontal w-full justify-start gap-2 text-sm font-semibold overflow-x-auto">
-                    <li><NavLink to="/" className={navLinkClass}>홈</NavLink></li>
-                    <li><NavLink to="/about" className={navLinkClass}>ABOUT</NavLink></li>
-                    <li><NavLink to="/gallery" className={navLinkClass}>갤러리</NavLink></li>
-                    <li><NavLink to="/board/notice" className={navLinkClass}>공지사항</NavLink></li>
-                    <li><NavLink to="/board/cnunotice" className={navLinkClass}>학과공지</NavLink></li>
-                    <li><NavLink to="/board/algorithm" className={navLinkClass}>알고리즘 꿀팁</NavLink></li>
-                    <li><NavLink to="/board/free" className={navLinkClass}>자유게시판</NavLink></li>
+                <ul className="menu menu-horizontal w-full justify-start gap-2 text-sm font-semibold">
+                    <li className='tooltip tooltip-bottom tooltip-neutral'><div className='tooltip-content'>집</div><NavLink to="/" className={navLinkClass}>홈</NavLink></li>
+                    <li className='tooltip tooltip-neutral tooltip-top'>
+                        <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-3 font-mulmaru'>*우리 ANA 자랑 페이지*</div></div>
+                        <NavLink to="/about" className={navLinkClass}>ABOUT</NavLink>
+                    </li>
+                    <li className='tooltip tooltip-neutral tooltip-bottom'><div className='tooltip-content'>추억들은 다 여기에</div><NavLink to="/gallery" className={navLinkClass}>갤러리</NavLink></li>
+                    <li className='tooltip tooltip-neutral tooltip-bottom'><div className='tooltip-content'>중요한 동아리 정보를 볼 수 있어요</div><NavLink to="/board/notice" className={navLinkClass}>공지사항</NavLink></li>
+                    <li className='tooltip tooltip-neutral tooltip-bottom'><div className='tooltip-content'>컴퓨터인공지능학부 학과 공지</div><NavLink to="/board/cnunotice" className={navLinkClass}>학과공지</NavLink></li>
+                    <li className='tooltip tooltip-neutral tooltip-bottom'><div className='tooltip-content'>코딩 고수들의 비밀게시판</div><NavLink to="/board/algorithm" className={navLinkClass}>알고리즘 꿀팁</NavLink></li>
+                    <li className='tooltip tooltip-neutral tooltip-bottom'><div className='tooltip-content'>질문, 자랑 등 다양하게 소통해요</div><NavLink to="/board/free" className={navLinkClass}>자유게시판</NavLink></li>
                 </ul>
             </nav>
         </div>

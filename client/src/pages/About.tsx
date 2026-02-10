@@ -151,11 +151,11 @@ const Intro = () => {
         <h2 className="text-5xl font-extrabold mb-10 ml-10 text-teal-600">동아리 소개</h2>
 
         <div id='intro-ana' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-5xl font-bold underline decoration-teal-600 decoration-10">ANA</h3>
+            <h3 className="text-4xl font-bold underline decoration-teal-600 decoration-10">ANA</h3>
             <p className="text-2xl mt-8">
                 알고리즘(Algorithm)과 문제 해결(Problem Solving) 능력으로 <br /> 세상의 실제 문제를 해결하는 동아리 (Application)
             </p>
-            <p className="text-4xl font-bold mt-8">
+            <p className="text-3xl font-bold mt-8">
                 어떤 동아리인가요?
             </p>
             <ul className="list-disc list-inside mt-6">
@@ -164,7 +164,7 @@ const Intro = () => {
                 <li className="text-2xl mt-4">프로그래밍 경진 대회(ICPC, UCPC, SCPC)를 준비하는 소모임이 있어요</li>
             </ul>
 
-            <p className="text-4xl font-bold mt-8">어디에 있나요?</p>
+            <p className="text-3xl font-bold mt-8">어디에 있나요?</p>
             <ul className="list-disc list-inside mt-6">
                 <li className="text-2xl mt-4">공과대학 5호관 315호 안쪽</li>
             </ul>
@@ -255,7 +255,7 @@ const Intro = () => {
                     </div>
                 </div>
             </div>
-            <p className="text-4xl font-extrabold text-center mt-5">
+            <p className="text-3xl font-extrabold text-center mt-5">
                 상시 진행
             </p>
             <ul className="list-disc list-inside mt-8 space-y-6">
