@@ -85,7 +85,7 @@ router.post('/post', authJwt, async (req, res) => {
     const tokenUser = req.user as TokenUser;
     const user = await User.findOne({ userid: tokenUser.userid }) as IUser;
 
-    if (!user.member) throw new ExpressError(401, '아나 회원이어야 합니다.');
+    if (!user.member && !user.admin) throw new ExpressError(401, '아나 회원이어야 합니다.');
     if (!user.admin && ['notice', 'algorithm'].includes(category)) throw new ExpressError(401, '관리자 권한이 없습니다.');
 
     const post: IPost = new Post({
@@ -142,7 +142,7 @@ router.delete('/post/:urlid', authJwt, async (req, res) => {
 router.post('/comment/:urlid', authJwt, async (req, res) => {
     const tokenUser = req.user as TokenUser;
     const user = await User.findOne({ userid: tokenUser.userid }) as IUser;
-    if (!user.member) throw new ExpressError(401, '아나 회원이어야 합니다.');
+    if (!user.member && !user.admin) throw new ExpressError(401, '아나 회원이어야 합니다.');
 
     const urlid = req.params.urlid;
     const post = await Post.findOne({ urlid: urlid });

@@ -96,7 +96,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                 {user && (
                     (user.admin || (user.member && category === 'free')) && category !== 'cnunotice'    
                 ) && (
-                        <Link to="/board/write" className="btn btn-primary btn-sm">글쓰기</Link>
+                        <Link to={`/board/write?category=${category}`} className="btn btn-primary btn-sm">글쓰기</Link>
                     )}
             </div>
 
@@ -128,7 +128,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                                             {post.title}
                                         </Link>
                                     </td>
-                                    <td className="text-center opacity-70">{post.author?.name || '익명'}</td>
+                                    <td className="text-center opacity-70">{post.author.name || '익명'}</td>
                                     <td className="text-center opacity-70">{post.createdAt ? new Date(post.createdAt).toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' }) : ''}</td>
                                 </tr>
                             ))

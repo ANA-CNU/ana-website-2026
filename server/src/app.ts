@@ -31,7 +31,7 @@ app.use((req, _res, next) => {
 })
 app.use(ExpressMongoSanitize());
 app.use(cookieParser());
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' }}));
+app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' }, crossOriginOpenerPolicy: false })); // 배포할때 coop 빼셈
 app.use(passport.initialize());
 app.use(cors({
     origin: process.env.CLIENT_URL,

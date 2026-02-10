@@ -4,29 +4,29 @@ function Toast() {
     const toasts = useToastStore(state => state.toasts);
 
     return (
-        <div className="toast toast-bottom toast-end">
+        <div className="toast toast-top">
             {
                 toasts.map((toast) => {
                     const { id, message, type } = toast;
                     return (
                         type == 'success' ? (
-                            <div role={type} className={`alert alert-success alert-soft`} key={id}>
+                            <div role={type} className={`alert alert-success`} key={id}>
                                 <span>{message}</span>
                             </div>
                         ) : type == 'error' ? (
-                            <div role={type} className={`alert alert-error alert-soft`} key={id}>
+                            <div role={type} className={`alert alert-error`} key={id}>
                                 <span>{message}</span>
                             </div>
                         ) : type == 'warning' ? (
-                            <div role={type} className={`alert alert-warning alert-soft`} key={id}>
+                            <div role={type} className={`alert alert-warning`} key={id}>
                                 <span>{message}</span>
                             </div>
                         ) : type == 'info' ? (
-                            <div role={type} className={`alert alert-info alert-soft`} key={id}>
+                            <div role={type} className={`alert alert-info`} key={id}>
                                 <span>{message}</span>
                             </div>
                         ) : (
-                            <div role={type} className={`alert alert-soft`} key={id}>
+                            <div role={type} className={`alert`} key={id}>
                                 <span>{message}</span>
                             </div>
                         )
