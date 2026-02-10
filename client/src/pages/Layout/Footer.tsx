@@ -4,7 +4,7 @@ export default function Footer() {
             <p className="font-bold text-lg">
                 ANA (Algorithm & Application)
             </p>
-            <p className="text-sm mt-2">충남대학교 컴퓨터융합학부 소속 알고리즘 동아리</p>
+            <p className="text-sm mt-2">충남대학교 컴퓨터인공지능학부 소속 알고리즘 동아리</p>
         </aside>
     </footer>
 }
