@@ -146,7 +146,7 @@ const PostDetail: React.FC = () => {
 
                 <div
                     ref={contentRef}
-                    className="prose max-w-none min-h-[200px] mb-8 ck-content"
+                    className="prose max-w-none min-h-[200px] mb-8 ck-content w-full overflow-x-hidden"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 >
                 </div>

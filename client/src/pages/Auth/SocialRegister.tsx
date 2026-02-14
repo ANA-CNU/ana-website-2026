@@ -57,7 +57,7 @@ const SocialRegister: React.FC = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">학번 / 아이디</span>
+                                <span className="label-text">학번</span>
                             </label>
                             <input
                                 type="text"
