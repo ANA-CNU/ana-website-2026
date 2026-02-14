@@ -1,16 +1,19 @@
 services:
   nginx:
     image: nginx:alpine
+    container_name: ana-website-nginx
     restart: always
-    ports:
-      - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - client
       - server
+    networks:
+      - dmoj_nginx_network
+      - ana_website_network
 
   client:
+    container_name: ana-website-client
     build:
       context: ./client
       args:
@@ -18,8 +21,11 @@ services:
     expose:
       - "80"
     restart: always
+    networks:
+      - ana_website_network
 
   server:
+    container_name: ana-website-server
     build: ./server
     env_file:
       - server/.env
@@ -30,11 +36,23 @@ services:
     depends_on:
       - mongodb
     restart: always
+    networks:
+      - ana_website_network
 
   mongodb:
     image: mongo:8.0
+    container_name: ana-website-mongodb
     expose:
       - "27017"
     volumes:
       - ./mongo-data:/data/db
     restart: always
+    networks:
+      - ana_website_network
+
+
+networks:
+  dmoj_nginx_network:
+    external: true
+  ana_website_network:
+    driver: bridge

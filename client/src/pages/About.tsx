@@ -170,10 +170,10 @@ const Intro = () => {
             </ul>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                 <div className="aspect-square overflow-hidden rounded-md shadow-md">
-                    <img src="https://anacnu.kr/images/About-5315.jpeg" alt="동방 입구" className="w-full h-full object-cover" />
+                    <img src="/images/dongbang1.jpeg" alt="동방 입구" className="w-full h-full object-cover" />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-md shadow-md">
-                    <img src="https://anacnu.kr/images/About-room.jpeg" alt="동방 내부" className="w-full h-full object-cover" />
+                    <img src="/images/dongbang2.jpeg" alt="동방 내부" className="w-full h-full object-cover" />
                 </div>
 
             </div>
@@ -286,7 +286,10 @@ const Intro = () => {
             <h3 className="text-3xl sm:text-4xl font-extrabold underline decoration-teal-600 decoration-10">실적</h3>
             <p className="text-xl sm:text-2xl mt-10">
                 2024-1 DevDay: 대상 1, 금상 1, 은상 4, 동상 3, 장려상 4 <br />
-                2024-2 DevDay: 대상 1, 금상 1, 은상 2, 동상 7, 장려상 7
+                2024-2 DevDay: 대상 1, 금상 1, 은상 2, 동상 7, 장려상 7 <br />
+                
+                2025-1 DevDay: 대상 1, 금상 2, 은상 2, 동상 5, 장려상 4 <br />
+                2024-2 DevDay: 대상 1, 금상 1, 은상 3, 동상 4, 장려상 6
             </p>
             <div id="ICPCAsiaPreliminary2024" className="flex flex-col justify-start items-start">
                 <ul className="list-disc list-inside mt-4">
