@@ -1,7 +1,6 @@
 services:
-  nginx:
+  ana-website-2026-nginx:
     image: nginx:alpine
-    container_name: ana-website-nginx
     restart: always
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
@@ -13,7 +12,6 @@ services:
       - ana_website_network
 
   client:
-    container_name: ana-website-client
     build:
       context: ./client
       args:
@@ -25,7 +23,6 @@ services:
       - ana_website_network
 
   server:
-    container_name: ana-website-server
     build: ./server
     env_file:
       - server/.env
@@ -41,7 +38,6 @@ services:
 
   mongodb:
     image: mongo:8.0
-    container_name: ana-website-mongodb
     expose:
       - "27017"
     volumes:
