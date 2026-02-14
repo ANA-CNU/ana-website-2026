@@ -124,7 +124,8 @@ export default () => {
     const googleOptions: GoogleStrategyOptions = {
         clientID: GOOGLE_CLIENT_ID,
         clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: '/api/auth/google/callback'
+        callbackURL: '/api/auth/google/callback',
+        proxy: true
     }
     const googleVerify = async (accessToken: string, refreshToken: string, profile: GoogleProfile, done: GoogleVerifyCallback) => {
         try {
@@ -196,7 +197,8 @@ export default () => {
     const githubOptions: GithubStrategyOptions = {
         clientID: GITHUB_CLIENT_ID,
         clientSecret: GITHUB_CLIENT_SECRET,
-        callbackURL: '/api/auth/github/callback'
+        callbackURL: '/api/auth/github/callback',
+        proxy: true
     }
     const githubVerify = async (accessToken: string, refreshToken: string, profile: GithubProfile, done: GithubVerifyCallback) => {
         try {
