@@ -5,17 +5,18 @@ import { useAuthStore } from '../../store/useAuthStore';
 const Navbar: React.FC = () => {
     const { isLogin, user, logout } = useAuthStore();
 
-    const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    const navLinkClass = ({ isActive }: { isActive: boolean }) => (
         `whitespace-nowrap px-4 py-2 transition-colors ${isActive
             ? 'bg-white text-primary font-bold shadow-md'
             : 'hover:bg-white/10 text-primary-content'
-        }`;
+        }`
+    )
 
     return <header className="bg-primary text-primary-content shadow-md">
         <div className="container mx-auto max-w-6xl">
             <div className="flex justify-between items-center py-3 px-4">
                 <Link to='/' className="flex flex-row items-end ml-2 font-mulmaru">
-                    <span className="text-3xl font-extrabold tracking-tight leading-none">A N A</span>
+                    <span className="text-xl sm:text-3xl font-extrabold tracking-tight leading-none">A N A</span>
                     <span className="text-xs opacity-80 font-light ml-2">Algorithm & Application</span>
                 </Link>
                 <div className="flex gap-4 text-sm font-medium mr-2 items-center">
