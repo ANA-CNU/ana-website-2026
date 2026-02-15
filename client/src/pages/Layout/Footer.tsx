@@ -4,8 +4,8 @@ export default function Footer() {
             <p className="font-bold text-lg">
                 ANA (Algorithm & Application)
             </p>
-            <p className="text-sm mt-2 opacity-80">충남대학교 컴퓨터인공지능학부 소속 알고리즘 동아리</p>
-            <p className="text-sm mt-2">회장: 010-3154-0982(황현석) <br className="sm:hidden"/>부회장: 010-3250-4532(박종현)</p>
+            <p className="text-sm mt-3 opacity-80">충남대학교 컴퓨터인공지능학부 소속 알고리즘 동아리</p>
+            <p className="text-sm mt-1">회장: 010-3154-0982(황현석) <br className="sm:hidden"/>부회장: 010-3250-4532(박종현)</p>
         </aside>
     </footer>
 }
