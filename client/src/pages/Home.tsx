@@ -49,7 +49,7 @@ const Home: React.FC = () => {
                     <figure className=" skeleton lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1]" />
                 ) : (
                     <figure className="lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1]">
-                        <img src={banner?.imageUrl} alt="Banner" className="w-full h-full object-cover" />
+                        <img src={banner?.imageUrl} alt="Banner" className="w-full h-full object-cover overflow-hidden transform-gpu" />
                     </figure>
                 )}
 
