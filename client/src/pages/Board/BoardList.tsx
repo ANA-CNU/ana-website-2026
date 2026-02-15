@@ -106,8 +106,8 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                         <tr>
                             <th className="w-16 text-center">번호</th>
                             <th>제목</th>
-                            <th className="w-24 text-center">작성자</th>
-                            <th className="w-24 text-center">날짜</th>
+                            <th className="w-20 text-center">작성자</th>
+                            <th className="hidden sm:table-cell w-20 text-center">날짜</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -129,7 +129,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                                         </Link>
                                     </td>
                                     <td className="text-center opacity-70">{post.author.name || '익명'}</td>
-                                    <td className="text-center opacity-70">{post.createdAt ? new Date(post.createdAt).toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' }) : ''}</td>
+                                    <td className="hidden sm:table-cell text-center opacity-70">{post.createdAt ? new Date(post.createdAt).toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' }) : ''}</td>
                                 </tr>
                             ))
                         )}

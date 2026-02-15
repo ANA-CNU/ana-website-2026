@@ -403,7 +403,7 @@ const KakaoMap = () => {
         const drawMap = () => {
             const container = mapRef.current;
 
-            const coords = new window.kakao.maps.LatLng(36.366111, 127.344444);
+            const coords = new window.kakao.maps.LatLng(36.366355, 127.344655);
 
             const options = {
                 center: coords,
