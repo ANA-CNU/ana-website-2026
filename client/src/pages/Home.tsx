@@ -46,10 +46,10 @@ const Home: React.FC = () => {
             {/* ========== Banner ========== */}
             <div className="card lg:card-side bg-base-100 shadow-md">
                 {loading ? (
-                    <figure className=" skeleton lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1]" />
+                    <figure className=" skeleton lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1] min-w-0" />
                 ) : (
-                    <figure className="lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1]">
-                        <img src={banner?.imageUrl} alt="Banner" className="w-full h-full object-cover overflow-hidden transform-gpu" />
+                    <figure className="lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1] min-w-0">
+                        <img src={banner?.imageUrl} alt="Banner" className="w-full h-full object-cover" />
                     </figure>
                 )}
 

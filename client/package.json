@@ -20,6 +20,7 @@
     "heic2any": "^0.0.4",
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.562.0",
+    "motion": "^12.34.0",
     "nprogress": "^0.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

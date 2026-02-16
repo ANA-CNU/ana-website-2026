@@ -4,6 +4,7 @@ import Layout from './pages/Layout/Layout';
 
 import Home from './pages/Home';
 const LazyAbout = lazy(() => import('./pages/About'));
+import Recruit from './pages/Recruit';
 
 import BoardList from './pages/Board/BoardList';
 import PostDetail from './pages/Board/PostDetail';
@@ -53,7 +54,7 @@ function App() {
                     <Route path='/board/cnunotice/:urlid' element={<CnuNoticeDetail />} />
                     <Route path='/board/:urlid' element={<PostDetail />} />
 
-
+                    <Route path='/recruit' element={<Recruit />} />
                 </Route>
             </Routes>
             <Toast />
