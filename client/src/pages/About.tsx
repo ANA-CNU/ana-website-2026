@@ -287,7 +287,6 @@ const Intro = () => {
             <p className="text-xl sm:text-2xl mt-10">
                 2024-1 DevDay: 대상 1, 금상 1, 은상 4, 동상 3, 장려상 4 <br />
                 2024-2 DevDay: 대상 1, 금상 1, 은상 2, 동상 7, 장려상 7 <br />
-                
                 2025-1 DevDay: 대상 1, 금상 2, 은상 2, 동상 5, 장려상 4 <br />
                 2024-2 DevDay: 대상 1, 금상 1, 은상 3, 동상 4, 장려상 6
             </p>
@@ -403,7 +402,7 @@ const KakaoMap = () => {
         const drawMap = () => {
             const container = mapRef.current;
 
-            const coords = new window.kakao.maps.LatLng(36.366355, 127.344655);
+            const coords = new window.kakao.maps.LatLng(36.366455, 127.344622);
 
             const options = {
                 center: coords,

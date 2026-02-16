@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         }`
     )
 
-    return <header className="bg-primary text-primary-content shadow-md">
+    return <header className="bg-primary text-primary-content shadow-md relative z-100">
         <div className="container mx-auto max-w-6xl">
 
             <div className="flex justify-between items-center py-3 px-4">
@@ -51,8 +51,12 @@ const Navbar: React.FC = () => {
                                 <div className='tooltip-content'>집</div>
                                 <NavLink to="/" className={navLinkClass}>홈</NavLink>
                             </li>
+                            <li className='tooltip tooltip-top tooltip-neutral'>
+                                <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-3 font-mulmaru translate-y-1'>ANA 절찬 모집 중🥵</div></div>
+                                <NavLink to="/recruit" className={navLinkClass}>*입부 신청*</NavLink>
+                            </li>
                             <li className='tooltip tooltip-neutral tooltip-top'>
-                                <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-5 font-mulmaru translate-y-1'>*우리 ANA를 소개합니다~*</div></div>
+                                <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-3 font-mulmaru translate-y-1'>*우리 ANA를 소개합니다~*</div></div>
                                 <NavLink to="/about" className={navLinkClass}>ABOUT</NavLink>
                             </li>
                             <li className='hidden sm:block tooltip tooltip-neutral tooltip-bottom'>
