@@ -4,7 +4,7 @@ function Toast() {
     const toasts = useToastStore(state => state.toasts);
 
     return (
-        <div className="toast toast-top">
+        <div className="toast toast-top z-100">
             {
                 toasts.map((toast) => {
                     const { id, message, type } = toast;

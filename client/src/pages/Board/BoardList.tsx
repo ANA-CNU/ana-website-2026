@@ -94,7 +94,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold text-gray-800">{categoryName}</h1>
                 {user && (
-                    (user.admin || (user.member && category === 'free')) && category !== 'cnunotice'    
+                    (user.admin || (user.member && (category === 'free' || category === 'algorithm'))) && category !== 'cnunotice'    
                 ) && (
                         <Link to={`/board/write?category=${category}`} className="btn btn-primary btn-sm">글쓰기</Link>
                     )}

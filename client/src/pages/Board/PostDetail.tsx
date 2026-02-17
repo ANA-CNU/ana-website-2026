@@ -153,11 +153,11 @@ const PostDetail: React.FC = () => {
 
                 <div className="flex justify-end gap-2 border-t border-base-300 pt-4">
                     <Link to={`/board/${post.category}`} className="btn btn-ghost btn-sm">목록</Link>
-                    {user && (user.admin || user.userid === post.author?.userid) && (
-                        <>
-                            <Link to={`/board/edit/${post.urlid}`} className="btn btn-outline btn-sm">수정</Link>
-                            <button onClick={handleDelete} className="btn btn-error btn-outline btn-sm">삭제</button>
-                        </>
+                    {user && user.userid === post.author.userid && (
+                        <Link to={`/board/edit/${post.urlid}`} className="btn btn-outline btn-sm">수정</Link>
+                    )}
+                    {user && (user.admin || user.userid === post.author.userid) && (
+                        <button onClick={handleDelete} className="btn btn-error btn-outline btn-sm">삭제</button>
                     )}
                 </div>
             </div>
@@ -185,7 +185,7 @@ const PostDetail: React.FC = () => {
                                 <span className="font-semibold text-sm">{comment.author.name || '알 수 없음'}</span>
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs opacity-50">{new Date(comment.createdAt).toLocaleDateString()}</span>
-                                    {user && (user.userid == comment.author.name || user.admin) && 
+                                    {user && (user.userid == comment.author.name || user.admin) &&
                                         <button onClick={() => handleCommentDelete(comment._id)} className="text-xs text-error hover:underline">삭제</button>
                                     }
                                 </div>
