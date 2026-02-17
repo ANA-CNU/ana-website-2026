@@ -92,9 +92,9 @@ const PostWrite: React.FC = () => {
                         disabled={isEdit}
                     >
                         <option value="free">자유게시판</option>
+                        <option value="algorithm">알고리즘 꿀팁</option>
                         {user && user.admin && <>
                             <option value="notice">공지사항</option>
-                            <option value="algorithm">알고리즘 꿀팁</option>
                         </>}
                     </select>
                 </div>
