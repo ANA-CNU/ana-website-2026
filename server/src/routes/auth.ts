@@ -8,6 +8,7 @@ import User, { IUser } from '../models/User';
 import Member from '../models/Member';
 import { TokenUser } from '../types/jwt';
 import { ExpressError } from '../Utils/ExpressError';
+import telegramMessage from '../Utils/telegramMessage';
 
 
 const router: Router = express.Router();
@@ -117,6 +118,9 @@ router.post('/register', validateLocalRegister, async (req: Request, res: Respon
     })
 
     await newUser.save();
+
+    telegramMessage(`*새로운 유저가 가입했습니다!*\n\n유저 이름: ${name}\n유저 학번: ${userid}\n\n[제발 관리 좀 하러 가기](https://anacnu.kr)`)
+    
     res.json({ success: true });
 })
 
@@ -369,6 +373,8 @@ router.patch('/admin/on', authJwt, async (req, res) => {
     const admin = await User.findOneAndUpdate({ userid: userid }, { $set: { admin: true } });
     if (!admin) throw new ExpressError(404, '유저를 찾을 수 없습니다');
 
+    telegramMessage(`*권한 상승*\n\n바꾼 유저: ${user.userid} ${user.name}\n바뀐 유저: ${admin.userid} ${admin.name}\n\n [관리 좀 하러 가기](https://anacnu.kr)`);
+
     res.json({ success: true, user: admin });
 })
 
@@ -379,8 +385,12 @@ router.patch('/admin/off', authJwt, async (req, res) => {
     const { userid } = req.body;
     if (!userid) throw new ExpressError(400, '입력값이 누락되었습니다.');
 
+    if (userid === process.env.ADMIN_ID) throw new ExpressError(400, '루트 관리자는 건들지 마라');
+
     const admin = await User.findOneAndUpdate({ userid: userid }, { $set: { admin: false } });
     if (!admin) throw new ExpressError(404, '유저를 찾을 수 없습니다');
+
+    telegramMessage(`*권한 하락*\n\n바꾼 유저: ${user.userid} ${user.name}\n바뀐 유저: ${admin.userid} ${admin.name}\n\n[관리 좀 하러 가기](https://anacnu.kr)`);
 
     res.json({ success: true, user: admin });
 })

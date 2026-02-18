@@ -12,6 +12,8 @@ import adminConfig from './config/admin';
 import passportConfig from './config/passport';
 import mongodbConfig from './config/mongodb';
 passportConfig();
+import nodecronConfig from './config/nodecron';
+nodecronConfig();
 
 import apiRoutes from './routes/api';
 
