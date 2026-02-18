@@ -13,7 +13,7 @@ interface SiteConfig {
         tier: string;
         title: string;
         linkUrl: string;
-    };
+    }[];
     information: {
         label: string;
         value: string;
@@ -68,6 +68,7 @@ const SiteConfigEditor = () => {
         });
     };
 
+    /*
     const handleTodayProblemChange = (key: keyof SiteConfig['todayProblem'], value: string) => {
         if (!config) return;
         setConfig({
@@ -78,6 +79,7 @@ const SiteConfigEditor = () => {
             }
         });
     };
+    */
 
     const handleInfoChange = (index: number, key: 'label' | 'value', value: string) => {
         if (!config) return;
@@ -153,7 +155,7 @@ const SiteConfigEditor = () => {
                 </div>
 
                 {/* Today's Problem Section */}
-                <div className="bg-base-100 p-6 rounded-lg shadow">
+                {/* <div className="bg-base-100 p-6 rounded-lg shadow">
                     <h3 className="text-xl font-semibold mb-4">오늘의 문제</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="form-control">
@@ -184,7 +186,7 @@ const SiteConfigEditor = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Information Stats Section */}
                 <div className="bg-base-100 p-6 rounded-lg shadow">

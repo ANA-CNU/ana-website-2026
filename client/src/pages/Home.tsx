@@ -6,7 +6,7 @@ interface Banner { imageUrl: string; title: string; description: string; linkUrl
 interface Information { label: string; value: string; }
 interface TodayProblem { tier: string; title: string; linkUrl: string }
 
-interface SiteConfig { isDefault: boolean; banner: Banner; information: Information[]; todayProblem: TodayProblem }
+interface SiteConfig { isDefault: boolean; banner: Banner; information: Information[]; todayProblem: TodayProblem[] }
 
 interface SiteConfigResponse {
     success: boolean;
@@ -16,7 +16,7 @@ interface SiteConfigResponse {
 const Home: React.FC = () => {
     const [banner, setBanner] = useState<Banner | null>(null);
     const [information, setInformation] = useState<Information[]>([]);
-    const [todayProblem, setTodayProblem] = useState<TodayProblem | null>(null);
+    const [todayProblem, setTodayProblem] = useState<TodayProblem[]>([]);
 
     const [loading, setLoading] = useState(true)
 
@@ -129,29 +129,34 @@ const Home: React.FC = () => {
                         <div className="bg-success text-success-content p-2 px-4 text-sm font-bold">
                             오늘의 문제
                         </div>
-                        {loading ? (
-                            <div className="p-4 text-sm">
-                                <span className="badge badge-outline badge-sm mb-1 skeleton skeleton-text">Loading</span>
-                                <p className="font-bold truncate skeleton skeleton-text">Loading</p>
-                                <button className='btn btn-primary btn-block btn-sm btn-disabled'><span className="loading loading-spinner loading-sm"></span></button>
-                            </div>
-                        ) : (
-                            <div className="p-4 text-sm">
-                                <span className="badge badge-outline badge-sm mb-1">{todayProblem ? todayProblem.tier : '로딩 중 ㅅㅂ'}</span>
-                                <p className="font-bold truncate">{todayProblem ? todayProblem.title : '로딩 중 ㅅㅂ'}</p>
-                                <Link to={todayProblem ? todayProblem.linkUrl : ''} className='btn btn-primary btn-block btn-sm mt-3'>도전하기</Link>
-                            </div>
-                        )}
+                        <div className='divide-y-1 divide-base-200'>
+                            {loading ? (
+                                <div className="p-4 text-sm">
+                                    <span className="badge badge-outline badge-sm mb-1 skeleton skeleton-text">Loading</span>
+                                    <p className="font-bold truncate skeleton skeleton-text">Loading</p>
+                                    <button className='btn btn-primary btn-block btn-sm btn-disabled'><span className="loading loading-spinner loading-sm"></span></button>
+                                </div>
+                            ) : (
+                                todayProblem.map((problem, idx) => (
+                                    <div className="p-4 text-sm" key={`problem_${idx}`}>
+                                        <span className="badge badge-outline badge-sm mb-1">{problem.tier}</span>
+                                        <p className="font-bold truncate">{problem.title}</p>
+                                        <Link to={problem.linkUrl} className='btn btn-primary btn-block btn-sm mt-3'>도전하기</Link>
+                                    </div>
+                                ))
+                            )}
+                        </div>
                     </div>
 
-                    <div className="card bg-base-100 shadow-md p-4 h-fit">
+                    {/* 회원 현황 부분이었는데 굳이 없어도 될듯 */}
+                    {/* <div className="card bg-base-100 shadow-md p-4 h-fit">
                         <h3 className="font-bold text-gray-700 mb-2 border-b pb-2 text-sm">회원 현황</h3>
                         <div className="flex justify-between text-center text-sm">
                             <div><div className="font-bold text-lg">48</div><span className="text-xs text-gray-400">전체</span></div>
                             <div><div className="font-bold text-lg text-blue-500">32</div><span className="text-xs text-gray-400">활동</span></div>
                             <div><div className="font-bold text-lg text-red-500">+5</div><span className="text-xs text-gray-400">신규</span></div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
