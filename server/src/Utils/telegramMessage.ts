@@ -1,4 +1,5 @@
 import axios from 'axios';
+import https from 'https';
 import { ExpressError } from './ExpressError';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -11,6 +12,9 @@ export default async (message: string) => {
             chat_id: TELEGRAM_CHAT_ID,
             text: message,
             parse_mode: 'Markdown'
+        }, {
+            httpsAgent: new https.Agent({ family: 4 }),
+            timeout: 10000
         })
         if (!response.data.ok) {
             throw new ExpressError(500, '메시지 전송 실패ㅜㅜ');
