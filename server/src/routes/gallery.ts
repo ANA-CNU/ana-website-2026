@@ -10,6 +10,7 @@ import mongoose from 'mongoose';
 import Album, { IAlbum } from '../models/Album';
 import { upload } from './image';
 import Image, { IImage } from '../models/Image';
+import telegramMessage from '../Utils/telegramMessage';
 
 const router = Router();
 
@@ -50,6 +51,8 @@ router.post('/album', authJwt, upload.array('images'), async (req, res) => {
     })
 
     await album.save();
+
+    telegramMessage(`*갤러리에 앨범이 올라왔습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\n\n[당장 구경가기](${process.env.CLIENT_URL}/gallery/${album.urlid})`);
     res.json({ success: true, album: album });
 })
 

@@ -9,8 +9,7 @@ import { TokenUser } from '../types/jwt';
 import User, { IUser } from '../models/User';
 import mongoose from 'mongoose';
 import { createClient } from '@supabase/supabase-js';
-import { marked } from 'marked';
-import DOMPurify from 'dompurify';
+import telegramMessage from '../Utils/telegramMessage';
 
 const supabase = createClient(process.env.SUPABASE_URL as string, process.env.SUPABASE_KEY as string);
 const router = Router();
@@ -96,6 +95,7 @@ router.post('/post', authJwt, async (req, res) => {
         urlid: randomid()
     })
     await post.save();
+    telegramMessage(`*게시판에 글이 올라왔습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\n카테고리: ${category}\n${user.name}\n글 제목: ${title}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
 
     res.json({ success: true, post: post });
 })

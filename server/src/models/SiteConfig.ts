@@ -16,7 +16,7 @@ export interface ISiteConfig extends Document {
         tier: string,
         title: string,
         linkUrl: string
-    }
+    }[]
 }
 
 const SiteConfigSchema = new Schema({
@@ -62,21 +62,18 @@ const SiteConfigSchema = new Schema({
         ]
     },
     todayProblem: {
-        tier: {
-            type: String,
-            required: true,
-            default: 'Bronze 5'
-        },
-        title: {
-            type: String,
-            required: true,
-            default: '#1000 A+B'
-        },
-        linkUrl: {
-            type: String,
-            required: true,
-            default: 'https://www.acmicpc.net/problem/1000'
-        }
+        type: [
+            {
+                tier: { type: String, required: true },
+                title: { type: String, required: true },
+                linkUrl: { type: String, required: true }
+            }
+        ],
+        defualt: [
+            { tier: 'Bronze IV', linkUrl: 'https://www.acmicpc.net/problem/21633', title: 'Bank Transfer' },
+            { tier: 'Bronze II', linkUrl: 'https://www.acmicpc.net/problem/3040', title: '백설 공주와 일곱 난쟁이' },
+            { tier: 'Gold IV', linkUrl: 'https://www.acmicpc.net/problem/12869', title: '뮤탈리스크' }
+        ]
     }
 }, {
     timestamps: true
