@@ -2,58 +2,35 @@ import cron from 'node-cron';
 import axios from 'axios';
 import SiteConfig from '../models/SiteConfig';
 import telegramMessage from '../Utils/telegramMessage';
+import { ExpressError } from '../Utils/ExpressError';
 
-const getRandomProblems = async (levelStart: number, levelEnd: number, solvedByGte: number, len: number) => {
-    let problems: { tier: string, num: string, title: string }[] = [];
-    try {
-        const searchString = `tier:${levelStart}..${levelEnd} solved:${solvedByGte}..`;
+const getRandomProblems = async (len: number) => {
+    const set = new Set<number>();
 
-        const encodedQuery = encodeURIComponent(searchString);
+    const problems = (await import('../assets/problem_lvlstart1_lvlend15_solved5000.json')).default
 
-        const URL = `https://solved.ac/api/v3/search/problem?query=${encodedQuery}&sort=random&page=1`;
-        const res = await axios.get(URL, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36'
-            }
-        });
-
-        const items = res.data.items as { level: string, titleKo: string, problemId: string }[]
-
-        problems = items.slice(0, len).map(problem => {
-            const idToTier = [
-                'Unrated', 
-                'Bronze V', 'Bronze IV', 'Bronze III', 'Bronze II', 'Bronze I', 
-                'Silver V', 'Silver IV', 'Silver III', 'Silver II', 'Silver I', 
-                'Gold V', 'Gold IV', 'Gold III', 'Gold II', 'Gold I', 
-                'Platinum V', 'Platinum IV', 'Platinum III', 'Platinum II', 'Platinum I', 
-                'Diamond V', 'Diamond IV', 'Diamond III', 'Diamond II', 'Diamond I', 
-                'Ruby V', 'Ruby IV', 'Ruby III', 'Ruby II', 'Ruby I'
-            ];
-
-            const level = Number(problem.level);
-            return {
-                tier: idToTier[level],
-                title: problem.titleKo,
-                num: problem.problemId
-            }
-        })
-    } catch (error) {
-        console.error(error)
+    while (set.size < len) {
+        const randomIdx = Math.floor(Math.random() * problems.length);
+        set.add(randomIdx);
     }
 
-    return problems;
+    const randomProblems = Array.from(set).map(ri => problems[ri]);
+
+    return randomProblems;
 }
 
 export default () => {
     cron.schedule('0 0 0 * * *', async () => {
         try {
 
-            const problems = await getRandomProblems(1, 15, 1000, 3);
+            const problems = await getRandomProblems(3);
 
-            const todayProblem: { tier: string, title: string, linkUrl: string }[] = problems.map((el, idx) => ({
-                tier: el.tier,
-                title: el.title,
-                linkUrl: `https://www.acmicpc.net/problem/${el.num}`
+            if (problems.length < 3) throw new ExpressError(500, '담배 말린다 진짜 왜 안되겠냐 되겠지');
+
+            const todayProblem: { tier: string, title: string, linkUrl: string }[] = problems.map(p => ({
+                tier: p.tier,
+                title: p.title,
+                linkUrl: `https://www.acmicpc.net/problem/${p.num}`
             }));
 
             await SiteConfig.updateOne({ isDefault: true }, { $set: { todayProblem: todayProblem } });
