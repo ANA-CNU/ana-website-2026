@@ -178,7 +178,7 @@ const Recruit: React.FC = () => {
                         initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={fadeInUp}
                     >
                         <h3 className="text-2xl mb-4">공부만 하나요? 🤔</h3>
-                        <p className="text-lg mb-6 opacity-90">그럴 리가요! 놀 땐 확실히 놀야요.</p>
+                        <p className="text-lg mb-6 opacity-90">그럴 리가요! 놀 땐 확실히 놀아요.</p>
                         <div className="flex flex-wrap justify-center gap-2">
                             {["개강총회/종강총회", "막걸리 동산", "동아리 MT", "풋살"].map((tag, i) => (
                                 <span key={i} className="badge bg-base-100/90">{tag}</span>

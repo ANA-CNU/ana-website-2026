@@ -95,7 +95,7 @@ router.post('/post', authJwt, async (req, res) => {
         urlid: randomid()
     })
     await post.save();
-    telegramMessage(`*게시판에 글이 올라왔습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\n카테고리: ${category}\n${user.name}\n글 제목: ${title}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
+    telegramMessage(`*게시판에 글이 올라왔습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\n카테고리: ${category}\n글 제목: ${title}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
 
     res.json({ success: true, post: post });
 })
@@ -157,6 +157,8 @@ router.post('/comment/:urlid', authJwt, async (req, res) => {
         post: post
     })
     await comment.save();
+
+    telegramMessage(`*게시판에 댓글이 달렸습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\게시판: ${post.category}\n작성한 유저: ${user.name}\n내용: ${comment.content}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
 
     res.json({ success: true, comment: comment });
 })

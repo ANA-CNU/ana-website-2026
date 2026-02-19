@@ -288,7 +288,7 @@ const Intro = () => {
                 2024-1 DevDay: 대상 1, 금상 1, 은상 4, 동상 3, 장려상 4 <br />
                 2024-2 DevDay: 대상 1, 금상 1, 은상 2, 동상 7, 장려상 7 <br />
                 2025-1 DevDay: 대상 1, 금상 2, 은상 2, 동상 5, 장려상 4 <br />
-                2024-2 DevDay: 대상 1, 금상 1, 은상 3, 동상 4, 장려상 6
+                2025-2 DevDay: 대상 1, 금상 1, 은상 3, 동상 4, 장려상 6
             </p>
             <div id="ICPCAsiaPreliminary2024" className="flex flex-col justify-start items-start">
                 <ul className="list-disc list-inside mt-4">
@@ -355,7 +355,7 @@ const Intro = () => {
                 </div>
             </div>
 
-            <div id="UCPCPreliminary2024" className="flex flex-col justify-start items-start">
+            {/* <div id="UCPCPreliminary2024" className="flex flex-col justify-start items-start">
                 <ul className="list-disc list-inside mt-4">
                     <li className="text-xl sm:text-2xl mt-2 font-bold">2024 UCPC 예선</li>
                 </ul>
@@ -383,6 +383,87 @@ const Intro = () => {
                         <a href="https://www.acmicpc.net/user/awj1052">awj1052</a></div>
                     <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
                         <a href="https://www.acmicpc.net/user/gytjdttop">gytjdtop</a></div>
+                </div>
+            </div> */}
+
+            <div id="ICPCAsiaPreliminary2025" className="flex flex-col justify-start items-start">
+                <ul className="list-disc list-inside mt-4">
+                    <li className="text-xl sm:text-2xl mt-2 font-bold">2025 ICPC Asia Seoul Preliminary Contest</li>
+                </ul>
+                <div className="grid grid-cols-2 sm:grid-cols-5 w-full border border-gray-300 text-left mt-3">
+                    <div className="p-2 font-bold bg-gray-100 border-b border-gray-300">#</div>
+                    <div className="p-2 font-bold bg-gray-100 border-b border-gray-300">팀</div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300"></div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300">참가자</div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300"></div>
+
+                    <div className="p-2 border-b border-gray-300">80</div>
+                    <div className="p-2 border-b border-gray-300">ANA</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/suminwow1">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/tjgus1668">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/factwy">?</a></div>
+
+                    <div className="p-2 border-b border-gray-300">95</div>
+                    <div className="p-2 border-b border-gray-300">ANAlog</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+
+                    <div className="p-2 border-b border-gray-300">133</div>
+                    <div className="p-2 border-b border-gray-300">BANANA</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+
+                    <div className="p-2 border-b border-gray-300">145</div>
+                    <div className="p-2 border-b border-gray-300">SSALMUK</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/ppaemon">ppaemon</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/hongjk2006">hongjk2006</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/rkdalsdn0647">rkdalsdn0647</a></div>
+
+                    <div className="p-2 border-b border-gray-300">175</div>
+                    <div className="p-2 border-b border-gray-300">NOMAC</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+                </div>
+            </div>
+
+            <div id="ICPCAsiaRegional2025" className="flex flex-col justify-start items-start">
+                <ul className="list-disc list-inside mt-4">
+                    <li className="text-xl sm:text-2xl mt-2 font-bold">2025 ICPC Asia Seoul Regional Contest</li>
+                </ul>
+                <div className="grid grid-cols-2 sm:grid-cols-5 w-full border border-gray-300 text-left mt-3">
+
+                    <div className="p-2 font-bold bg-gray-100 border-b border-gray-300">#</div>
+                    <div className="p-2 font-bold bg-gray-100 border-b border-gray-300">팀</div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300"></div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300">참가자</div>
+                    <div className="hidden sm:block p-2 font-bold bg-gray-100 border-b border-gray-300"></div>
+
+                    <div className="p-2 border-b border-gray-300">61</div>
+                    <div className="p-2 border-b border-gray-300">ANA</div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
                 </div>
             </div>
         </div>
