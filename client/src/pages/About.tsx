@@ -399,48 +399,48 @@ const Intro = () => {
 
                     <div className="p-2 border-b border-gray-300">80</div>
                     <div className="p-2 border-b border-gray-300">ANA</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/suminwow1">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/tjgus1668">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/factwy">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/awj1052">awj1052</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/tjgus1668">tjgus1668</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/hhs2003">hhs2003</a></div>
 
                     <div className="p-2 border-b border-gray-300">95</div>
                     <div className="p-2 border-b border-gray-300">ANAlog</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
 
                     <div className="p-2 border-b border-gray-300">133</div>
                     <div className="p-2 border-b border-gray-300">BANANA</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300">
+                        <a href="https://www.acmicpc.net">?</a></div>
 
                     <div className="p-2 border-b border-gray-300">145</div>
                     <div className="p-2 border-b border-gray-300">SSALMUK</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
                         <a href="https://www.acmicpc.net/user/ppaemon">ppaemon</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
                         <a href="https://www.acmicpc.net/user/hongjk2006">hongjk2006</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
                         <a href="https://www.acmicpc.net/user/rkdalsdn0647">rkdalsdn0647</a></div>
 
                     <div className="p-2 border-b border-gray-300">175</div>
                     <div className="p-2 border-b border-gray-300">NOMAC</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/agape6614">agape6614</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/standardrkd">standardrkd</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/hraverals">hraverals</a></div>
                 </div>
             </div>
 
@@ -458,12 +458,12 @@ const Intro = () => {
 
                     <div className="p-2 border-b border-gray-300">61</div>
                     <div className="p-2 border-b border-gray-300">ANA</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/ygonepiece">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/awj1052">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300 font-bold">
-                        <a href="https://www.acmicpc.net/user/gytjdttop">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/awj1052">awj1052</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/tjgus1668">tjgus1668</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/hhs2003">hhs2003</a></div>
                 </div>
             </div>
         </div>
