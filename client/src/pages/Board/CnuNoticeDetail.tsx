@@ -8,7 +8,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 import useToastStore from '../../store/useToastStore';
 
-// 'id, title, publish_date, writer, markdown_content, original_url, created_at, updated_at'
 interface Post {
     id: string;
     title: string;
@@ -19,15 +18,33 @@ interface Post {
     created_at: string;
 }
 
+interface Image {
+    id: string;
+    url: string;
+    notice_id: string;
+}
+
+interface File {
+    id: string;
+    filename: string;
+    url: string;
+    notice_id: string;
+    created_at: string;
+}
+
 interface PostDetailResponse {
     success: boolean;
     post: Post;
+    images: Image[];
+    files: File[];
 }
 
 const PostDetail: React.FC = () => {
     const { urlid } = useParams<{ urlid: string }>();
     const navigate = useNavigate();
     const [post, setPost] = useState<Post | null>(null);
+    const [images, setImages] = useState<Image[]>([]);
+    const [files, setFiles] = useState<File[]>([]);
     const contentRef = useRef<HTMLDivElement>(null);
     const { showToast } = useToastStore();
 
@@ -44,11 +61,14 @@ const PostDetail: React.FC = () => {
         const fetchPost = async () => {
             try {
                 const res = await api.get<PostDetailResponse>(`/api/board/post/cnunotice/${urlid}`);
+
                 const post = res.data.post;
                 post.title = DOMPurify.sanitize(post.title);
                 post.markdown_content = DOMPurify.sanitize(post.markdown_content);
-
                 setPost(post);
+
+                setImages(res.data.images);
+                setFiles(res.data.files);
             } catch (err) {
                 console.error(err);
                 showToast('게시글을 불러오는데 실패했습니다.', 'error');

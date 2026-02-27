@@ -70,7 +70,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                         params: { category, page: page }
                     });
 
-                    setPosts(res.data.posts.map( (post) => ({ ...post, title: DOMPurify.sanitize(post.title) }) ));
+                    setPosts(res.data.posts.map((post) => ({ ...post, title: DOMPurify.sanitize(post.title) })));
                 }
                 setTotalPage(res.data.totalPage);
             } catch (err) {
@@ -94,7 +94,7 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold text-gray-800">{categoryName}</h1>
                 {user && (
-                    (user.admin || (user.member && (category === 'free' || category === 'algorithm'))) && category !== 'cnunotice'    
+                    (user.admin || (user.member && (category === 'free' || category === 'algorithm'))) && category !== 'cnunotice'
                 ) && (
                         <Link to={`/board/write?category=${category}`} className="btn btn-primary btn-sm">글쓰기</Link>
                     )}
@@ -137,16 +137,20 @@ const BoardList: React.FC<BoardListProps> = ({ category }) => {
                 </table>
             </div>
 
-            <div className="flex justify-center mt-8 join">
-                {Array.from({ length: totalPage }, (_, i) => i + 1).map((p) => (
-                    <Link
-                        key={p}
-                        to={`/board/${category}?page=${p}`}
-                        className={`join-item btn ${p === page ? 'btn-active' : ''}`}
-                    >
-                        {p}
-                    </Link>
-                ))}
+            <div className="mt-8 w-full overflow-x-auto pb-4">
+                <div className="flex w-max min-w-full justify-center">
+                    <div className="join">
+                        {Array.from({ length: totalPage }, (_, i) => i + 1).map((p) => (
+                            <Link
+                                key={p}
+                                to={`/board/${category}?page=${p}`}
+                                className={`join-item btn ${p === page ? 'btn-active' : ''}`}
+                            >
+                                {p}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

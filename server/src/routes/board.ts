@@ -65,13 +65,23 @@ router.get('/posts/cnunotice', async (req, res) => {
 router.get('/post/cnunotice/:urlid', async (req, res) => {
     const urlid = req.params.urlid;
 
-    const { data, error } = await supabase.from('notice')
+    const { data: notice, error: notice_error } = await supabase.from('notice')
         .select('id, title, publish_date, writer, markdown_content, original_url, created_at, updated_at')
         .eq('id', urlid).eq('ignore_flag', 'false');
-    if (error) throw error;
-    if (data.length == 0) throw new ExpressError(404, '그런 게시글 없습니다');
+    if (notice_error) throw notice_error;
+    if (notice.length == 0) throw new ExpressError(404, '그런 게시글 없습니다');
 
-    res.json({ success: true, post: data[0] });
+    const { data: images, error: images_error } = await supabase.from('notice_images')
+        .select('*')
+        .eq('notice_id', urlid)
+    if (images_error) throw images_error;
+
+    const { data: files, error: files_error } = await supabase.from('notice_files')
+        .select('*')
+        .eq('notice_id', urlid)
+    if (files_error) throw files_error;
+
+    res.json({ success: true, post: notice[0], images: images, files: files });
 })
 
 // 일반 게시글 CUD
