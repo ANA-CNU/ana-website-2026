@@ -43,8 +43,6 @@ const PostDetail: React.FC = () => {
     const { urlid } = useParams<{ urlid: string }>();
     const navigate = useNavigate();
     const [post, setPost] = useState<Post | null>(null);
-    const [images, setImages] = useState<Image[]>([]);
-    const [files, setFiles] = useState<File[]>([]);
     const contentRef = useRef<HTMLDivElement>(null);
     const { showToast } = useToastStore();
 
@@ -66,9 +64,6 @@ const PostDetail: React.FC = () => {
                 post.title = DOMPurify.sanitize(post.title);
                 post.markdown_content = DOMPurify.sanitize(post.markdown_content);
                 setPost(post);
-
-                setImages(res.data.images);
-                setFiles(res.data.files);
             } catch (err) {
                 console.error(err);
                 showToast('게시글을 불러오는데 실패했습니다.', 'error');
