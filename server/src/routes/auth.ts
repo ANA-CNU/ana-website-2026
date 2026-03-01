@@ -211,6 +211,8 @@ router.post('/social/register', validateSocialRegister, async (req: Request, res
 
     await newUser.save();
 
+    telegramMessage(`*새로운 유저가 가입했습니다!*\n\n유저 이름: ${name}\n유저 학번: ${userid}\n\n[제발 관리 좀 하러 가기](https://anacnu.kr)`)
+
     const tokenUser: TokenUser = {
         name: newUser.name,
         userid: newUser.userid,
