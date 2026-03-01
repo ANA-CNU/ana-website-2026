@@ -168,7 +168,7 @@ router.post('/comment/:urlid', authJwt, async (req, res) => {
     })
     await comment.save();
 
-    telegramMessage(`*게시판에 댓글이 달렸습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\게시판: ${post.category}\n작성한 유저: ${user.name}\n내용: ${comment.content}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
+    telegramMessage(`*게시판에 댓글이 달렸습니다!*\n\n작성한 유저: ${user.userid} ${user.name}\n게시판: ${post.category}\n내용: ${comment.content}\n\n[당장 구경가기](${process.env.CLIENT_URL}/board/${post.urlid})`);
 
     res.json({ success: true, comment: comment });
 })
