@@ -53,10 +53,10 @@ const Navbar: React.FC = () => {
                                 <div className='tooltip-content'>집</div>
                                 <NavLink to="/" className={navLinkClass}>홈</NavLink>
                             </li>
-                            <li className='tooltip tooltip-top tooltip-neutral'>
+                            {/* <li className='tooltip tooltip-top tooltip-neutral'>
                                 <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-3 font-mulmaru translate-y-1'>ANA 절찬 모집 중🥵</div></div>
                                 <NavLink to="/recruit" className={navLinkClass}>*입부 신청*</NavLink>
-                            </li>
+                            </li> */}
                             <li className='tooltip tooltip-neutral tooltip-top'>
                                 <div className='tooltip-content text-md text-orange-300'><div className='animate-bounce -rotate-3 font-mulmaru translate-y-1'>*우리 ANA를 소개합니다~*</div></div>
                                 <NavLink to="/about" className={navLinkClass}>ABOUT</NavLink>
@@ -80,6 +80,10 @@ const Navbar: React.FC = () => {
                             <li className='hidden lg:block tooltip tooltip-neutral tooltip-bottom'>
                                 <div className='tooltip-content'>컴퓨터인공지능학부 학과 공지</div>
                                 <NavLink to="/board/cnunotice" className={navLinkClass}>학과공지</NavLink>
+                            </li>
+                            <li className='hidden lg:block tooltip tooltip-neutral tooltip-bottom'>
+                                <div className='tooltip-content'>동아리의 역사를 알아봐요</div>
+                                <NavLink to="/history" className={navLinkClass}>연혁</NavLink>
                             </li>
                         </ul>
 
@@ -116,6 +120,10 @@ const Navbar: React.FC = () => {
                         <li className='tooltip tooltip-neutral tooltip-bottom'>
                             <div className='tooltip-content'>컴퓨터인공지능학부 학과 공지</div>
                             <NavLink to="/board/cnunotice" className={navLinkClass}>학과공지</NavLink>
+                        </li>
+                        <li className='tooltip tooltip-neutral tooltip-bottom'>
+                            <div className='tooltip-content'>동아리의 역사를 알아봐요</div>
+                            <NavLink to="/history" className={navLinkClass}>연혁</NavLink>
                         </li>
                     </ul>
                 </div>
