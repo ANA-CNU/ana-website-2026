@@ -4,7 +4,8 @@ import Layout from './pages/Layout/Layout';
 
 import Home from './pages/Home';
 const LazyAbout = lazy(() => import('./pages/About'));
-import Recruit from './pages/Recruit';
+import History from './pages/History';
+import Recruit from './pages/EventPage/Recruit';
 
 import BoardList from './pages/Board/BoardList';
 import PostDetail from './pages/Board/PostDetail';
@@ -20,7 +21,7 @@ import Register from './pages/Auth/Register';
 import SocialRegister from './pages/Auth/SocialRegister';
 import LoginSuccess from './pages/Auth/LoginSuccess';
 
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from './pages/EventPage/ErrorPage';
 
 import Admin from './pages/Admin/Admin';
 
@@ -43,6 +44,7 @@ function App() {
                     <Route index element={<Home />} />
 
                     <Route path='/about' element={<LazyAbout />} />
+                    <Route path='/history' element={<History />} />
 
                     <Route path='/gallery' element={<GalleryList />} />
                     <Route path='/gallery/write' element={<LazyAlbumWrite />} />
