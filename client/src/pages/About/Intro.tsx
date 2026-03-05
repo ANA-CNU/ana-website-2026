@@ -330,7 +330,7 @@ const Intro: React.FC = () => {
                 controls
                 loop
             >
-                <source src="/videos/ana_orientation.mp4" type="video/mp4" />
+                <source src="/videos/ana_orientation_captions.mp4" type="video/mp4" />
                 브라우저가 비디오 태그를 지원하지 않습니다.
             </video>
         </div>
