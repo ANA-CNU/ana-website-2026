@@ -13,7 +13,8 @@ const sections = [
         items: [
             { id: 'intro-ana', title: 'ANA' },
             { id: 'intro-roadmap', title: '월별 계획' },
-            { id: 'intro-result', title: '실적' }
+            { id: 'intro-result', title: '실적' },
+            { id: 'intro-video', title: '소개 영상' }
         ]
     },
     {
@@ -466,6 +467,19 @@ const Intro = () => {
                         <a href="https://www.acmicpc.net/user/hhs2003">hhs2003</a></div>
                 </div>
             </div>
+        </div>
+
+        <div id='intro-video' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
+            <h3 className="text-3xl sm:text-4xl font-extrabold underline decoration-teal-600 decoration-10">소개 영상</h3>
+
+            <video
+                className="w-full rounded-md shadow-md mt-10"
+                controls
+                loop
+            >
+                <source src="/videos/ana_orientation.mp4" type="video/mp4" />
+                브라우저가 비디오 태그를 지원하지 않습니다.
+            </video>
         </div>
     </section>
 }

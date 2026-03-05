@@ -21,13 +21,8 @@ const timeline: Timeline[] = [
     {
         year: 2025,
         events: [
-            { date: '2025.11', content: 'ANA 세미나' },
-            { date: '2025.10', content: 'ICPC 참가 (예선 5팀, 본선 1팀)' },
             { date: '2025.09', content: 'SW-IT CONTEST 대회 개최' },
-            { date: '2025.05', content: '알고리즘 초급/중급 교육' },
             { date: '2025.05', content: 'ANAGETDON 대회 개최' },
-            { date: '2025.05', content: 'ANA MT' },
-            { date: '2025.03', content: '입문자용 Java & Python 교육' },
             { date: '2025.01', content: '임원진 선발 (회장: 양영우, 부회장: 정민용)' },
         ]
     },
