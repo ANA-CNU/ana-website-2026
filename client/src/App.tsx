@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import Layout from './pages/Layout/Layout';
 
 import Home from './pages/Home';
-const LazyAbout = lazy(() => import('./pages/About'));
+const LazyAbout = lazy(() => import('./pages/About/About'));
 import History from './pages/History';
 import Recruit from './pages/EventPage/Recruit';
 
