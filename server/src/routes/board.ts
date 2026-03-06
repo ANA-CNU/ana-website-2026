@@ -175,7 +175,7 @@ router.post('/comment/:urlid', authJwt, async (req, res) => {
 
 router.delete('/comment/:id', authJwt, async (req, res) => {
     const id = req.params.id;
-    const comment = await Comment.findById(id).populate('author');
+    const comment = await Comment.findById(id);
     if (!comment) throw new ExpressError(404, '댓글이 존재하지 않습니다.');
 
     const tokenUser = req.user as TokenUser;
