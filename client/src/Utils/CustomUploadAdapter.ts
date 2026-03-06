@@ -17,7 +17,7 @@ class CustomUploadAdapter {
                     .then(response => {
                         if (response.data.success) {
                             resolve({
-                                default: `${import.meta.env.VITE_SERVER_URL}/api/images/${response.data.image.name}`
+                                default: `${import.meta.env.VITE_SERVER_URL || ''}/api/images/${response.data.image.name}`
                             });
                         } else {
                             reject(response.data.message || 'Upload failed');

@@ -262,21 +262,21 @@ const Intro: React.FC = () => {
 
                     <div className="p-2 border-b border-gray-300">95</div>
                     <div className="p-2 border-b border-gray-300">ANAlog</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/sossos5989">sossos5989</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/gytjdttop">gytjdttop</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/baek1004">baek1004</a></div>
 
                     <div className="p-2 border-b border-gray-300">133</div>
                     <div className="p-2 border-b border-gray-300">BANANA</div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
-                    <div className="hidden sm:block p-2 border-b border-gray-300">
-                        <a href="https://www.acmicpc.net">?</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/suminwow1">suminwow1</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/13months">13months</a></div>
+                    <div className="hidden sm:block p-2 border-b border-gray-300 hover:underline">
+                        <a href="https://www.acmicpc.net/user/factwy">factwy</a></div>
 
                     <div className="p-2 border-b border-gray-300">145</div>
                     <div className="p-2 border-b border-gray-300">SSALMUK</div>
