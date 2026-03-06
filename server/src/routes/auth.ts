@@ -140,7 +140,7 @@ router.post(
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true });
+        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
         res.json({ success: true, accessToken });
     }
 )
@@ -164,7 +164,7 @@ router.get('/google/callback', (req, res, next) => {
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true });
+        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
         res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
@@ -183,7 +183,7 @@ router.get('/github/callback', (req, res, next) => {
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true });
+        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
         res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
@@ -223,7 +223,7 @@ router.post('/social/register', validateSocialRegister, async (req: Request, res
     const accessToken = generateAccessToken(tokenUser);
     const refreshToken = generateRefreshToken(tokenUser);
 
-    res.cookie('refreshToken', refreshToken, { httpOnly: true });
+    res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
     res.json({ success: true, accessToken: accessToken });
 })
 
@@ -242,7 +242,7 @@ router.get(
             const accessToken = generateAccessToken(user);
             const refreshToken = generateRefreshToken(user);
 
-            res.cookie('refreshToken', refreshToken, { httpOnly: true });
+            res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
             res.redirect(`${ CLIENT_URL }/login/success?accessToken=${ accessToken }`);
         })(req, res, next);
     }
@@ -284,7 +284,7 @@ router.get(
             const accessToken = generateAccessToken(user);
             const refreshToken = generateRefreshToken(user);
 
-            res.cookie('refreshToken', refreshToken, { httpOnly: true });
+            res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
             res.redirect(`${ CLIENT_URL }/login/success?accessToken=${ accessToken }`);
         })(req, res, next);
     }
