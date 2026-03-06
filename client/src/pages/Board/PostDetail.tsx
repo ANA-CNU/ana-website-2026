@@ -185,7 +185,7 @@ const PostDetail: React.FC = () => {
                                 <span className="font-semibold text-sm">{comment.author.name || '알 수 없음'}</span>
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs opacity-50">{new Date(comment.createdAt).toLocaleDateString()}</span>
-                                    {user && (user.userid == comment.author.name || user.admin) &&
+                                    {user && (user.userid == comment.author.userid || user.admin) &&
                                         <button onClick={() => handleCommentDelete(comment._id)} className="text-xs text-error hover:underline">삭제</button>
                                     }
                                 </div>
