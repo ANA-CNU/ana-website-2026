@@ -19,19 +19,7 @@ const Activities: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-y-7 grid-flow-dense">
 
                 <div className='flex justify-center items-center sm:col-span-3 aspect-[5/4] rounded-md'>
-                    <Swiper
-                        slidesPerView={1.35}
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        autoplay={{ delay: 3000, disableOnInteraction: true }}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className=''
-                    >
-                        <SwiperSlide><img src="/images/anagetdon1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/anagetdon2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                    </Swiper>
+                    <Carousel imgSrc={["/images/anagetdon1.jpg", "/images/anagetdon2.jpg"]} />
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 sm:col-span-2'>
                     <h4 className='text-2xl sm:text-3xl text-indigo-800 font-extrabold'>ANAGETDON</h4>
@@ -40,22 +28,7 @@ const Activities: React.FC = () => {
                 </div>
 
                 <div className='flex justify-center items-center sm:col-start-3 sm:col-span-3 aspect-[5/4] rounded-md'>
-                    <Swiper
-                        slidesPerView={1.35}
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        autoplay={{ delay: 3000, disableOnInteraction: true }}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className=''
-                    >
-                        <SwiperSlide><img src="/images/swit4.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/swit5.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/swit1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/swit2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/swit3.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                    </Swiper>
+                    <Carousel imgSrc={["/images/swit4.jpg", "/images/swit5.jpg", "/images/swit1.jpg", "/images/swit2.jpg", "/images/swit3.jpg"]}/>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 sm:col-start-1 sm:col-span-2'>
                     <h4 className='text-2xl sm:text-3xl text-indigo-800 font-extrabold'>SW-IT CONTEST</h4>
@@ -111,22 +84,7 @@ const Activities: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-5 grid-flow-dense gap-y-7">
                 <div className='flex justify-center items-center sm:col-span-3 aspect-[5/4] rounded-md overflow-hidden'>
-                    <Swiper
-                        slidesPerView={2.2}
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        autoplay={{ delay: 3000, disableOnInteraction: true }}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className=''
-                    >
-                        <SwiperSlide><img src="/images/mentor1.jpg" className="rounded-md" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/mentor2.jpg" className="rounded-md" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/mentor3.jpg" className="rounded-md" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/mentor4.jpg" className="rounded-md" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/mentor5.jpg" className="rounded-md" /></SwiperSlide>
-                    </Swiper>
+                    <Carousel slidePerView={2.2} imgStyle={'w-full h-full object-cover rounded-md'} imgSrc={["/images/mentor1.jpg", "/images/mentor2.jpg", "/images/mentor3.jpg", "/images/mentor4.jpg", "/images/mentor5.jpg"]}/>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 sm:col-span-2'>
                     <h4 className='text-2xl sm:text-3xl text-indigo-800 font-extrabold text-center'>멘토 멘티</h4>
@@ -135,20 +93,7 @@ const Activities: React.FC = () => {
                 </div>
 
                 <div className='flex justify-center items-center sm:col-span-3 sm:col-start-3 aspect-[5/4] rounded-md'>
-                    <Swiper
-                        slidesPerView={1.35}
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        autoplay={{ delay: 3000, disableOnInteraction: true }}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className=''
-                    >
-                        <SwiperSlide><img src="/images/mt1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/gaechong.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/jongchong.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                    </Swiper>
+                    <Carousel imgSrc={["/images/mt1.jpg", "/images/gaechong.jpg", "/images/jongchong.jpg"]}/>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 sm:col-span-2 sm:col-start-1'>
                     <h4 className='text-2xl sm:text-3xl text-indigo-800 font-extrabold text-center '>MT, 개강총회, 종강총회, 막동</h4>
@@ -156,19 +101,7 @@ const Activities: React.FC = () => {
                 </div>
 
                 <div className='flex justify-center items-center sm:col-span-3 aspect-[5/4] rounded-md'>
-                    <Swiper
-                        slidesPerView={1.35}
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        autoplay={{ delay: 3000, disableOnInteraction: true }}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className=''
-                    >
-                        <SwiperSlide><img src="/images/soccer.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        <SwiperSlide><img src="/images/soccer2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                    </Swiper>
+                    <Carousel imgSrc={["/images/soccer.jpg", "/images/soccer2.jpg"]}/>
                 </div>
                 <div className='flex flex-col justify-around items-center p-5 sm:col-span-2'>
                     <h4 className='text-2xl sm:text-3xl text-indigo-800 font-extrabold text-center'>풋살 모임</h4>
@@ -185,19 +118,7 @@ const Activities: React.FC = () => {
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="세미나" />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
-                        <Swiper
-                            slidesPerView={1.35}
-                            spaceBetween={10}
-                            centeredSlides={true}
-                            autoplay={{ delay: 3000, disableOnInteraction: true }}
-                            pagination={{ clickable: true }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            className=''
-                        >
-                            <SwiperSlide><img src="/images/seminar1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/seminar2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        </Swiper>
+                        <Carousel imgSrc={["/images/seminar1.jpg", "/images/seminar2.jpg"]}/>
                     </div>
                 </div>
 
@@ -205,40 +126,14 @@ const Activities: React.FC = () => {
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="하루하나" />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
-                        <Swiper
-                            slidesPerView={1.35}
-                            spaceBetween={10}
-                            centeredSlides={true}
-                            autoplay={{ delay: 3000, disableOnInteraction: true }}
-                            pagination={{ clickable: true }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            className=''
-                        >
-                            <SwiperSlide><img src="/images/anabada2.jpg" className="rounded-md aspect-square object-contain bg-gray-500" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/anabada1.jpg" className="rounded-md aspect-square object-contain bg-gray-500" /></SwiperSlide>
-                        </Swiper>
+                        <Carousel imgStyle='rounded-md aspect-square object-contain bg-gray-500' imgSrc={["/images/anabada2.jpg", "/images/anabada1.jpg"]}/>
                     </div>
                 </div>
 
                 <input type="radio" name="my_tabs_3" className="tab font-bold" aria-label="ICPC&UCPC" defaultChecked />
                 <div className="tab-content bg-base-100 border-base-300 p-6">
                     <div className='flex justify-center items-center aspect-[5/4] rounded-md'>
-                        <Swiper
-                            slidesPerView={1.35}
-                            spaceBetween={10}
-                            centeredSlides={true}
-                            autoplay={{ delay: 3000, disableOnInteraction: true }}
-                            pagination={{ clickable: true }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            className=''
-                        >
-                            <SwiperSlide><img src="/images/ucpcicpc1.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/ucpcicpc2.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/ucpcicpc3.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/ucpcicpc4.jpg" className="rounded-md aspect-square object-cover" /></SwiperSlide>
-                        </Swiper>
+                        <Carousel imgSrc={["/images/ucpcicpc1.jpg", "/images/ucpcicpc2.jpg", "/images/ucpcicpc3.jpg", "/images/ucpcicpc4.jpg"]}/>
                     </div>
                 </div>
             </div>
@@ -249,3 +144,28 @@ const Activities: React.FC = () => {
 }
 
 export default Activities
+
+interface CarouselProps {
+    imgSrc: string[];
+    imgStyle?: string;
+    slidePerView?: number;
+}
+
+const Carousel: React.FC<CarouselProps> = ({ imgSrc, imgStyle = 'rounded-md aspect-square object-cover', slidePerView = 1.35 }) => {
+    return <Swiper
+        slidesPerView={slidePerView}
+        spaceBetween={10}
+        centeredSlides={true}
+        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        pagination={{ clickable: true }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className=''
+    >
+        {imgSrc.map((source) => (
+            <SwiperSlide key={source}>
+                <img src={source} className={imgStyle} />
+            </SwiperSlide>
+        ))}
+    </Swiper>
+}
