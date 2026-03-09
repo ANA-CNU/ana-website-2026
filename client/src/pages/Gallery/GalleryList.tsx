@@ -84,7 +84,7 @@ const GalleryList: React.FC = () => {
 
             )
             }
-            {albums.length === 0 && (
+            {albums.length === 0 && !loading && (
                 <div className="text-center py-10 text-gray-500">
                     등록된 앨범이 없습니다.
                 </div>

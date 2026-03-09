@@ -20,10 +20,10 @@ const sections: Section[] = [
         title: '동아리 소개',
         color: 'text-teal-600 border-teal-600',
         items: [
+            { id: 'intro-video', title: '소개 영상' },
             { id: 'intro-ana', title: 'ANA' },
             { id: 'intro-roadmap', title: '월별 계획' },
-            { id: 'intro-result', title: '실적' },
-            { id: 'intro-video', title: '소개 영상' }
+            { id: 'intro-result', title: '실적' }
         ]
     },
     {

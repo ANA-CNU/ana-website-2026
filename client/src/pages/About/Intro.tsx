@@ -4,6 +4,19 @@ const Intro: React.FC = () => {
     return <section id="intro" className="min-h-[50vh]">
         <h2 className="text-3xl sm:text-5xl font-extrabold mb-10 ml-10 text-teal-600">동아리 소개</h2>
 
+        <div id='intro-video' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
+            <h3 className="text-3xl sm:text-4xl font-extrabold underline decoration-teal-600 decoration-10">소개 영상</h3>
+
+            <video
+                className="w-full rounded-md shadow-md mt-10"
+                controls
+                loop
+            >
+                <source src="/videos/ana_orientation_captions.mp4" type="video/mp4" />
+                브라우저가 비디오 태그를 지원하지 않습니다.
+            </video>
+        </div>
+
         <div id='intro-ana' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
             <h3 className="text-3xl sm:text-4xl font-bold underline decoration-teal-600 decoration-10">ANA</h3>
             <p className="text-xl sm:text-2xl mt-8">
@@ -322,18 +335,6 @@ const Intro: React.FC = () => {
             </div>
         </div>
 
-        <div id='intro-video' className='bg-base-100 p-10 rounded-md border border-base-300 mb-10'>
-            <h3 className="text-3xl sm:text-4xl font-extrabold underline decoration-teal-600 decoration-10">소개 영상</h3>
-
-            <video
-                className="w-full rounded-md shadow-md mt-10"
-                controls
-                loop
-            >
-                <source src="/videos/ana_orientation_captions.mp4" type="video/mp4" />
-                브라우저가 비디오 태그를 지원하지 않습니다.
-            </video>
-        </div>
     </section>
 }
 

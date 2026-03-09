@@ -116,10 +116,11 @@ const Home: React.FC = () => {
 
                 {/* ========== Board ========== */}
                 <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <Board title="공지사항" category="notice" />
-                    <Board title="학과 공지" category="cnunotice" />
-                    <Board title="알고리즘 꿀팁" category="algorithm" />
-                    <Board title="자유게시판" category="free" />
+                    <MiniBoard title="공지사항" category="notice" />
+                    <MiniBoard title="학과 공지" category="cnunotice" />
+                    <MiniBoard title="알고리즘 꿀팁" category="algorithm" />
+                    <MiniBoard title="자유게시판" category="free" />
+                    <MiniGallery />
                 </div>
 
                 {/* ========== Etc ========== */}
@@ -189,7 +190,7 @@ interface CnuNoticeResponse {
     posts: CnuNotice[];
 }
 
-const Board: React.FC<{ title: string, category: string }> = ({ title, category }) => {
+const MiniBoard: React.FC<{ title: string, category: string }> = ({ title, category }) => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -233,7 +234,8 @@ const Board: React.FC<{ title: string, category: string }> = ({ title, category 
     };
 
     return (
-        <div className="card bg-base-100 shadow-md h-full min-h-[220px] overflow-hidden border border-base-200">
+        <div className="card bg-base-100 shadow-md h-full overflow-hidden border border-base-200">
+
             <div className="bg-primary px-5 py-2 flex justify-between items-center">
                 <h3 className="font-bold text-primary-content text-lg flex items-center gap-2">
                     {title}
@@ -242,10 +244,11 @@ const Board: React.FC<{ title: string, category: string }> = ({ title, category 
                     더보기 +
                 </Link>
             </div>
+
             {loading ? (
-                <div className='card-body p-4 pt-4 skeleton'></div>
+                <div className='card-body p-4 h-30 skeleton'></div>
             ) : (
-                <div className="card-body p-4 pt-4">
+                <div className="card-body p-4">
                     <ul className="text-sm space-y-3">
                         {posts.length === 0 ? (
                             <li className="text-center text-gray-400 py-4">게시글이 없습니다.</li>
@@ -265,8 +268,87 @@ const Board: React.FC<{ title: string, category: string }> = ({ title, category 
                     </ul>
                 </div>
             )}
+
         </div>
     );
 }
 
 export default Home;
+
+
+interface Image {
+    _id: string;
+    name: string;
+}
+
+interface Album {
+    _id: string;
+    urlid: string;
+    content: string;
+    images: Image[];
+    author: {
+        _id: string;
+        name: string;
+    };
+}
+
+interface GalleryResponse {
+    success: boolean;
+    albums: Album[];
+}
+
+const MiniGallery: React.FC = () => {
+    const [albums, setAlbums] = useState<Album[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchAlbums = async () => {
+            try {
+                const res = await api.get<GalleryResponse>('/api/gallery/albums');
+                if (res.data.success) {
+                    setAlbums(res.data.albums);
+                }
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchAlbums();
+    }, []);
+
+    return (
+        <div className="card bg-base-100 shadow-md h-full overflow-hidden border border-base-200 md:col-span-2">
+
+            <div className="bg-primary px-5 py-2 flex justify-between items-center">
+                <h3 className="font-bold text-primary-content text-lg flex items-center gap-2">
+                    갤러리
+                </h3>
+                <Link to={`/gallery`} className="text-xs text-primary-content/80 hover:text-white hover:underline">
+                    더보기 +
+                </Link>
+            </div>
+
+            {loading ? (
+                <div className='card-body p-4 grid grid-cols-3 gap-4'>
+                    {[0, 1, 2].map((el) => (
+                        <div key={el} className='aspect-square skeleton' />
+                    ))}
+                </div>
+            ) : (
+                <div className="card-body p-4 grid grid-cols-3 gap-4">
+                    {albums.slice(0, 3).map((album) => (
+                        <Link to={`/gallery/${album.urlid}`} key={album.urlid}>
+                            <img
+                                src={`${import.meta.env.VITE_SERVER_URL || ''}/api/images/${album.images[0].name}`}
+                                alt="Album Cover"
+                                className='aspect-square object-cover hover:brightness-90'
+                            />
+                        </Link>
+                    ))}
+                </div>
+            )}
+
+        </div>
+    )
+}
