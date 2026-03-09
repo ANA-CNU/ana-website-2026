@@ -90,6 +90,7 @@ const PostDetail: React.FC = () => {
                     </div>
                     <h1 className="text-3xl font-bold text-gray-800 mb-2">{post.title}</h1>
                     <div className="text-sm font-medium opacity-70">작성자: {post.writer}</div>
+                    <div className='text-sm text-primary mt-5'>원본 게시물: <Link target='_blank' to={post.original_url} className='text-secondary underline'>{post.original_url}</Link></div>
                 </div>
 
                 <div className='prose max-w-none min-h-[200px] mb-8 ck-content'>
