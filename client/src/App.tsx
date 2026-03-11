@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Layout from './pages/Layout/Layout';
 
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 const LazyAbout = lazy(() => import('./pages/About/About'));
 import History from './pages/History';
 import Recruit from './pages/EventPage/Recruit';
