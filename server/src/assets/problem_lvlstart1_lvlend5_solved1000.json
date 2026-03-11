@@ -1,0 +1,5472 @@
+[
+    {
+        "tier": 1,
+        "title": "A+B",
+        "num": 1000
+    },
+    {
+        "tier": 1,
+        "title": "A-B",
+        "num": 1001
+    },
+    {
+        "tier": 1,
+        "title": "A/B",
+        "num": 1008
+    },
+    {
+        "tier": 4,
+        "title": "분산처리",
+        "num": 1009
+    },
+    {
+        "tier": 5,
+        "title": "명령 프롬프트",
+        "num": 1032
+    },
+    {
+        "tier": 5,
+        "title": "약수",
+        "num": 1037
+    },
+    {
+        "tier": 4,
+        "title": "나누기",
+        "num": 1075
+    },
+    {
+        "tier": 4,
+        "title": "저항",
+        "num": 1076
+    },
+    {
+        "tier": 3,
+        "title": "직사각형에서 탈출",
+        "num": 1085
+    },
+    {
+        "tier": 4,
+        "title": "하얀 칸",
+        "num": 1100
+    },
+    {
+        "tier": 5,
+        "title": "더하기 사이클",
+        "num": 1110
+    },
+    {
+        "tier": 5,
+        "title": "적어도 대부분의 배수",
+        "num": 1145
+    },
+    {
+        "tier": 4,
+        "title": "단어의 개수",
+        "num": 1152
+    },
+    {
+        "tier": 5,
+        "title": "단어 공부",
+        "num": 1157
+    },
+    {
+        "tier": 4,
+        "title": "농구 경기",
+        "num": 1159
+    },
+    {
+        "tier": 4,
+        "title": "운동",
+        "num": 1173
+    },
+    {
+        "tier": 4,
+        "title": "8진수 2진수",
+        "num": 1212
+    },
+    {
+        "tier": 4,
+        "title": "이상한 곱셈",
+        "num": 1225
+    },
+    {
+        "tier": 4,
+        "title": "주사위",
+        "num": 1233
+    },
+    {
+        "tier": 5,
+        "title": "성 지키기",
+        "num": 1236
+    },
+    {
+        "tier": 3,
+        "title": "부호",
+        "num": 1247
+    },
+    {
+        "tier": 4,
+        "title": "이진수 덧셈",
+        "num": 1252
+    },
+    {
+        "tier": 5,
+        "title": "팰린드롬수",
+        "num": 1259
+    },
+    {
+        "tier": 2,
+        "title": "모음의 개수",
+        "num": 1264
+    },
+    {
+        "tier": 3,
+        "title": "핸드폰 요금",
+        "num": 1267
+    },
+    {
+        "tier": 1,
+        "title": "엄청난 부자2",
+        "num": 1271
+    },
+    {
+        "tier": 3,
+        "title": "집 주소",
+        "num": 1284
+    },
+    {
+        "tier": 5,
+        "title": "쉽게 푸는 문제",
+        "num": 1292
+    },
+    {
+        "tier": 5,
+        "title": "팀 이름 정하기",
+        "num": 1296
+    },
+    {
+        "tier": 4,
+        "title": "TV 크기",
+        "num": 1297
+    },
+    {
+        "tier": 1,
+        "title": "두 수 비교하기",
+        "num": 1330
+    },
+    {
+        "tier": 5,
+        "title": "부재중 전화",
+        "num": 1333
+    },
+    {
+        "tier": 4,
+        "title": "진짜 공간",
+        "num": 1350
+    },
+    {
+        "tier": 5,
+        "title": "유진수",
+        "num": 1356
+    },
+    {
+        "tier": 4,
+        "title": "뒤집힌 덧셈",
+        "num": 1357
+    },
+    {
+        "tier": 4,
+        "title": "펫",
+        "num": 1362
+    },
+    {
+        "tier": 4,
+        "title": "가장 많은 글자",
+        "num": 1371
+    },
+    {
+        "tier": 5,
+        "title": "2진수 8진수",
+        "num": 1373
+    },
+    {
+        "tier": 4,
+        "title": "노래 악보",
+        "num": 1392
+    },
+    {
+        "tier": 4,
+        "title": "24",
+        "num": 1408
+    },
+    {
+        "tier": 4,
+        "title": "책 정리",
+        "num": 1434
+    },
+    {
+        "tier": 4,
+        "title": "타임머신",
+        "num": 1440
+    },
+    {
+        "tier": 4,
+        "title": "피시방 알바",
+        "num": 1453
+    },
+    {
+        "tier": 5,
+        "title": "세준세비",
+        "num": 1524
+    },
+    {
+        "tier": 5,
+        "title": "가장 큰 금민수",
+        "num": 1526
+    },
+    {
+        "tier": 5,
+        "title": "평균",
+        "num": 1546
+    },
+    {
+        "tier": 3,
+        "title": "공",
+        "num": 1547
+    },
+    {
+        "tier": 4,
+        "title": "16진수",
+        "num": 1550
+    },
+    {
+        "tier": 5,
+        "title": "수열의 변화",
+        "num": 1551
+    },
+    {
+        "tier": 4,
+        "title": "새",
+        "num": 1568
+    },
+    {
+        "tier": 4,
+        "title": "영식이와 친구들",
+        "num": 1592
+    },
+    {
+        "tier": 3,
+        "title": "꼬리를 무는 숫자 나열",
+        "num": 1598
+    },
+    {
+        "tier": 4,
+        "title": "트로피 진열",
+        "num": 1668
+    },
+    {
+        "tier": 5,
+        "title": "DNA 해독",
+        "num": 1672
+    },
+    {
+        "tier": 4,
+        "title": "치킨 쿠폰",
+        "num": 1673
+    },
+    {
+        "tier": 4,
+        "title": "줄 세우기",
+        "num": 1681
+    },
+    {
+        "tier": 3,
+        "title": "생장점",
+        "num": 1703
+    },
+    {
+        "tier": 4,
+        "title": "손익분기점",
+        "num": 1712
+    },
+    {
+        "tier": 4,
+        "title": "암호",
+        "num": 1718
+    },
+    {
+        "tier": 4,
+        "title": "추론",
+        "num": 1731
+    },
+    {
+        "tier": 4,
+        "title": "폭죽쇼",
+        "num": 1773
+    },
+    {
+        "tier": 1,
+        "title": "Moo",
+        "num": 1809
+    },
+    {
+        "tier": 5,
+        "title": "암호 키",
+        "num": 1816
+    },
+    {
+        "tier": 5,
+        "title": "나머지와 몫이 같은 수",
+        "num": 1834
+    },
+    {
+        "tier": 3,
+        "title": "암호제작",
+        "num": 1837
+    },
+    {
+        "tier": 5,
+        "title": "암호",
+        "num": 1855
+    },
+    {
+        "tier": 4,
+        "title": "문어 숫자",
+        "num": 1864
+    },
+    {
+        "tier": 4,
+        "title": "좋은 자동차 번호판",
+        "num": 1871
+    },
+    {
+        "tier": 4,
+        "title": "애너그램 만들기",
+        "num": 1919
+    },
+    {
+        "tier": 5,
+        "title": "2007년",
+        "num": 1924
+    },
+    {
+        "tier": 5,
+        "title": "최소공배수",
+        "num": 1934
+    },
+    {
+        "tier": 5,
+        "title": "디지털시계",
+        "num": 1942
+    },
+    {
+        "tier": 5,
+        "title": "달팽이2",
+        "num": 1952
+    },
+    {
+        "tier": 4,
+        "title": "오각형, 오각형, 오각형…",
+        "num": 1964
+    },
+    {
+        "tier": 5,
+        "title": "Number Game",
+        "num": 1975
+    },
+    {
+        "tier": 4,
+        "title": "완전제곱수",
+        "num": 1977
+    },
+    {
+        "tier": 4,
+        "title": "소수 찾기",
+        "num": 1978
+    },
+    {
+        "tier": 3,
+        "title": "플러그",
+        "num": 2010
+    },
+    {
+        "tier": 4,
+        "title": "자기복제수",
+        "num": 2028
+    },
+    {
+        "tier": 5,
+        "title": "반올림",
+        "num": 2033
+    },
+    {
+        "tier": 5,
+        "title": "문자메시지",
+        "num": 2037
+    },
+    {
+        "tier": 5,
+        "title": "지수연산",
+        "num": 2052
+    },
+    {
+        "tier": 3,
+        "title": "좋은 암호",
+        "num": 2061
+    },
+    {
+        "tier": 2,
+        "title": "럭비 클럽",
+        "num": 2083
+    },
+    {
+        "tier": 4,
+        "title": "나는 너가 살아온 날을 알고 있다",
+        "num": 2139
+    },
+    {
+        "tier": 4,
+        "title": "숫자 놀이",
+        "num": 2145
+    },
+    {
+        "tier": 4,
+        "title": "소수 단어",
+        "num": 2153
+    },
+    {
+        "tier": 4,
+        "title": "수 이어 쓰기 3",
+        "num": 2154
+    },
+    {
+        "tier": 5,
+        "title": "그림 비교",
+        "num": 2160
+    },
+    {
+        "tier": 5,
+        "title": "초콜릿 자르기",
+        "num": 2163
+    },
+    {
+        "tier": 5,
+        "title": "도비의 난독증 테스트",
+        "num": 2204
+    },
+    {
+        "tier": 4,
+        "title": "분해합",
+        "num": 2231
+    },
+    {
+        "tier": 5,
+        "title": "콘도 선정",
+        "num": 2246
+    },
+    {
+        "tier": 4,
+        "title": "벌집",
+        "num": 2292
+    },
+    {
+        "tier": 5,
+        "title": "일곱 난쟁이",
+        "num": 2309
+    },
+    {
+        "tier": 1,
+        "title": "긴자리 계산",
+        "num": 2338
+    },
+    {
+        "tier": 4,
+        "title": "시그마",
+        "num": 2355
+    },
+    {
+        "tier": 4,
+        "title": "도비의 영어 공부",
+        "num": 2386
+    },
+    {
+        "tier": 1,
+        "title": "Rook",
+        "num": 2393
+    },
+    {
+        "tier": 4,
+        "title": "거리의 합",
+        "num": 2399
+    },
+    {
+        "tier": 1,
+        "title": "사파리월드",
+        "num": 2420
+    },
+    {
+        "tier": 5,
+        "title": "기상청 인턴 신현수",
+        "num": 2435
+    },
+    {
+        "tier": 1,
+        "title": "별 찍기 - 1",
+        "num": 2438
+    },
+    {
+        "tier": 2,
+        "title": "별 찍기 - 2",
+        "num": 2439
+    },
+    {
+        "tier": 2,
+        "title": "별 찍기 - 3",
+        "num": 2440
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 4",
+        "num": 2441
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 5",
+        "num": 2442
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 6",
+        "num": 2443
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 7",
+        "num": 2444
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 8",
+        "num": 2445
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 9",
+        "num": 2446
+    },
+    {
+        "tier": 3,
+        "title": "지능형 기차",
+        "num": 2455
+    },
+    {
+        "tier": 5,
+        "title": "나는 학급회장이다",
+        "num": 2456
+    },
+    {
+        "tier": 3,
+        "title": "지능형 기차 2",
+        "num": 2460
+    },
+    {
+        "tier": 1,
+        "title": "검증수",
+        "num": 2475
+    },
+    {
+        "tier": 3,
+        "title": "주사위 게임",
+        "num": 2476
+    },
+    {
+        "tier": 2,
+        "title": "주사위 세개",
+        "num": 2480
+    },
+    {
+        "tier": 4,
+        "title": "주사위 네개",
+        "num": 2484
+    },
+    {
+        "tier": 3,
+        "title": "윷놀이",
+        "num": 2490
+    },
+    {
+        "tier": 4,
+        "title": "연속구간",
+        "num": 2495
+    },
+    {
+        "tier": 3,
+        "title": "약수 구하기",
+        "num": 2501
+    },
+    {
+        "tier": 3,
+        "title": "점수계산",
+        "num": 2506
+    },
+    {
+        "tier": 4,
+        "title": "카드놀이",
+        "num": 2511
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 12",
+        "num": 2522
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 13",
+        "num": 2523
+    },
+    {
+        "tier": 3,
+        "title": "오븐 시계",
+        "num": 2525
+    },
+    {
+        "tier": 5,
+        "title": "싸이클",
+        "num": 2526
+    },
+    {
+        "tier": 2,
+        "title": "인공지능 시계",
+        "num": 2530
+    },
+    {
+        "tier": 3,
+        "title": "사탕 선생 고창영",
+        "num": 2547
+    },
+    {
+        "tier": 1,
+        "title": "Hello World",
+        "num": 2557
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 2",
+        "num": 2558
+    },
+    {
+        "tier": 3,
+        "title": "최댓값",
+        "num": 2562
+    },
+    {
+        "tier": 3,
+        "title": "최댓값",
+        "num": 2566
+    },
+    {
+        "tier": 3,
+        "title": "홀수",
+        "num": 2576
+    },
+    {
+        "tier": 4,
+        "title": "숫자의 개수",
+        "num": 2577
+    },
+    {
+        "tier": 4,
+        "title": "소수",
+        "num": 2581
+    },
+    {
+        "tier": 4,
+        "title": "대표값2",
+        "num": 2587
+    },
+    {
+        "tier": 3,
+        "title": "곱셈",
+        "num": 2588
+    },
+    {
+        "tier": 4,
+        "title": "대표값",
+        "num": 2592
+    },
+    {
+        "tier": 5,
+        "title": "비밀편지",
+        "num": 2596
+    },
+    {
+        "tier": 4,
+        "title": "줄 세우기",
+        "num": 2605
+    },
+    {
+        "tier": 5,
+        "title": "최대공약수와 최소공배수",
+        "num": 2609
+    },
+    {
+        "tier": 4,
+        "title": "문자열 반복",
+        "num": 2675
+    },
+    {
+        "tier": 5,
+        "title": "동전 게임",
+        "num": 2684
+    },
+    {
+        "tier": 5,
+        "title": "N번째 큰 수",
+        "num": 2693
+    },
+    {
+        "tier": 4,
+        "title": "초6 수학",
+        "num": 2702
+    },
+    {
+        "tier": 4,
+        "title": "Cryptoquote",
+        "num": 2703
+    },
+    {
+        "tier": 4,
+        "title": "오타맨 고창영",
+        "num": 2711
+    },
+    {
+        "tier": 3,
+        "title": "미국 스타일",
+        "num": 2712
+    },
+    {
+        "tier": 3,
+        "title": "세탁소 사장 동혁",
+        "num": 2720
+    },
+    {
+        "tier": 3,
+        "title": "삼각수의 합",
+        "num": 2721
+    },
+    {
+        "tier": 5,
+        "title": "이진수 덧셈",
+        "num": 2729
+    },
+    {
+        "tier": 3,
+        "title": "행렬 덧셈",
+        "num": 2738
+    },
+    {
+        "tier": 1,
+        "title": "구구단",
+        "num": 2739
+    },
+    {
+        "tier": 1,
+        "title": "N 찍기",
+        "num": 2741
+    },
+    {
+        "tier": 1,
+        "title": "기찍 N",
+        "num": 2742
+    },
+    {
+        "tier": 1,
+        "title": "단어 길이 재기",
+        "num": 2743
+    },
+    {
+        "tier": 1,
+        "title": "대소문자 바꾸기",
+        "num": 2744
+    },
+    {
+        "tier": 4,
+        "title": "진법 변환",
+        "num": 2745
+    },
+    {
+        "tier": 4,
+        "title": "피보나치 수",
+        "num": 2747
+    },
+    {
+        "tier": 5,
+        "title": "피보나치 수 2",
+        "num": 2748
+    },
+    {
+        "tier": 4,
+        "title": "수 정렬하기",
+        "num": 2750
+    },
+    {
+        "tier": 2,
+        "title": "세수정렬",
+        "num": 2752
+    },
+    {
+        "tier": 1,
+        "title": "윤년",
+        "num": 2753
+    },
+    {
+        "tier": 3,
+        "title": "학점계산",
+        "num": 2754
+    },
+    {
+        "tier": 5,
+        "title": "이번학기 평점은 몇점?",
+        "num": 2755
+    },
+    {
+        "tier": 3,
+        "title": "자전거 속도",
+        "num": 2765
+    },
+    {
+        "tier": 4,
+        "title": "아름다운 수",
+        "num": 2774
+    },
+    {
+        "tier": 5,
+        "title": "부녀회장이 될테야",
+        "num": 2775
+    },
+    {
+        "tier": 3,
+        "title": "삼각 김밥",
+        "num": 2783
+    },
+    {
+        "tier": 4,
+        "title": "유학 금지",
+        "num": 2789
+    },
+    {
+        "tier": 4,
+        "title": "블랙잭",
+        "num": 2798
+    },
+    {
+        "tier": 5,
+        "title": "크로스워드 만들기",
+        "num": 2804
+    },
+    {
+        "tier": 5,
+        "title": "컵홀더",
+        "num": 2810
+    },
+    {
+        "tier": 5,
+        "title": "디지털 티비",
+        "num": 2816
+    },
+    {
+        "tier": 2,
+        "title": "파티가 끝나고 난 뒤",
+        "num": 2845
+    },
+    {
+        "tier": 5,
+        "title": "오르막길",
+        "num": 2846
+    },
+    {
+        "tier": 5,
+        "title": "슈퍼 마리오",
+        "num": 2851
+    },
+    {
+        "tier": 3,
+        "title": "FBI",
+        "num": 2857
+    },
+    {
+        "tier": 4,
+        "title": "기숙사 바닥",
+        "num": 2858
+    },
+    {
+        "tier": 3,
+        "title": "이게 분수?",
+        "num": 2863
+    },
+    {
+        "tier": 4,
+        "title": "5와 6의 차이",
+        "num": 2864
+    },
+    {
+        "tier": 5,
+        "title": "달팽이는 올라가고 싶다",
+        "num": 2869
+    },
+    {
+        "tier": 3,
+        "title": "대회 or 인턴",
+        "num": 2875
+    },
+    {
+        "tier": 3,
+        "title": "알람 시계",
+        "num": 2884
+    },
+    {
+        "tier": 5,
+        "title": "무알콜 칵테일",
+        "num": 2896
+    },
+    {
+        "tier": 5,
+        "title": "몬스터 트럭",
+        "num": 2897
+    },
+    {
+        "tier": 3,
+        "title": "KMP는 왜 KMP일까?",
+        "num": 2902
+    },
+    {
+        "tier": 3,
+        "title": "중앙 이동 알고리즘",
+        "num": 2903
+    },
+    {
+        "tier": 4,
+        "title": "상수",
+        "num": 2908
+    },
+    {
+        "tier": 4,
+        "title": "캔디 구매",
+        "num": 2909
+    },
+    {
+        "tier": 3,
+        "title": "저작권",
+        "num": 2914
+    },
+    {
+        "tier": 4,
+        "title": "음계",
+        "num": 2920
+    },
+    {
+        "tier": 3,
+        "title": "도미노",
+        "num": 2921
+    },
+    {
+        "tier": 3,
+        "title": "소음",
+        "num": 2935
+    },
+    {
+        "tier": 5,
+        "title": "나무 조각",
+        "num": 2947
+    },
+    {
+        "tier": 4,
+        "title": "2009년",
+        "num": 2948
+    },
+    {
+        "tier": 3,
+        "title": "나는 요리사다",
+        "num": 2953
+    },
+    {
+        "tier": 4,
+        "title": "창영이의 일기장",
+        "num": 2954
+    },
+    {
+        "tier": 3,
+        "title": "거북이",
+        "num": 2959
+    },
+    {
+        "tier": 3,
+        "title": "캥거루 세마리",
+        "num": 2965
+    },
+    {
+        "tier": 4,
+        "title": "찍기",
+        "num": 2966
+    },
+    {
+        "tier": 3,
+        "title": "Transactions",
+        "num": 2975
+    },
+    {
+        "tier": 4,
+        "title": "트럭 주차",
+        "num": 2979
+    },
+    {
+        "tier": 3,
+        "title": "세 수",
+        "num": 2985
+    },
+    {
+        "tier": 3,
+        "title": "사나운 개",
+        "num": 2991
+    },
+    {
+        "tier": 3,
+        "title": "네 번째 수",
+        "num": 2997
+    },
+    {
+        "tier": 4,
+        "title": "8진수",
+        "num": 2998
+    },
+    {
+        "tier": 5,
+        "title": "비밀 이메일",
+        "num": 2999
+    },
+    {
+        "tier": 1,
+        "title": "킹, 퀸, 룩, 비숍, 나이트, 폰",
+        "num": 3003
+    },
+    {
+        "tier": 3,
+        "title": "체스판 조각",
+        "num": 3004
+    },
+    {
+        "tier": 3,
+        "title": "네 번째 점",
+        "num": 3009
+    },
+    {
+        "tier": 5,
+        "title": "마술사 이민혁",
+        "num": 3023
+    },
+    {
+        "tier": 4,
+        "title": "창영마을",
+        "num": 3028
+    },
+    {
+        "tier": 3,
+        "title": "경고",
+        "num": 3029
+    },
+    {
+        "tier": 3,
+        "title": "앵그리 창영",
+        "num": 3034
+    },
+    {
+        "tier": 5,
+        "title": "스캐너",
+        "num": 3035
+    },
+    {
+        "tier": 4,
+        "title": "백설 공주와 일곱 난쟁이",
+        "num": 3040
+    },
+    {
+        "tier": 5,
+        "title": "N-퍼즐",
+        "num": 3041
+    },
+    {
+        "tier": 2,
+        "title": "R2",
+        "num": 3046
+    },
+    {
+        "tier": 3,
+        "title": "ABC",
+        "num": 3047
+    },
+    {
+        "tier": 4,
+        "title": "나머지",
+        "num": 3052
+    },
+    {
+        "tier": 3,
+        "title": "택시 기하학",
+        "num": 3053
+    },
+    {
+        "tier": 3,
+        "title": "짝수를 찾아라",
+        "num": 3058
+    },
+    {
+        "tier": 3,
+        "title": "등장하지 않는 문자의 합",
+        "num": 3059
+    },
+    {
+        "tier": 4,
+        "title": "수 뒤집기",
+        "num": 3062
+    },
+    {
+        "tier": 4,
+        "title": "상근이의 체스판",
+        "num": 3076
+    },
+    {
+        "tier": 4,
+        "title": "줄임말 만들기",
+        "num": 3181
+    },
+    {
+        "tier": 5,
+        "title": "전화 요금",
+        "num": 3226
+    },
+    {
+        "tier": 5,
+        "title": "버그왕",
+        "num": 3447
+    },
+    {
+        "tier": 3,
+        "title": "해밍 거리",
+        "num": 3449
+    },
+    {
+        "tier": 3,
+        "title": "이진수",
+        "num": 3460
+    },
+    {
+        "tier": 1,
+        "title": "Shares",
+        "num": 3733
+    },
+    {
+        "tier": 2,
+        "title": "Celebrity jeopardy",
+        "num": 3765
+    },
+    {
+        "tier": 4,
+        "title": "헤일스톤 수열",
+        "num": 3943
+    },
+    {
+        "tier": 5,
+        "title": "롤 케이크",
+        "num": 3985
+    },
+    {
+        "tier": 3,
+        "title": "Viva la Diferencia",
+        "num": 4084
+    },
+    {
+        "tier": 1,
+        "title": "크냐?",
+        "num": 4101
+    },
+    {
+        "tier": 5,
+        "title": "피보나치 수",
+        "num": 4150
+    },
+    {
+        "tier": 3,
+        "title": "직각삼각형",
+        "num": 4153
+    },
+    {
+        "tier": 2,
+        "title": "AFC 윔블던",
+        "num": 4299
+    },
+    {
+        "tier": 5,
+        "title": "평균은 넘겠지",
+        "num": 4344
+    },
+    {
+        "tier": 4,
+        "title": "받아올림",
+        "num": 4388
+    },
+    {
+        "tier": 3,
+        "title": "중간계 전쟁",
+        "num": 4435
+    },
+    {
+        "tier": 4,
+        "title": "좋은놈 나쁜놈",
+        "num": 4447
+    },
+    {
+        "tier": 3,
+        "title": "첫 글자를 대문자로",
+        "num": 4458
+    },
+    {
+        "tier": 2,
+        "title": "줄번호",
+        "num": 4470
+    },
+    {
+        "tier": 3,
+        "title": "가위 바위 보?",
+        "num": 4493
+    },
+    {
+        "tier": 3,
+        "title": "배수 찾기",
+        "num": 4504
+    },
+    {
+        "tier": 5,
+        "title": "반올림",
+        "num": 4539
+    },
+    {
+        "tier": 2,
+        "title": "No Brainer",
+        "num": 4562
+    },
+    {
+        "tier": 4,
+        "title": "숫자 카드놀이",
+        "num": 4564
+    },
+    {
+        "tier": 2,
+        "title": "Gnome Sequencing",
+        "num": 4589
+    },
+    {
+        "tier": 4,
+        "title": "중복을 없애자",
+        "num": 4592
+    },
+    {
+        "tier": 4,
+        "title": "패리티",
+        "num": 4597
+    },
+    {
+        "tier": 4,
+        "title": "Quicksum",
+        "num": 4613
+    },
+    {
+        "tier": 3,
+        "title": "루트",
+        "num": 4619
+    },
+    {
+        "tier": 3,
+        "title": "Speed Limit",
+        "num": 4635
+    },
+    {
+        "tier": 4,
+        "title": "Doubles",
+        "num": 4641
+    },
+    {
+        "tier": 3,
+        "title": "완전 세제곱",
+        "num": 4690
+    },
+    {
+        "tier": 2,
+        "title": "St. Ives",
+        "num": 4696
+    },
+    {
+        "tier": 2,
+        "title": "Lunacy",
+        "num": 4714
+    },
+    {
+        "tier": 3,
+        "title": "거울, 오! 거울",
+        "num": 4740
+    },
+    {
+        "tier": 3,
+        "title": "일반 화학 실험",
+        "num": 4766
+    },
+    {
+        "tier": 5,
+        "title": "캠핑",
+        "num": 4796
+    },
+    {
+        "tier": 3,
+        "title": "줄 세기",
+        "num": 4806
+    },
+    {
+        "tier": 3,
+        "title": "다음수",
+        "num": 4880
+    },
+    {
+        "tier": 3,
+        "title": "숫자 맞추기 게임",
+        "num": 4892
+    },
+    {
+        "tier": 4,
+        "title": "저금",
+        "num": 4998
+    },
+    {
+        "tier": 1,
+        "title": "아!",
+        "num": 4999
+    },
+    {
+        "tier": 4,
+        "title": "박사 과정",
+        "num": 5026
+    },
+    {
+        "tier": 4,
+        "title": "탄산 음료",
+        "num": 5032
+    },
+    {
+        "tier": 5,
+        "title": "전국 대학생 프로그래밍 대회 동아리 연합",
+        "num": 5046
+    },
+    {
+        "tier": 4,
+        "title": "주차의 신",
+        "num": 5054
+    },
+    {
+        "tier": 3,
+        "title": "TGN",
+        "num": 5063
+    },
+    {
+        "tier": 3,
+        "title": "삼각형과 세 변",
+        "num": 5073
+    },
+    {
+        "tier": 3,
+        "title": "배수와 약수",
+        "num": 5086
+    },
+    {
+        "tier": 4,
+        "title": "대회 자리",
+        "num": 5176
+    },
+    {
+        "tier": 3,
+        "title": "쌍의 합",
+        "num": 5217
+    },
+    {
+        "tier": 4,
+        "title": "알파벳 거리",
+        "num": 5218
+    },
+    {
+        "tier": 2,
+        "title": "Fill the Rowboats!",
+        "num": 5300
+    },
+    {
+        "tier": 1,
+        "title": "웰컴",
+        "num": 5337
+    },
+    {
+        "tier": 1,
+        "title": "마이크로소프트 로고",
+        "num": 5338
+    },
+    {
+        "tier": 1,
+        "title": "콜센터",
+        "num": 5339
+    },
+    {
+        "tier": 1,
+        "title": "Pyramids",
+        "num": 5341
+    },
+    {
+        "tier": 3,
+        "title": "J박스",
+        "num": 5354
+    },
+    {
+        "tier": 4,
+        "title": "화성 수학",
+        "num": 5355
+    },
+    {
+        "tier": 2,
+        "title": "Dedupe",
+        "num": 5357
+    },
+    {
+        "tier": 2,
+        "title": "Football Team",
+        "num": 5358
+    },
+    {
+        "tier": 3,
+        "title": "전투 드로이드 가격",
+        "num": 5361
+    },
+    {
+        "tier": 4,
+        "title": "요다",
+        "num": 5363
+    },
+    {
+        "tier": 1,
+        "title": "카드 게임",
+        "num": 5522
+    },
+    {
+        "tier": 3,
+        "title": "경기 결과",
+        "num": 5523
+    },
+    {
+        "tier": 2,
+        "title": "입실 관리",
+        "num": 5524
+    },
+    {
+        "tier": 2,
+        "title": "방학 숙제",
+        "num": 5532
+    },
+    {
+        "tier": 5,
+        "title": "유니크",
+        "num": 5533
+    },
+    {
+        "tier": 2,
+        "title": "상근날드",
+        "num": 5543
+    },
+    {
+        "tier": 2,
+        "title": "심부름 가는 길",
+        "num": 5554
+    },
+    {
+        "tier": 2,
+        "title": "영수증",
+        "num": 5565
+    },
+    {
+        "tier": 4,
+        "title": "주사위 게임",
+        "num": 5566
+    },
+    {
+        "tier": 2,
+        "title": "타임 카드",
+        "num": 5575
+    },
+    {
+        "tier": 4,
+        "title": "콘테스트",
+        "num": 5576
+    },
+    {
+        "tier": 4,
+        "title": "거스름돈",
+        "num": 5585
+    },
+    {
+        "tier": 4,
+        "title": "JOI와 IOI",
+        "num": 5586
+    },
+    {
+        "tier": 2,
+        "title": "시험 점수",
+        "num": 5596
+    },
+    {
+        "tier": 3,
+        "title": "과제 안 내신 분..?",
+        "num": 5597
+    },
+    {
+        "tier": 4,
+        "title": "카이사르 암호",
+        "num": 5598
+    },
+    {
+        "tier": 3,
+        "title": "터널의 입구와 출구",
+        "num": 5612
+    },
+    {
+        "tier": 3,
+        "title": "계산기 프로그램",
+        "num": 5613
+    },
+    {
+        "tier": 4,
+        "title": "공약수",
+        "num": 5618
+    },
+    {
+        "tier": 4,
+        "title": "다이얼",
+        "num": 5622
+    },
+    {
+        "tier": 4,
+        "title": "비교 연산자",
+        "num": 5656
+    },
+    {
+        "tier": 3,
+        "title": "Hot Dogs",
+        "num": 5666
+    },
+    {
+        "tier": 3,
+        "title": "평균 중앙값 문제",
+        "num": 5691
+    },
+    {
+        "tier": 3,
+        "title": "팩토리얼 진법",
+        "num": 5692
+    },
+    {
+        "tier": 4,
+        "title": "팬그램",
+        "num": 5704
+    },
+    {
+        "tier": 1,
+        "title": "상근이의 친구들",
+        "num": 5717
+    },
+    {
+        "tier": 3,
+        "title": "파인만",
+        "num": 5724
+    },
+    {
+        "tier": 3,
+        "title": "한다 안한다",
+        "num": 5789
+    },
+    {
+        "tier": 3,
+        "title": "17배",
+        "num": 5893
+    },
+    {
+        "tier": 2,
+        "title": "Contest Timing",
+        "num": 5928
+    },
+    {
+        "tier": 3,
+        "title": "홀수일까 짝수일까",
+        "num": 5988
+    },
+    {
+        "tier": 3,
+        "title": "완전 제곱수",
+        "num": 6131
+    },
+    {
+        "tier": 4,
+        "title": "풍선 놀이",
+        "num": 6246
+    },
+    {
+        "tier": 3,
+        "title": "IBM 빼기 1",
+        "num": 6321
+    },
+    {
+        "tier": 3,
+        "title": "직각 삼각형의 두 변",
+        "num": 6322
+    },
+    {
+        "tier": 4,
+        "title": "만취한 상범",
+        "num": 6359
+    },
+    {
+        "tier": 4,
+        "title": "e 계산",
+        "num": 6376
+    },
+    {
+        "tier": 3,
+        "title": "디지털 루트",
+        "num": 6378
+    },
+    {
+        "tier": 4,
+        "title": "동혁 피자",
+        "num": 6502
+    },
+    {
+        "tier": 4,
+        "title": "싱기한 네자리 숫자",
+        "num": 6679
+    },
+    {
+        "tier": 2,
+        "title": "Next in line",
+        "num": 6749
+    },
+    {
+        "tier": 2,
+        "title": "Speed fines are not fine!",
+        "num": 6763
+    },
+    {
+        "tier": 2,
+        "title": "Sounds fishy!",
+        "num": 6764
+    },
+    {
+        "tier": 3,
+        "title": "Don’t pass me the ball!",
+        "num": 6768
+    },
+    {
+        "tier": 2,
+        "title": "Which Alien?",
+        "num": 6778
+    },
+    {
+        "tier": 2,
+        "title": "ISBN",
+        "num": 6810
+    },
+    {
+        "tier": 2,
+        "title": "Body Mass Index",
+        "num": 6825
+    },
+    {
+        "tier": 1,
+        "title": "Who is in the middle?",
+        "num": 6840
+    },
+    {
+        "tier": 2,
+        "title": "I Speak TXTMSG",
+        "num": 6841
+    },
+    {
+        "tier": 2,
+        "title": "Squares",
+        "num": 6887
+    },
+    {
+        "tier": 2,
+        "title": "Terms of Office",
+        "num": 6888
+    },
+    {
+        "tier": 5,
+        "title": "애너그램",
+        "num": 6996
+    },
+    {
+        "tier": 1,
+        "title": "등록",
+        "num": 7287
+    },
+    {
+        "tier": 4,
+        "title": "팩토리얼",
+        "num": 7489
+    },
+    {
+        "tier": 3,
+        "title": "고급 수학",
+        "num": 7510
+    },
+    {
+        "tier": 4,
+        "title": "Gauß",
+        "num": 7523
+    },
+    {
+        "tier": 4,
+        "title": "그릇",
+        "num": 7567
+    },
+    {
+        "tier": 4,
+        "title": "간지(干支)",
+        "num": 7572
+    },
+    {
+        "tier": 2,
+        "title": "Triangles",
+        "num": 7595
+    },
+    {
+        "tier": 4,
+        "title": "문자가 몇갤까",
+        "num": 7600
+    },
+    {
+        "tier": 4,
+        "title": "아즈텍 피라미드",
+        "num": 7770
+    },
+    {
+        "tier": 4,
+        "title": "텔레프라임",
+        "num": 7789
+    },
+    {
+        "tier": 1,
+        "title": "Can you add this?",
+        "num": 7891
+    },
+    {
+        "tier": 4,
+        "title": "직사각형을 만드는 방법",
+        "num": 8320
+    },
+    {
+        "tier": 1,
+        "title": "Plane",
+        "num": 8370
+    },
+    {
+        "tier": 1,
+        "title": "합",
+        "num": 8393
+    },
+    {
+        "tier": 1,
+        "title": "Julka",
+        "num": 8437
+    },
+    {
+        "tier": 1,
+        "title": "Zadanie próbne",
+        "num": 8545
+    },
+    {
+        "tier": 2,
+        "title": "Silnia",
+        "num": 8558
+    },
+    {
+        "tier": 5,
+        "title": "히든 넘버",
+        "num": 8595
+    },
+    {
+        "tier": 2,
+        "title": "Tabliczka",
+        "num": 8674
+    },
+    {
+        "tier": 2,
+        "title": "Koszykarz",
+        "num": 8710
+    },
+    {
+        "tier": 3,
+        "title": "Bałwanek",
+        "num": 8718
+    },
+    {
+        "tier": 2,
+        "title": "Patyki",
+        "num": 8723
+    },
+    {
+        "tier": 4,
+        "title": "이진수 합",
+        "num": 8741
+    },
+    {
+        "tier": 2,
+        "title": "Schronisko",
+        "num": 8760
+    },
+    {
+        "tier": 1,
+        "title": "Zadanie próbne 2",
+        "num": 8871
+    },
+    {
+        "tier": 3,
+        "title": "7종 경기",
+        "num": 8932
+    },
+    {
+        "tier": 4,
+        "title": "대충 더해",
+        "num": 8949
+    },
+    {
+        "tier": 4,
+        "title": "OX퀴즈",
+        "num": 8958
+    },
+    {
+        "tier": 5,
+        "title": "희주의 수학시험",
+        "num": 8974
+    },
+    {
+        "tier": 4,
+        "title": "복호화",
+        "num": 9046
+    },
+    {
+        "tier": 3,
+        "title": "대지",
+        "num": 9063
+    },
+    {
+        "tier": 4,
+        "title": "점수 집계",
+        "num": 9076
+    },
+    {
+        "tier": 2,
+        "title": "더하기",
+        "num": 9085
+    },
+    {
+        "tier": 1,
+        "title": "문자열",
+        "num": 9086
+    },
+    {
+        "tier": 5,
+        "title": "단어 뒤집기",
+        "num": 9093
+    },
+    {
+        "tier": 3,
+        "title": "수학적 호기심",
+        "num": 9094
+    },
+    {
+        "tier": 4,
+        "title": "도깨비말",
+        "num": 9226
+    },
+    {
+        "tier": 4,
+        "title": "파일 완전 삭제",
+        "num": 9243
+    },
+    {
+        "tier": 2,
+        "title": "주사위",
+        "num": 9295
+    },
+    {
+        "tier": 1,
+        "title": "Hello Judge",
+        "num": 9316
+    },
+    {
+        "tier": 3,
+        "title": "얼마?",
+        "num": 9325
+    },
+    {
+        "tier": 3,
+        "title": "삼각형 분류",
+        "num": 9366
+    },
+    {
+        "tier": 4,
+        "title": "사라진 페이지 찾기",
+        "num": 9437
+    },
+    {
+        "tier": 5,
+        "title": "박스",
+        "num": 9455
+    },
+    {
+        "tier": 3,
+        "title": "폰 노이만",
+        "num": 9469
+    },
+    {
+        "tier": 5,
+        "title": "Text Roll",
+        "num": 9494
+    },
+    {
+        "tier": 1,
+        "title": "시험 성적",
+        "num": 9498
+    },
+    {
+        "tier": 3,
+        "title": "꿍의 우주여행",
+        "num": 9501
+    },
+    {
+        "tier": 5,
+        "title": "약수들의 합",
+        "num": 9506
+    },
+    {
+        "tier": 3,
+        "title": "아이 러브 크로아티아",
+        "num": 9517
+    },
+    {
+        "tier": 4,
+        "title": "3000번 버스",
+        "num": 9546
+    },
+    {
+        "tier": 3,
+        "title": "아이들은 사탕을 좋아해",
+        "num": 9550
+    },
+    {
+        "tier": 3,
+        "title": "사분면",
+        "num": 9610
+    },
+    {
+        "tier": 1,
+        "title": "스타워즈 로고",
+        "num": 9653
+    },
+    {
+        "tier": 1,
+        "title": "나부 함대 데이터",
+        "num": 9654
+    },
+    {
+        "tier": 2,
+        "title": "RICE SACK",
+        "num": 9699
+    },
+    {
+        "tier": 3,
+        "title": "Sum of Odd Sequence",
+        "num": 9713
+    },
+    {
+        "tier": 2,
+        "title": "Quadrants",
+        "num": 9772
+    },
+    {
+        "tier": 2,
+        "title": "Median",
+        "num": 9782
+    },
+    {
+        "tier": 5,
+        "title": "민균이의 비밀번호",
+        "num": 9933
+    },
+    {
+        "tier": 5,
+        "title": "단어 퍼즐",
+        "num": 9946
+    },
+    {
+        "tier": 2,
+        "title": "평균 점수",
+        "num": 10039
+    },
+    {
+        "tier": 4,
+        "title": "투표",
+        "num": 10040
+    },
+    {
+        "tier": 4,
+        "title": "숫자",
+        "num": 10093
+    },
+    {
+        "tier": 2,
+        "title": "삼각형 외우기",
+        "num": 10101
+    },
+    {
+        "tier": 3,
+        "title": "개표",
+        "num": 10102
+    },
+    {
+        "tier": 3,
+        "title": "주사위 게임",
+        "num": 10103
+    },
+    {
+        "tier": 2,
+        "title": "과자",
+        "num": 10156
+    },
+    {
+        "tier": 3,
+        "title": "전자레인지",
+        "num": 10162
+    },
+    {
+        "tier": 5,
+        "title": "색종이",
+        "num": 10163
+    },
+    {
+        "tier": 1,
+        "title": "NFC West vs North",
+        "num": 10170
+    },
+    {
+        "tier": 1,
+        "title": "고양이",
+        "num": 10171
+    },
+    {
+        "tier": 1,
+        "title": "개",
+        "num": 10172
+    },
+    {
+        "tier": 4,
+        "title": "니모를 찾아서",
+        "num": 10173
+    },
+    {
+        "tier": 4,
+        "title": "팰린드롬",
+        "num": 10174
+    },
+    {
+        "tier": 3,
+        "title": "할로윈의 사탕",
+        "num": 10178
+    },
+    {
+        "tier": 3,
+        "title": "쿠폰",
+        "num": 10179
+    },
+    {
+        "tier": 2,
+        "title": "Quadrilateral",
+        "num": 10188
+    },
+    {
+        "tier": 1,
+        "title": "Hook",
+        "num": 10189
+    },
+    {
+        "tier": 3,
+        "title": "헤라클레스와 히드라",
+        "num": 10205
+    },
+    {
+        "tier": 3,
+        "title": "Baseball",
+        "num": 10214
+    },
+    {
+        "tier": 5,
+        "title": "Meats On The Grill",
+        "num": 10219
+    },
+    {
+        "tier": 3,
+        "title": "ACM 호텔",
+        "num": 10250
+    },
+    {
+        "tier": 3,
+        "title": "서버",
+        "num": 10409
+    },
+    {
+        "tier": 3,
+        "title": "지각",
+        "num": 10419
+    },
+    {
+        "tier": 1,
+        "title": "나머지",
+        "num": 10430
+    },
+    {
+        "tier": 5,
+        "title": "유레카 이론",
+        "num": 10448
+    },
+    {
+        "tier": 3,
+        "title": "분수좋아해?",
+        "num": 10474
+    },
+    {
+        "tier": 2,
+        "title": "Oddities",
+        "num": 10480
+    },
+    {
+        "tier": 4,
+        "title": "수빈이와 수열",
+        "num": 10539
+    },
+    {
+        "tier": 2,
+        "title": "다면체",
+        "num": 10569
+    },
+    {
+        "tier": 5,
+        "title": "Favorite Number",
+        "num": 10570
+    },
+    {
+        "tier": 3,
+        "title": "페르시아의 왕들",
+        "num": 10599
+    },
+    {
+        "tier": 3,
+        "title": "Ahmed Aly",
+        "num": 10698
+    },
+    {
+        "tier": 1,
+        "title": "오늘 날짜",
+        "num": 10699
+    },
+    {
+        "tier": 3,
+        "title": "수도요금",
+        "num": 10707
+    },
+    {
+        "tier": 4,
+        "title": "크리스마스 파티",
+        "num": 10708
+    },
+    {
+        "tier": 1,
+        "title": "We love kriii",
+        "num": 10718
+    },
+    {
+        "tier": 1,
+        "title": "큰 수 A+B",
+        "num": 10757
+    },
+    {
+        "tier": 2,
+        "title": "특별한 날",
+        "num": 10768
+    },
+    {
+        "tier": 5,
+        "title": "행복한지 슬픈지",
+        "num": 10769
+    },
+    {
+        "tier": 2,
+        "title": "10부제",
+        "num": 10797
+    },
+    {
+        "tier": 5,
+        "title": "세로읽기",
+        "num": 10798
+    },
+    {
+        "tier": 4,
+        "title": "카드게임",
+        "num": 10801
+    },
+    {
+        "tier": 4,
+        "title": "카드 역배치",
+        "num": 10804
+    },
+    {
+        "tier": 1,
+        "title": "개수 세기",
+        "num": 10807
+    },
+    {
+        "tier": 2,
+        "title": "알파벳 개수",
+        "num": 10808
+    },
+    {
+        "tier": 4,
+        "title": "알파벳 찾기",
+        "num": 10809
+    },
+    {
+        "tier": 3,
+        "title": "공 넣기",
+        "num": 10810
+    },
+    {
+        "tier": 4,
+        "title": "바구니 뒤집기",
+        "num": 10811
+    },
+    {
+        "tier": 4,
+        "title": "바구니 순서 바꾸기",
+        "num": 10812
+    },
+    {
+        "tier": 4,
+        "title": "공 바꾸기",
+        "num": 10813
+    },
+    {
+        "tier": 2,
+        "title": "세 수",
+        "num": 10817
+    },
+    {
+        "tier": 3,
+        "title": "최소, 최대",
+        "num": 10818
+    },
+    {
+        "tier": 4,
+        "title": "문자열 분석",
+        "num": 10820
+    },
+    {
+        "tier": 4,
+        "title": "정수의 개수",
+        "num": 10821
+    },
+    {
+        "tier": 4,
+        "title": "더하기",
+        "num": 10822
+    },
+    {
+        "tier": 5,
+        "title": "더하기 2",
+        "num": 10823
+    },
+    {
+        "tier": 3,
+        "title": "네 수",
+        "num": 10824
+    },
+    {
+        "tier": 4,
+        "title": "이진수 변환",
+        "num": 10829
+    },
+    {
+        "tier": 3,
+        "title": "사과",
+        "num": 10833
+    },
+    {
+        "tier": 4,
+        "title": "벨트",
+        "num": 10834
+    },
+    {
+        "tier": 4,
+        "title": "친구",
+        "num": 10864
+    },
+    {
+        "tier": 3,
+        "title": "친구 친구",
+        "num": 10865
+    },
+    {
+        "tier": 1,
+        "title": "사칙연산",
+        "num": 10869
+    },
+    {
+        "tier": 4,
+        "title": "피보나치 수 5",
+        "num": 10870
+    },
+    {
+        "tier": 1,
+        "title": "X보다 작은 수",
+        "num": 10871
+    },
+    {
+        "tier": 3,
+        "title": "팩토리얼",
+        "num": 10872
+    },
+    {
+        "tier": 3,
+        "title": "이교수님의 시험",
+        "num": 10874
+    },
+    {
+        "tier": 3,
+        "title": "0 = not cute / 1 = cute",
+        "num": 10886
+    },
+    {
+        "tier": 1,
+        "title": "??!",
+        "num": 10926
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 3",
+        "num": 10950
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 4",
+        "num": 10951
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 5",
+        "num": 10952
+    },
+    {
+        "tier": 3,
+        "title": "A+B - 6",
+        "num": 10953
+    },
+    {
+        "tier": 3,
+        "title": "내 학점을 구해줘",
+        "num": 10984
+    },
+    {
+        "tier": 2,
+        "title": "모음의 개수",
+        "num": 10987
+    },
+    {
+        "tier": 3,
+        "title": "팰린드롬인지 확인하기",
+        "num": 10988
+    },
+    {
+        "tier": 5,
+        "title": "수 정렬하기 3",
+        "num": 10989
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 15",
+        "num": 10990
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 16",
+        "num": 10991
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 17",
+        "num": 10992
+    },
+    {
+        "tier": 3,
+        "title": "별 찍기 - 20",
+        "num": 10995
+    },
+    {
+        "tier": 4,
+        "title": "별 찍기 - 21",
+        "num": 10996
+    },
+    {
+        "tier": 1,
+        "title": "A×B",
+        "num": 10998
+    },
+    {
+        "tier": 5,
+        "title": "진법 변환 2",
+        "num": 11005
+    },
+    {
+        "tier": 3,
+        "title": "남욱이의 닭장",
+        "num": 11006
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 7",
+        "num": 11021
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 8",
+        "num": 11022
+    },
+    {
+        "tier": 3,
+        "title": "더하기 3",
+        "num": 11023
+    },
+    {
+        "tier": 3,
+        "title": "더하기 4",
+        "num": 11024
+    },
+    {
+        "tier": 3,
+        "title": "캥거루 세마리2",
+        "num": 11034
+    },
+    {
+        "tier": 5,
+        "title": "이항 계수 1",
+        "num": 11050
+    },
+    {
+        "tier": 5,
+        "title": "피타고라스 기댓값",
+        "num": 11070
+    },
+    {
+        "tier": 4,
+        "title": "알파벳 전부 쓰기",
+        "num": 11091
+    },
+    {
+        "tier": 4,
+        "title": "꿍 가라사대",
+        "num": 11094
+    },
+    {
+        "tier": 4,
+        "title": "첼시를 도와줘!",
+        "num": 11098
+    },
+    {
+        "tier": 4,
+        "title": "Fridge of Your Dreams",
+        "num": 11104
+    },
+    {
+        "tier": 3,
+        "title": "괴짜 교수",
+        "num": 11109
+    },
+    {
+        "tier": 2,
+        "title": "Communication Channels",
+        "num": 11121
+    },
+    {
+        "tier": 3,
+        "title": "쿠키애호가",
+        "num": 11134
+    },
+    {
+        "tier": 5,
+        "title": "0의 개수",
+        "num": 11170
+    },
+    {
+        "tier": 5,
+        "title": "2진수 뒤집기",
+        "num": 11179
+    },
+    {
+        "tier": 2,
+        "title": "IT Passport Examination",
+        "num": 11257
+    },
+    {
+        "tier": 2,
+        "title": "한글",
+        "num": 11282
+    },
+    {
+        "tier": 2,
+        "title": "한글 2",
+        "num": 11283
+    },
+    {
+        "tier": 3,
+        "title": "삼각 무늬 - 2",
+        "num": 11312
+    },
+    {
+        "tier": 3,
+        "title": "Count Me In",
+        "num": 11319
+    },
+    {
+        "tier": 3,
+        "title": "삼각 무늬 - 1",
+        "num": 11320
+    },
+    {
+        "tier": 4,
+        "title": "Strfry",
+        "num": 11328
+    },
+    {
+        "tier": 2,
+        "title": "!밀비 급일",
+        "num": 11365
+    },
+    {
+        "tier": 3,
+        "title": "Report Card Time",
+        "num": 11367
+    },
+    {
+        "tier": 1,
+        "title": "꼬마 정민",
+        "num": 11382
+    },
+    {
+        "tier": 5,
+        "title": "뚊",
+        "num": 11383
+    },
+    {
+        "tier": 2,
+        "title": "Identifying tea",
+        "num": 11549
+    },
+    {
+        "tier": 5,
+        "title": "Yangjojang of The Year",
+        "num": 11557
+    },
+    {
+        "tier": 4,
+        "title": "Affine Cipher",
+        "num": 11575
+    },
+    {
+        "tier": 3,
+        "title": "지영 공주님의 마법 거울",
+        "num": 11586
+    },
+    {
+        "tier": 3,
+        "title": "지속",
+        "num": 11648
+    },
+    {
+        "tier": 5,
+        "title": "소인수분해",
+        "num": 11653
+    },
+    {
+        "tier": 1,
+        "title": "아스키 코드",
+        "num": 11654
+    },
+    {
+        "tier": 5,
+        "title": "ROT13",
+        "num": 11655
+    },
+    {
+        "tier": 3,
+        "title": "그대로 출력하기",
+        "num": 11718
+    },
+    {
+        "tier": 3,
+        "title": "그대로 출력하기 2",
+        "num": 11719
+    },
+    {
+        "tier": 2,
+        "title": "숫자의 합",
+        "num": 11720
+    },
+    {
+        "tier": 3,
+        "title": "열 개씩 끊어 출력하기",
+        "num": 11721
+    },
+    {
+        "tier": 3,
+        "title": "POT",
+        "num": 11772
+    },
+    {
+        "tier": 3,
+        "title": "Tawla",
+        "num": 11800
+    },
+    {
+        "tier": 4,
+        "title": "8진수, 10진수, 16진수",
+        "num": 11816
+    },
+    {
+        "tier": 4,
+        "title": "개미",
+        "num": 11880
+    },
+    {
+        "tier": 1,
+        "title": "고려대는 사랑입니다",
+        "num": 11942
+    },
+    {
+        "tier": 2,
+        "title": "파일 옮기기",
+        "num": 11943
+    },
+    {
+        "tier": 4,
+        "title": "NN",
+        "num": 11944
+    },
+    {
+        "tier": 2,
+        "title": "뜨거운 붕어빵",
+        "num": 11945
+    },
+    {
+        "tier": 2,
+        "title": "과목선택",
+        "num": 11948
+    },
+    {
+        "tier": 3,
+        "title": "2의 제곱인가?",
+        "num": 11966
+    },
+    {
+        "tier": 3,
+        "title": "Fence Painting",
+        "num": 11970
+    },
+    {
+        "tier": 4,
+        "title": "단어순서 뒤집기",
+        "num": 12605
+    },
+    {
+        "tier": 3,
+        "title": "고급 여관",
+        "num": 12756
+    },
+    {
+        "tier": 4,
+        "title": "CTP공국으로 이민 가자",
+        "num": 12778
+    },
+    {
+        "tier": 4,
+        "title": "원피스",
+        "num": 12780
+    },
+    {
+        "tier": 3,
+        "title": "Mini Fantasy War",
+        "num": 12790
+    },
+    {
+        "tier": 4,
+        "title": "Starman",
+        "num": 12791
+    },
+    {
+        "tier": 4,
+        "title": "이진수 연산",
+        "num": 12813
+    },
+    {
+        "tier": 5,
+        "title": "XORXORXOR",
+        "num": 12833
+    },
+    {
+        "tier": 3,
+        "title": "창용이의 시계",
+        "num": 12840
+    },
+    {
+        "tier": 2,
+        "title": "뉴턴과 사과",
+        "num": 13118
+    },
+    {
+        "tier": 2,
+        "title": "Do Not Touch Anything",
+        "num": 13136
+    },
+    {
+        "tier": 3,
+        "title": "닉네임에 갓 붙이기",
+        "num": 13163
+    },
+    {
+        "tier": 3,
+        "title": "소금 폭탄",
+        "num": 13223
+    },
+    {
+        "tier": 3,
+        "title": "Divisors",
+        "num": 13225
+    },
+    {
+        "tier": 4,
+        "title": "팰린드롬",
+        "num": 13235
+    },
+    {
+        "tier": 1,
+        "title": "큰 수 곱셈",
+        "num": 13277
+    },
+    {
+        "tier": 2,
+        "title": "Quick Estimates",
+        "num": 13297
+    },
+    {
+        "tier": 4,
+        "title": "방 배정",
+        "num": 13300
+    },
+    {
+        "tier": 4,
+        "title": "방 배정",
+        "num": 13304
+    },
+    {
+        "tier": 5,
+        "title": "행운의 편지",
+        "num": 13311
+    },
+    {
+        "tier": 5,
+        "title": "접두사 배열",
+        "num": 13322
+    },
+    {
+        "tier": 4,
+        "title": "거꾸로 구구단",
+        "num": 13410
+    },
+    {
+        "tier": 3,
+        "title": "주식 투자",
+        "num": 13416
+    },
+    {
+        "tier": 4,
+        "title": "탕수육",
+        "num": 13419
+    },
+    {
+        "tier": 4,
+        "title": "사칙연산",
+        "num": 13420
+    },
+    {
+        "tier": 4,
+        "title": "시험 감독",
+        "num": 13458
+    },
+    {
+        "tier": 2,
+        "title": "The Merchant of Venice",
+        "num": 13496
+    },
+    {
+        "tier": 2,
+        "title": "Andando no tempo",
+        "num": 13580
+    },
+    {
+        "tier": 2,
+        "title": "Tri-du",
+        "num": 13597
+    },
+    {
+        "tier": 2,
+        "title": "Zero or One",
+        "num": 13623
+    },
+    {
+        "tier": 3,
+        "title": "Hawk eyes",
+        "num": 13698
+    },
+    {
+        "tier": 2,
+        "title": "히스토그램",
+        "num": 13752
+    },
+    {
+        "tier": 2,
+        "title": "팀 나누기",
+        "num": 13866
+    },
+    {
+        "tier": 2,
+        "title": "Equality",
+        "num": 13985
+    },
+    {
+        "tier": 2,
+        "title": "Tournament Selection",
+        "num": 14038
+    },
+    {
+        "tier": 2,
+        "title": "Gorivo",
+        "num": 14065
+    },
+    {
+        "tier": 3,
+        "title": "Square Pasture",
+        "num": 14173
+    },
+    {
+        "tier": 4,
+        "title": "The Cow-Signal",
+        "num": 14175
+    },
+    {
+        "tier": 3,
+        "title": "세 막대",
+        "num": 14215
+    },
+    {
+        "tier": 3,
+        "title": "정육각형과 삼각형",
+        "num": 14264
+    },
+    {
+        "tier": 5,
+        "title": "소가 길을 건너간 이유 1",
+        "num": 14467
+    },
+    {
+        "tier": 2,
+        "title": "전자레인지",
+        "num": 14470
+    },
+    {
+        "tier": 4,
+        "title": "욱제는 효도쟁이야!!",
+        "num": 14487
+    },
+    {
+        "tier": 2,
+        "title": "치킨 두 마리 (...)",
+        "num": 14489
+    },
+    {
+        "tier": 4,
+        "title": "9진수",
+        "num": 14491
+    },
+    {
+        "tier": 4,
+        "title": "완전수",
+        "num": 14563
+    },
+    {
+        "tier": 3,
+        "title": "2017 연세대학교 프로그래밍 경시대회",
+        "num": 14568
+    },
+    {
+        "tier": 3,
+        "title": "덧셈과 곱셈",
+        "num": 14579
+    },
+    {
+        "tier": 1,
+        "title": "팬들에게 둘러싸인 홍준",
+        "num": 14581
+    },
+    {
+        "tier": 5,
+        "title": "오늘도 졌다",
+        "num": 14582
+    },
+    {
+        "tier": 3,
+        "title": "2017 아주대학교 프로그래밍 경시대회 (Small)",
+        "num": 14592
+    },
+    {
+        "tier": 4,
+        "title": "Calculate!",
+        "num": 14614
+    },
+    {
+        "tier": 4,
+        "title": "감정이입",
+        "num": 14623
+    },
+    {
+        "tier": 4,
+        "title": "전북대학교",
+        "num": 14624
+    },
+    {
+        "tier": 5,
+        "title": "ISBN",
+        "num": 14626
+    },
+    {
+        "tier": 1,
+        "title": "와이버스 부릉부릉",
+        "num": 14645
+    },
+    {
+        "tier": 5,
+        "title": "준오는 조류혐오야!!",
+        "num": 14647
+    },
+    {
+        "tier": 4,
+        "title": "쿼리 맛보기",
+        "num": 14648
+    },
+    {
+        "tier": 2,
+        "title": "나는 행복합니다~",
+        "num": 14652
+    },
+    {
+        "tier": 3,
+        "title": "조교는 새디스트야!!",
+        "num": 14656
+    },
+    {
+        "tier": 5,
+        "title": "한조서열정리하고옴ㅋㅋ",
+        "num": 14659
+    },
+    {
+        "tier": 1,
+        "title": "사분면 고르기",
+        "num": 14681
+    },
+    {
+        "tier": 3,
+        "title": "Shifty Sum",
+        "num": 14682
+    },
+    {
+        "tier": 5,
+        "title": "딱지놀이",
+        "num": 14696
+    },
+    {
+        "tier": 4,
+        "title": "방 배정하기",
+        "num": 14697
+    },
+    {
+        "tier": 4,
+        "title": "우유 축제",
+        "num": 14720
+    },
+    {
+        "tier": 4,
+        "title": "관리자는 누구?",
+        "num": 14724
+    },
+    {
+        "tier": 4,
+        "title": "신용카드 판별",
+        "num": 14726
+    },
+    {
+        "tier": 3,
+        "title": "Bedtime Reading, I",
+        "num": 14782
+    },
+    {
+        "tier": 3,
+        "title": "양수 개수 세기",
+        "num": 14909
+    },
+    {
+        "tier": 4,
+        "title": "오르막",
+        "num": 14910
+    },
+    {
+        "tier": 3,
+        "title": "등차수열에서 항 번호 찾기",
+        "num": 14913
+    },
+    {
+        "tier": 3,
+        "title": "사과와 바나나 나눠주기",
+        "num": 14914
+    },
+    {
+        "tier": 4,
+        "title": "진수 변환기",
+        "num": 14915
+    },
+    {
+        "tier": 3,
+        "title": "3n+1 수열",
+        "num": 14920
+    },
+    {
+        "tier": 2,
+        "title": "폰 노이만과 파리",
+        "num": 14924
+    },
+    {
+        "tier": 1,
+        "title": "큰 수 (BIG)",
+        "num": 14928
+    },
+    {
+        "tier": 2,
+        "title": "FA",
+        "num": 14935
+    },
+    {
+        "tier": 4,
+        "title": "Happy Number",
+        "num": 14954
+    },
+    {
+        "tier": 1,
+        "title": "CAPS",
+        "num": 15000
+    },
+    {
+        "tier": 2,
+        "title": "Judging Moose",
+        "num": 15025
+    },
+    {
+        "tier": 2,
+        "title": "Máquina de café",
+        "num": 15051
+    },
+    {
+        "tier": 2,
+        "title": "Hard choice",
+        "num": 15059
+    },
+    {
+        "tier": 2,
+        "title": "Every Second Counts",
+        "num": 15080
+    },
+    {
+        "tier": 2,
+        "title": "Congruent Numbers",
+        "num": 15128
+    },
+    {
+        "tier": 1,
+        "title": "Rectangles",
+        "num": 15232
+    },
+    {
+        "tier": 4,
+        "title": "인생 점수",
+        "num": 15351
+    },
+    {
+        "tier": 2,
+        "title": "A Simple Problem.",
+        "num": 15372
+    },
+    {
+        "tier": 2,
+        "title": "베라의 패션",
+        "num": 15439
+    },
+    {
+        "tier": 2,
+        "title": "鉛筆 (Pencils)",
+        "num": 15474
+    },
+    {
+        "tier": 2,
+        "title": "빠른 A+B",
+        "num": 15552
+    },
+    {
+        "tier": 5,
+        "title": "Lifeguards (Bronze)",
+        "num": 15593
+    },
+    {
+        "tier": 4,
+        "title": "정수 N개의 합",
+        "num": 15596
+    },
+    {
+        "tier": 2,
+        "title": "Abbey Courtyard",
+        "num": 15610
+    },
+    {
+        "tier": 3,
+        "title": "Fan Death",
+        "num": 15633
+    },
+    {
+        "tier": 3,
+        "title": "2018 연세대학교 프로그래밍 경진대회",
+        "num": 15667
+    },
+    {
+        "tier": 1,
+        "title": "연세대학교",
+        "num": 15680
+    },
+    {
+        "tier": 2,
+        "title": "타일 채우기 4",
+        "num": 15700
+    },
+    {
+        "tier": 2,
+        "title": "이칙연산",
+        "num": 15726
+    },
+    {
+        "tier": 1,
+        "title": "조별과제를 하려는데 조장이 사라졌다",
+        "num": 15727
+    },
+    {
+        "tier": 1,
+        "title": "나는 누구인가",
+        "num": 15733
+    },
+    {
+        "tier": 3,
+        "title": "명장 남정훈",
+        "num": 15734
+    },
+    {
+        "tier": 1,
+        "title": "A+B - 9",
+        "num": 15740
+    },
+    {
+        "tier": 3,
+        "title": "Teleportation",
+        "num": 15751
+    },
+    {
+        "tier": 3,
+        "title": "멀티탭 충분하니?",
+        "num": 15780
+    },
+    {
+        "tier": 3,
+        "title": "헬멧과 조끼",
+        "num": 15781
+    },
+    {
+        "tier": 3,
+        "title": "질투진서",
+        "num": 15784
+    },
+    {
+        "tier": 5,
+        "title": "A/B - 2",
+        "num": 15792
+    },
+    {
+        "tier": 3,
+        "title": "너의 이름은 몇 점이니?",
+        "num": 15813
+    },
+    {
+        "tier": 4,
+        "title": "야바위 대장",
+        "num": 15814
+    },
+    {
+        "tier": 3,
+        "title": "오버플로우와 모듈러",
+        "num": 15818
+    },
+    {
+        "tier": 5,
+        "title": "너의 핸들은",
+        "num": 15819
+    },
+    {
+        "tier": 3,
+        "title": "맞았는데 왜 틀리죠?",
+        "num": 15820
+    },
+    {
+        "tier": 4,
+        "title": "Hashing",
+        "num": 15829
+    },
+    {
+        "tier": 2,
+        "title": "공백 없는 A+B",
+        "num": 15873
+    },
+    {
+        "tier": 5,
+        "title": "Pen Pineapple Apple Pen",
+        "num": 15881
+    },
+    {
+        "tier": 3,
+        "title": "수학은 체육과목 입니다",
+        "num": 15894
+    },
+    {
+        "tier": 5,
+        "title": "UCPC는 무엇의 약자일까?",
+        "num": 15904
+    },
+    {
+        "tier": 3,
+        "title": "노솔브 방지문제야!!",
+        "num": 15917
+    },
+    {
+        "tier": 3,
+        "title": "수찬은 마린보이야!!",
+        "num": 15921
+    },
+    {
+        "tier": 3,
+        "title": "욱제는 건축왕이야!!",
+        "num": 15923
+    },
+    {
+        "tier": 5,
+        "title": "아기 석환 뚜루루 뚜루",
+        "num": 15947
+    },
+    {
+        "tier": 3,
+        "title": "상금 헌터",
+        "num": 15953
+    },
+    {
+        "tier": 1,
+        "title": "새로운 시작",
+        "num": 15962
+    },
+    {
+        "tier": 1,
+        "title": "CASIO",
+        "num": 15963
+    },
+    {
+        "tier": 1,
+        "title": "이상한 기호",
+        "num": 15964
+    },
+    {
+        "tier": 3,
+        "title": "행복",
+        "num": 15969
+    },
+    {
+        "tier": 2,
+        "title": "Telemarketer or not?",
+        "num": 16017
+    },
+    {
+        "tier": 2,
+        "title": "Larger Sport Facility",
+        "num": 16099
+    },
+    {
+        "tier": 1,
+        "title": "오늘의 날짜는?",
+        "num": 16170
+    },
+    {
+        "tier": 4,
+        "title": "나는 친구가 적다 (Small)",
+        "num": 16171
+    },
+    {
+        "tier": 4,
+        "title": "나는 친구가 적다 (Large)",
+        "num": 16172
+    },
+    {
+        "tier": 2,
+        "title": "나이 계산하기",
+        "num": 16199
+    },
+    {
+        "tier": 2,
+        "title": "카드 뽑기",
+        "num": 16204
+    },
+    {
+        "tier": 4,
+        "title": "Farm",
+        "num": 16283
+    },
+    {
+        "tier": 1,
+        "title": "홍익대학교",
+        "num": 16394
+    },
+    {
+        "tier": 5,
+        "title": "선 그리기",
+        "num": 16396
+    },
+    {
+        "tier": 3,
+        "title": "A/B - 3",
+        "num": 16428
+    },
+    {
+        "tier": 1,
+        "title": "제리와 톰",
+        "num": 16430
+    },
+    {
+        "tier": 3,
+        "title": "베시와 데이지",
+        "num": 16431
+    },
+    {
+        "tier": 5,
+        "title": "주디와 당근농장",
+        "num": 16433
+    },
+    {
+        "tier": 5,
+        "title": "콘서트",
+        "num": 16466
+    },
+    {
+        "tier": 3,
+        "title": "컵라면 측정하기",
+        "num": 16479
+    },
+    {
+        "tier": 4,
+        "title": "접시 안의 원",
+        "num": 16483
+    },
+    {
+        "tier": 4,
+        "title": "작도하자! - ②",
+        "num": 16485
+    },
+    {
+        "tier": 2,
+        "title": "운동장 한 바퀴",
+        "num": 16486
+    },
+    {
+        "tier": 3,
+        "title": "괄호 없는 사칙연산",
+        "num": 16503
+    },
+    {
+        "tier": 3,
+        "title": "종이접기",
+        "num": 16504
+    },
+    {
+        "tier": 4,
+        "title": "3의 배수",
+        "num": 16561
+    },
+    {
+        "tier": 2,
+        "title": "Contemporary Art",
+        "num": 16600
+    },
+    {
+        "tier": 3,
+        "title": "고려대학교에는 공식 와인이 있다",
+        "num": 16673
+    },
+    {
+        "tier": 4,
+        "title": "2018년을 되돌아보며",
+        "num": 16674
+    },
+    {
+        "tier": 4,
+        "title": "두 개의 손",
+        "num": 16675
+    },
+    {
+        "tier": 4,
+        "title": "근우의 다이어리 꾸미기",
+        "num": 16676
+    },
+    {
+        "tier": 2,
+        "title": "Pizza Deal",
+        "num": 16693
+    },
+    {
+        "tier": 2,
+        "title": "ICPC",
+        "num": 16727
+    },
+    {
+        "tier": 4,
+        "title": "Mixing Milk",
+        "num": 16769
+    },
+    {
+        "tier": 4,
+        "title": "부분 문자열",
+        "num": 16916
+    },
+    {
+        "tier": 4,
+        "title": "양념 반 후라이드 반",
+        "num": 16917
+    },
+    {
+        "tier": 5,
+        "title": "차량 번호판 1",
+        "num": 16968
+    },
+    {
+        "tier": 2,
+        "title": "Winning Score",
+        "num": 17009
+    },
+    {
+        "tier": 2,
+        "title": "Time to Decompress",
+        "num": 17010
+    },
+    {
+        "tier": 5,
+        "title": "아스키 아트",
+        "num": 17072
+    },
+    {
+        "tier": 3,
+        "title": "Serious Problem",
+        "num": 17094
+    },
+    {
+        "tier": 4,
+        "title": "배수들의 합",
+        "num": 17173
+    },
+    {
+        "tier": 3,
+        "title": "전체 계산 횟수",
+        "num": 17174
+    },
+    {
+        "tier": 5,
+        "title": "암호해독기",
+        "num": 17176
+    },
+    {
+        "tier": 3,
+        "title": "자석 체인",
+        "num": 17201
+    },
+    {
+        "tier": 5,
+        "title": "핸드폰 번호 궁합",
+        "num": 17202
+    },
+    {
+        "tier": 5,
+        "title": "준석이의 수학 숙제",
+        "num": 17206
+    },
+    {
+        "tier": 3,
+        "title": "문문문",
+        "num": 17210
+    },
+    {
+        "tier": 5,
+        "title": "APC는 왜 서브태스크 대회가 되었을까?",
+        "num": 17224
+    },
+    {
+        "tier": 5,
+        "title": "택시 거리",
+        "num": 17247
+    },
+    {
+        "tier": 4,
+        "title": "태보태보 총난타",
+        "num": 17249
+    },
+    {
+        "tier": 2,
+        "title": "달달함이 넘쳐흘러",
+        "num": 17256
+    },
+    {
+        "tier": 3,
+        "title": "Sort 마스터 배지훈",
+        "num": 17263
+    },
+    {
+        "tier": 3,
+        "title": "Vending Machine",
+        "num": 17284
+    },
+    {
+        "tier": 4,
+        "title": "맥주 99병",
+        "num": 17293
+    },
+    {
+        "tier": 5,
+        "title": "귀여운 수~ε٩(๑> ₃ <)۶з",
+        "num": 17294
+    },
+    {
+        "tier": 3,
+        "title": "2루수 이름이 뭐야",
+        "num": 17350
+    },
+    {
+        "tier": 2,
+        "title": "욱 제",
+        "num": 17356
+    },
+    {
+        "tier": 2,
+        "title": "수학은 체육과목 입니다 2",
+        "num": 17362
+    },
+    {
+        "tier": 5,
+        "title": "우유가 넘어지면?",
+        "num": 17363
+    },
+    {
+        "tier": 2,
+        "title": "와글와글 숭고한",
+        "num": 17388
+    },
+    {
+        "tier": 4,
+        "title": "보너스 점수",
+        "num": 17389
+    },
+    {
+        "tier": 3,
+        "title": "과자 사기",
+        "num": 17450
+    },
+    {
+        "tier": 4,
+        "title": "N! mod P (1)",
+        "num": 17466
+    },
+    {
+        "tier": 3,
+        "title": "스타후르츠",
+        "num": 17496
+    },
+    {
+        "tier": 4,
+        "title": "클레어와 팰린드롬",
+        "num": 17502
+    },
+    {
+        "tier": 3,
+        "title": "Buffoon",
+        "num": 17530
+    },
+    {
+        "tier": 2,
+        "title": "Greetings!",
+        "num": 17548
+    },
+    {
+        "tier": 4,
+        "title": "막대기",
+        "num": 17608
+    },
+    {
+        "tier": 3,
+        "title": "369",
+        "num": 17614
+    },
+    {
+        "tier": 3,
+        "title": "신기한 수",
+        "num": 17618
+    },
+    {
+        "tier": 4,
+        "title": "나의 학점은?",
+        "num": 17826
+    },
+    {
+        "tier": 2,
+        "title": "FYI",
+        "num": 17863
+    },
+    {
+        "tier": 2,
+        "title": "Piece of Cake!",
+        "num": 17874
+    },
+    {
+        "tier": 2,
+        "title": "Counting Clauses",
+        "num": 17903
+    },
+    {
+        "tier": 3,
+        "title": "통학의 신",
+        "num": 17945
+    },
+    {
+        "tier": 3,
+        "title": "Even or Odd?",
+        "num": 18005
+    },
+    {
+        "tier": 1,
+        "title": "Арифметическая магия",
+        "num": 18096
+    },
+    {
+        "tier": 1,
+        "title": "1998년생인 내가 태국에서는 2541년생?!",
+        "num": 18108
+    },
+    {
+        "tier": 2,
+        "title": "Basketball One-on-One",
+        "num": 18198
+    },
+    {
+        "tier": 4,
+        "title": "펭귄추락대책위원회",
+        "num": 18228
+    },
+    {
+        "tier": 4,
+        "title": "ZOAC 2",
+        "num": 18238
+    },
+    {
+        "tier": 3,
+        "title": "겨울왕국 티켓 예매",
+        "num": 18247
+    },
+    {
+        "tier": 1,
+        "title": "Rats",
+        "num": 18301
+    },
+    {
+        "tier": 4,
+        "title": "시각",
+        "num": 18312
+    },
+    {
+        "tier": 2,
+        "title": "Petrol",
+        "num": 18330
+    },
+    {
+        "tier": 2,
+        "title": "HOMWRK",
+        "num": 18398
+    },
+    {
+        "tier": 4,
+        "title": "럭키 스트레이트",
+        "num": 18406
+    },
+    {
+        "tier": 2,
+        "title": "3 つの整数 (Three Integers)",
+        "num": 18408
+    },
+    {
+        "tier": 1,
+        "title": "母音を数える (Counting Vowels)",
+        "num": 18409
+    },
+    {
+        "tier": 2,
+        "title": "試験 (Exam)",
+        "num": 18411
+    },
+    {
+        "tier": 2,
+        "title": "X に最も近い値 (The Nearest Value)",
+        "num": 18414
+    },
+    {
+        "tier": 5,
+        "title": "점프 점프",
+        "num": 18512
+    },
+    {
+        "tier": 2,
+        "title": "Pokemon Buddy",
+        "num": 18691
+    },
+    {
+        "tier": 2,
+        "title": "The Walking Adam",
+        "num": 18698
+    },
+    {
+        "tier": 3,
+        "title": "N M 찍기",
+        "num": 18883
+    },
+    {
+        "tier": 4,
+        "title": "수학은 비대면강의입니다",
+        "num": 19532
+    },
+    {
+        "tier": 5,
+        "title": "반복",
+        "num": 19564
+    },
+    {
+        "tier": 3,
+        "title": "가뭄(Small)",
+        "num": 19572
+    },
+    {
+        "tier": 2,
+        "title": "Dog Treats",
+        "num": 19602
+    },
+    {
+        "tier": 2,
+        "title": "헛간 청약",
+        "num": 19698
+    },
+    {
+        "tier": 2,
+        "title": "뉴비의 기준은 뭘까?",
+        "num": 19944
+    },
+    {
+        "tier": 4,
+        "title": "고무오리 디버깅",
+        "num": 20001
+    },
+    {
+        "tier": 3,
+        "title": "최소, 최대 2",
+        "num": 20053
+    },
+    {
+        "tier": 5,
+        "title": "사토르 마방진",
+        "num": 20112
+    },
+    {
+        "tier": 4,
+        "title": "모르고리즘 회장님 추천 받습니다",
+        "num": 20124
+    },
+    {
+        "tier": 5,
+        "title": "이 구역의 승자는 누구야?!",
+        "num": 20154
+    },
+    {
+        "tier": 4,
+        "title": "교수님 그림이 깨지는데요?",
+        "num": 20205
+    },
+    {
+        "tier": 2,
+        "title": "Cutting Corners",
+        "num": 20215
+    },
+    {
+        "tier": 2,
+        "title": "Archivist",
+        "num": 20232
+    },
+    {
+        "tier": 2,
+        "title": "Bicycle",
+        "num": 20233
+    },
+    {
+        "tier": 1,
+        "title": "Site Score",
+        "num": 20254
+    },
+    {
+        "tier": 4,
+        "title": "3대 측정",
+        "num": 20299
+    },
+    {
+        "tier": 2,
+        "title": "Circus",
+        "num": 20352
+    },
+    {
+        "tier": 2,
+        "title": "Atrium",
+        "num": 20353
+    },
+    {
+        "tier": 3,
+        "title": "일우는 야바위꾼",
+        "num": 20361
+    },
+    {
+        "tier": 3,
+        "title": "추첨상 사수 대작전! (Easy)",
+        "num": 20410
+    },
+    {
+        "tier": 1,
+        "title": "세금",
+        "num": 20492
+    },
+    {
+        "tier": 2,
+        "title": "Darius님 한타 안 함?",
+        "num": 20499
+    },
+    {
+        "tier": 4,
+        "title": "끝말잇기",
+        "num": 20528
+    },
+    {
+        "tier": 3,
+        "title": "연길이의 이상형",
+        "num": 20540
+    },
+    {
+        "tier": 5,
+        "title": "Do You Know Your ABCs?",
+        "num": 20650
+    },
+    {
+        "tier": 2,
+        "title": "Covid-19",
+        "num": 20673
+    },
+    {
+        "tier": 2,
+        "title": "Kuber",
+        "num": 20833
+    },
+    {
+        "tier": 2,
+        "title": "Betygsättning",
+        "num": 20839
+    },
+    {
+        "tier": 3,
+        "title": "팰린드롬 척화비",
+        "num": 20944
+    },
+    {
+        "tier": 2,
+        "title": "2 番目に大きい整数 (The Second Largest Integer)",
+        "num": 20976
+    },
+    {
+        "tier": 1,
+        "title": "Bottle Return",
+        "num": 21300
+    },
+    {
+        "tier": 3,
+        "title": "홀짝 칵테일",
+        "num": 21312
+    },
+    {
+        "tier": 4,
+        "title": "문어",
+        "num": 21313
+    },
+    {
+        "tier": 2,
+        "title": "Another Eruption",
+        "num": 21335
+    },
+    {
+        "tier": 2,
+        "title": "Äpplen och päron",
+        "num": 21354
+    },
+    {
+        "tier": 4,
+        "title": "숫자의 개수 2",
+        "num": 21567
+    },
+    {
+        "tier": 2,
+        "title": "Laptop Sticker",
+        "num": 21591
+    },
+    {
+        "tier": 1,
+        "title": "SciComLove",
+        "num": 21598
+    },
+    {
+        "tier": 2,
+        "title": "Boiling Water",
+        "num": 21612
+    },
+    {
+        "tier": 2,
+        "title": "Checkers",
+        "num": 21631
+    },
+    {
+        "tier": 2,
+        "title": "Bank Transfer",
+        "num": 21633
+    },
+    {
+        "tier": 2,
+        "title": "SMS from MCHS",
+        "num": 21638
+    },
+    {
+        "tier": 2,
+        "title": "Миша и негатив",
+        "num": 21665
+    },
+    {
+        "tier": 4,
+        "title": "SMUPC의 등장",
+        "num": 21734
+    },
+    {
+        "tier": 4,
+        "title": "지우개",
+        "num": 21756
+    },
+    {
+        "tier": 3,
+        "title": "추첨을 통해 커피를 받자",
+        "num": 21866
+    },
+    {
+        "tier": 4,
+        "title": "전구",
+        "num": 21918
+    },
+    {
+        "tier": 2,
+        "title": "선린인터넷고등학교 교가",
+        "num": 21964
+    },
+    {
+        "tier": 2,
+        "title": "金平糖 (Konpeito)",
+        "num": 22015
+    },
+    {
+        "tier": 1,
+        "title": "Multiply",
+        "num": 22193
+    },
+    {
+        "tier": 4,
+        "title": "사각형 면적",
+        "num": 22341
+    },
+    {
+        "tier": 4,
+        "title": "피로도",
+        "num": 22864
+    },
+    {
+        "tier": 3,
+        "title": "백발백준하는 명사수",
+        "num": 22938
+    },
+    {
+        "tier": 4,
+        "title": "가장 쉬운 문제를 찾는 문제",
+        "num": 22966
+    },
+    {
+        "tier": 4,
+        "title": "5의 수난",
+        "num": 23037
+    },
+    {
+        "tier": 3,
+        "title": "스키테일 암호",
+        "num": 23080
+    },
+    {
+        "tier": 1,
+        "title": "The World Responds",
+        "num": 23234
+    },
+    {
+        "tier": 1,
+        "title": "The Fastest Sorting Algorithm In The World",
+        "num": 23235
+    },
+    {
+        "tier": 4,
+        "title": "스물셋",
+        "num": 23251
+    },
+    {
+        "tier": 3,
+        "title": "이 문제는 D2 입니다.",
+        "num": 23303
+    },
+    {
+        "tier": 3,
+        "title": "스트릿 코딩 파이터",
+        "num": 23348
+    },
+    {
+        "tier": 3,
+        "title": "Not A + B",
+        "num": 23530
+    },
+    {
+        "tier": 3,
+        "title": "driip",
+        "num": 23627
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 정사각형",
+        "num": 23794
+    },
+    {
+        "tier": 2,
+        "title": "사장님 도박은 재미로 하셔야 합니다",
+        "num": 23795
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 뒤집힌 ㄱ",
+        "num": 23802
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - ㄴ",
+        "num": 23803
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - ㄷ",
+        "num": 23804
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 돌아간 ㄹ",
+        "num": 23805
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - ㅁ",
+        "num": 23806
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - ㅂ",
+        "num": 23808
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 돌아간 ㅈ",
+        "num": 23809
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 뒤집힌 ㅋ",
+        "num": 23810
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - ㅌ",
+        "num": 23811
+    },
+    {
+        "tier": 3,
+        "title": "골뱅이 찍기 - 돌아간 ㅍ",
+        "num": 23812
+    },
+    {
+        "tier": 2,
+        "title": "SASA 모형을 만들어보자",
+        "num": 23825
+    },
+    {
+        "tier": 5,
+        "title": "데칼코마니",
+        "num": 23841
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 선택 정렬 1",
+        "num": 23881
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 선택 정렬 2",
+        "num": 23882
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 버블 정렬 1",
+        "num": 23968
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 버블 정렬 2",
+        "num": 23969
+    },
+    {
+        "tier": 3,
+        "title": "ZOAC 4",
+        "num": 23971
+    },
+    {
+        "tier": 4,
+        "title": "악마의 제안",
+        "num": 23972
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 삽입 정렬 1",
+        "num": 24051
+    },
+    {
+        "tier": 2,
+        "title": "帰省 (Homecoming)",
+        "num": 24072
+    },
+    {
+        "tier": 2,
+        "title": "計算 (Calculation)",
+        "num": 24075
+    },
+    {
+        "tier": 1,
+        "title": "余り (Remainder)",
+        "num": 24078
+    },
+    {
+        "tier": 2,
+        "title": "移動 (Moving)",
+        "num": 24079
+    },
+    {
+        "tier": 1,
+        "title": "立方体 (Cube)",
+        "num": 24082
+    },
+    {
+        "tier": 2,
+        "title": "短針 (Hour Hand)",
+        "num": 24083
+    },
+    {
+        "tier": 1,
+        "title": "身長 (Height)",
+        "num": 24086
+    },
+    {
+        "tier": 2,
+        "title": "アイスクリーム (Ice Cream)",
+        "num": 24087
+    },
+    {
+        "tier": 2,
+        "title": "Affischutskicket",
+        "num": 24183
+    },
+    {
+        "tier": 1,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 1",
+        "num": 24262
+    },
+    {
+        "tier": 2,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 2",
+        "num": 24263
+    },
+    {
+        "tier": 3,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 3",
+        "num": 24264
+    },
+    {
+        "tier": 3,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 4",
+        "num": 24265
+    },
+    {
+        "tier": 3,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 5",
+        "num": 24266
+    },
+    {
+        "tier": 4,
+        "title": "알고리즘 수업 - 알고리즘의 수행 시간 6",
+        "num": 24267
+    },
+    {
+        "tier": 2,
+        "title": "ГРАДИНА",
+        "num": 24294
+    },
+    {
+        "tier": 1,
+        "title": "РАВЕНСТВО",
+        "num": 24309
+    },
+    {
+        "tier": 2,
+        "title": "ЧАСОВНИК",
+        "num": 24356
+    },
+    {
+        "tier": 2,
+        "title": "ПЧЕЛИЧКАТА МАЯ",
+        "num": 24365
+    },
+    {
+        "tier": 5,
+        "title": "2의 보수",
+        "num": 24389
+    },
+    {
+        "tier": 5,
+        "title": "알고리즘 수업 - 피보나치 수 1",
+        "num": 24416
+    },
+    {
+        "tier": 4,
+        "title": "시간복잡도를 배운 도도",
+        "num": 24510
+    },
+    {
+        "tier": 1,
+        "title": "Cupcake Party",
+        "num": 24568
+    },
+    {
+        "tier": 2,
+        "title": "녹색거탑",
+        "num": 24723
+    },
+    {
+        "tier": 2,
+        "title": "현대모비스와 함께하는 부품 관리",
+        "num": 24724
+    },
+    {
+        "tier": 1,
+        "title": "Football Scoring",
+        "num": 24736
+    },
+    {
+        "tier": 2,
+        "title": "Betting",
+        "num": 24751
+    },
+    {
+        "tier": 2,
+        "title": "Counting Antibodies",
+        "num": 24860
+    },
+    {
+        "tier": 1,
+        "title": "자동완성",
+        "num": 24883
+    },
+    {
+        "tier": 1,
+        "title": "한별 찍기",
+        "num": 24900
+    },
+    {
+        "tier": 3,
+        "title": "시간과 날짜",
+        "num": 25024
+    },
+    {
+        "tier": 1,
+        "title": "새싹",
+        "num": 25083
+    },
+    {
+        "tier": 3,
+        "title": "두~~부 두부 두부",
+        "num": 25175
+    },
+    {
+        "tier": 5,
+        "title": "청정수열 (Easy)",
+        "num": 25176
+    },
+    {
+        "tier": 2,
+        "title": "치킨댄스를 추는 곰곰이를 본 임스",
+        "num": 25191
+    },
+    {
+        "tier": 4,
+        "title": "경로당펑크 2077",
+        "num": 25205
+    },
+    {
+        "tier": 2,
+        "title": "가희와 방어율 무시",
+        "num": 25238
+    },
+    {
+        "tier": 3,
+        "title": "심준의 병역판정검사",
+        "num": 25285
+    },
+    {
+        "tier": 2,
+        "title": "영수증",
+        "num": 25304
+    },
+    {
+        "tier": 4,
+        "title": "커트라인",
+        "num": 25305
+    },
+    {
+        "tier": 1,
+        "title": "UCPC에서 가장 쉬운 문제 번호는?",
+        "num": 25311
+    },
+    {
+        "tier": 1,
+        "title": "코딩은 체육과목 입니다",
+        "num": 25314
+    },
+    {
+        "tier": 1,
+        "title": "성택이의 은밀한 비밀번호",
+        "num": 25372
+    },
+    {
+        "tier": 2,
+        "title": "빵",
+        "num": 25377
+    },
+    {
+        "tier": 5,
+        "title": "제자리",
+        "num": 25400
+    },
+    {
+        "tier": 2,
+        "title": "단순한 문제 (Small)",
+        "num": 25494
+    },
+    {
+        "tier": 4,
+        "title": "재귀의 귀재",
+        "num": 25501
+    },
+    {
+        "tier": 2,
+        "title": "푸앙이와 종윤이",
+        "num": 25591
+    },
+    {
+        "tier": 2,
+        "title": "Triathlon",
+        "num": 25600
+    },
+    {
+        "tier": 2,
+        "title": "샤틀버스",
+        "num": 25625
+    },
+    {
+        "tier": 2,
+        "title": "햄버거 만들기",
+        "num": 25628
+    },
+    {
+        "tier": 3,
+        "title": "홀짝 수열",
+        "num": 25629
+    },
+    {
+        "tier": 3,
+        "title": "팰린드롬 소떡소떡",
+        "num": 25630
+    },
+    {
+        "tier": 2,
+        "title": "MBTI",
+        "num": 25640
+    },
+    {
+        "tier": 3,
+        "title": "균형 잡힌 소떡소떡",
+        "num": 25641
+    },
+    {
+        "tier": 3,
+        "title": "젓가락 게임",
+        "num": 25642
+    },
+    {
+        "tier": 3,
+        "title": "포인터 공부",
+        "num": 25703
+    },
+    {
+        "tier": 2,
+        "title": "출석 이벤트",
+        "num": 25704
+    },
+    {
+        "tier": 2,
+        "title": "Easy-to-Solve Expressions",
+        "num": 25784
+    },
+    {
+        "tier": 2,
+        "title": "Corona Virus Testing",
+        "num": 25828
+    },
+    {
+        "tier": 2,
+        "title": "Divide the Cash",
+        "num": 25858
+    },
+    {
+        "tier": 2,
+        "title": "Electric Bill",
+        "num": 25881
+    },
+    {
+        "tier": 3,
+        "title": "안녕 클레오파트라 세상에서 제일가는 포테이토칩",
+        "num": 25904
+    },
+    {
+        "tier": 3,
+        "title": "연세여 사랑한다",
+        "num": 25915
+    },
+    {
+        "tier": 2,
+        "title": "Find the Twins",
+        "num": 25932
+    },
+    {
+        "tier": 3,
+        "title": "HI-ARC",
+        "num": 26004
+    },
+    {
+        "tier": 3,
+        "title": "특정 대문자를 소문자로 바꾸기",
+        "num": 26040
+    },
+    {
+        "tier": 2,
+        "title": "치킨댄스를 추는 곰곰이를 본 임스 2",
+        "num": 26068
+    },
+    {
+        "tier": 1,
+        "title": "WARBOY",
+        "num": 26082
+    },
+    {
+        "tier": 1,
+        "title": "Intercepting Information",
+        "num": 26209
+    },
+    {
+        "tier": 3,
+        "title": "빅데이터? 정보보호!",
+        "num": 26264
+    },
+    {
+        "tier": 1,
+        "title": "Correct",
+        "num": 26307
+    },
+    {
+        "tier": 2,
+        "title": "Buying in Bulk",
+        "num": 26332
+    },
+    {
+        "tier": 1,
+        "title": "Gum Gum for Jay Jay",
+        "num": 26489
+    },
+    {
+        "tier": 2,
+        "title": "Absolutely",
+        "num": 26500
+    },
+    {
+        "tier": 2,
+        "title": "Simple Sum",
+        "num": 26531
+    },
+    {
+        "tier": 2,
+        "title": "Acres",
+        "num": 26532
+    },
+    {
+        "tier": 1,
+        "title": "Mathematics",
+        "num": 26545
+    },
+    {
+        "tier": 2,
+        "title": "Reverse",
+        "num": 26546
+    },
+    {
+        "tier": 2,
+        "title": "Periods",
+        "num": 26560
+    },
+    {
+        "tier": 2,
+        "title": "Population",
+        "num": 26561
+    },
+    {
+        "tier": 2,
+        "title": "Pizza",
+        "num": 26566
+    },
+    {
+        "tier": 1,
+        "title": "Copier",
+        "num": 26574
+    },
+    {
+        "tier": 2,
+        "title": "Pups",
+        "num": 26575
+    },
+    {
+        "tier": 2,
+        "title": "Triangle Height",
+        "num": 26592
+    },
+    {
+        "tier": 3,
+        "title": "ZOAC 5",
+        "num": 26594
+    },
+    {
+        "tier": 1,
+        "title": "A+B",
+        "num": 26711
+    },
+    {
+        "tier": 2,
+        "title": "Wynik meczu",
+        "num": 26736
+    },
+    {
+        "tier": 1,
+        "title": "Serca",
+        "num": 26766
+    },
+    {
+        "tier": 2,
+        "title": "H4x0r",
+        "num": 26768
+    },
+    {
+        "tier": 2,
+        "title": "특식 배부",
+        "num": 27110
+    },
+    {
+        "tier": 3,
+        "title": "노 땡스!",
+        "num": 27159
+    },
+    {
+        "tier": 4,
+        "title": "할리갈리",
+        "num": 27160
+    },
+    {
+        "tier": 1,
+        "title": "Робинзон Крузо",
+        "num": 27219
+    },
+    {
+        "tier": 1,
+        "title": "몇개고?",
+        "num": 27294
+    },
+    {
+        "tier": 2,
+        "title": ":chino_shock:",
+        "num": 27310
+    },
+    {
+        "tier": 1,
+        "title": "직사각형",
+        "num": 27323
+    },
+    {
+        "tier": 1,
+        "title": "ゾロ目 (Same Numbers)",
+        "num": 27324
+    },
+    {
+        "tier": 1,
+        "title": "時間 (Hour)",
+        "num": 27327
+    },
+    {
+        "tier": 1,
+        "title": "三方比較 (Three-Way Comparison)",
+        "num": 27328
+    },
+    {
+        "tier": 1,
+        "title": "2 桁の整数 (Two-digit Integer)",
+        "num": 27331
+    },
+    {
+        "tier": 2,
+        "title": "11 月 (November)",
+        "num": 27332
+    },
+    {
+        "tier": 1,
+        "title": "Metronome",
+        "num": 27389
+    },
+    {
+        "tier": 1,
+        "title": "팩토리얼 2",
+        "num": 27433
+    },
+    {
+        "tier": 1,
+        "title": "팩토리얼 3",
+        "num": 27434
+    },
+    {
+        "tier": 3,
+        "title": "소수가 아닌 수",
+        "num": 27465
+    },
+    {
+        "tier": 2,
+        "title": "末尾の文字 (Last Letter)",
+        "num": 27541
+    },
+    {
+        "tier": 3,
+        "title": "찬반투표",
+        "num": 27736
+    },
+    {
+        "tier": 1,
+        "title": "문자와 문자열",
+        "num": 27866
+    },
+    {
+        "tier": 2,
+        "title": "Gahui and Soongsil University station",
+        "num": 27880
+    },
+    {
+        "tier": 1,
+        "title": "특별한 학교 이름",
+        "num": 27889
+    },
+    {
+        "tier": 2,
+        "title": "특별한 작은 분수",
+        "num": 27890
+    },
+    {
+        "tier": 2,
+        "title": "탁구 경기",
+        "num": 27918
+    },
+    {
+        "tier": 5,
+        "title": "당신은 운명을 믿나요?",
+        "num": 27930
+    },
+    {
+        "tier": 1,
+        "title": "초코바",
+        "num": 27959
+    },
+    {
+        "tier": 3,
+        "title": "사격 내기",
+        "num": 27960
+    },
+    {
+        "tier": 5,
+        "title": "고양이는 많을수록 좋다",
+        "num": 27961
+    },
+    {
+        "tier": 3,
+        "title": "첨탑 밀어서 부수기",
+        "num": 28014
+    },
+    {
+        "tier": 3,
+        "title": "레몬 따기",
+        "num": 28061
+    },
+    {
+        "tier": 4,
+        "title": "준석이의 사탕 사기",
+        "num": 28062
+    },
+    {
+        "tier": 2,
+        "title": "모비스",
+        "num": 28074
+    },
+    {
+        "tier": 2,
+        "title": "모범생 포닉스",
+        "num": 28097
+    },
+    {
+        "tier": 1,
+        "title": "정보섬의 대중교통",
+        "num": 28113
+    },
+    {
+        "tier": 4,
+        "title": "팀명 정하기",
+        "num": 28114
+    },
+    {
+        "tier": 3,
+        "title": "크림빵",
+        "num": 28214
+    },
+    {
+        "tier": 2,
+        "title": "Final Price",
+        "num": 28224
+    },
+    {
+        "tier": 1,
+        "title": "코드마스터 2023",
+        "num": 28235
+    },
+    {
+        "tier": 2,
+        "title": "Deliv-e-droid",
+        "num": 28248
+    },
+    {
+        "tier": 2,
+        "title": "Chili Peppers",
+        "num": 28249
+    },
+    {
+        "tier": 2,
+        "title": "선물",
+        "num": 28281
+    },
+    {
+        "tier": 3,
+        "title": "과 조사하기",
+        "num": 28289
+    },
+    {
+        "tier": 2,
+        "title": "안밖? 밖안? 계단? 역계단?",
+        "num": 28290
+    },
+    {
+        "tier": 2,
+        "title": "체육은 코딩과목 입니다",
+        "num": 28295
+    },
+    {
+        "tier": 5,
+        "title": "불안정한 수열",
+        "num": 28323
+    },
+    {
+        "tier": 2,
+        "title": "10!",
+        "num": 28352
+    },
+    {
+        "tier": 3,
+        "title": "스케이트보드",
+        "num": 28417
+    },
+    {
+        "tier": 2,
+        "title": "양말 짝 맞추기",
+        "num": 28431
+    },
+    {
+        "tier": 1,
+        "title": "HI-ARC=?",
+        "num": 28444
+    },
+    {
+        "tier": 2,
+        "title": "Previous Level",
+        "num": 28453
+    },
+    {
+        "tier": 2,
+        "title": "Area",
+        "num": 28490
+    },
+    {
+        "tier": 1,
+        "title": "정보보호학부 동아리 소개",
+        "num": 28691
+    },
+    {
+        "tier": 1,
+        "title": "세제곱의 합",
+        "num": 28701
+    },
+    {
+        "tier": 5,
+        "title": "FizzBuzz",
+        "num": 28702
+    },
+    {
+        "tier": 1,
+        "title": "Киноманы",
+        "num": 28927
+    },
+    {
+        "tier": 1,
+        "title": "Конвейер",
+        "num": 28938
+    },
+    {
+        "tier": 1,
+        "title": "Счастье Мистера Бина",
+        "num": 29163
+    },
+    {
+        "tier": 1,
+        "title": "Welcome to SMUPC!",
+        "num": 29699
+    },
+    {
+        "tier": 2,
+        "title": "체스 초보 브실이",
+        "num": 29725
+    },
+    {
+        "tier": 2,
+        "title": "2033년 밈 투표",
+        "num": 29731
+    },
+    {
+        "tier": 2,
+        "title": "브실이와 친구가 되고 싶어 🤸‍♀️",
+        "num": 29736
+    },
+    {
+        "tier": 2,
+        "title": "Goodbye, Code Jam",
+        "num": 29738
+    },
+    {
+        "tier": 1,
+        "title": "삼각형",
+        "num": 29751
+    },
+    {
+        "tier": 3,
+        "title": "최장 스트릭",
+        "num": 29752
+    },
+    {
+        "tier": 2,
+        "title": "DKSH 찾기",
+        "num": 29766
+    },
+    {
+        "tier": 2,
+        "title": "임스의 메이플컵",
+        "num": 29790
+    },
+    {
+        "tier": 2,
+        "title": "학번을 찾아줘!",
+        "num": 29807
+    },
+    {
+        "tier": 1,
+        "title": "Arno's Sleep Schedule",
+        "num": 29863
+    },
+    {
+        "tier": 1,
+        "title": "라면 공식",
+        "num": 30007
+    },
+    {
+        "tier": 2,
+        "title": "준영이의 등급",
+        "num": 30008
+    },
+    {
+        "tier": 2,
+        "title": "치즈버거 만들기",
+        "num": 30017
+    },
+    {
+        "tier": 3,
+        "title": "타슈",
+        "num": 30018
+    },
+    {
+        "tier": 1,
+        "title": "스위트콘 가격 구하기",
+        "num": 30030
+    },
+    {
+        "tier": 2,
+        "title": "지폐 세기",
+        "num": 30031
+    },
+    {
+        "tier": 2,
+        "title": "Rust Study",
+        "num": 30033
+    },
+    {
+        "tier": 2,
+        "title": "ZOAC 6",
+        "num": 30045
+    },
+    {
+        "tier": 1,
+        "title": "진흥원 세미나",
+        "num": 30087
+    },
+    {
+        "tier": 1,
+        "title": "An Easy-Peasy Problem",
+        "num": 30214
+    },
+    {
+        "tier": 1,
+        "title": "Lucky 7",
+        "num": 30224
+    },
+    {
+        "tier": 1,
+        "title": "Java Warriors",
+        "num": 30328
+    },
+    {
+        "tier": 2,
+        "title": "감마선을 맞은 컴퓨터",
+        "num": 30402
+    },
+    {
+        "tier": 3,
+        "title": "얼룩말을 찾아라!",
+        "num": 30454
+    },
+    {
+        "tier": 5,
+        "title": "이제는 더 이상 물러날 곳이 없다",
+        "num": 30455
+    },
+    {
+        "tier": 2,
+        "title": "호반우가 학교에 지각한 이유 1",
+        "num": 30468
+    },
+    {
+        "tier": 2,
+        "title": "관공... 어찌하여 목만 오셨소...",
+        "num": 30501
+    },
+    {
+        "tier": 1,
+        "title": "Loteria Falha",
+        "num": 30664
+    },
+    {
+        "tier": 1,
+        "title": "이 별은 무슨 색일까",
+        "num": 30676
+    },
+    {
+        "tier": 2,
+        "title": "가희와 클럽 오디션 1",
+        "num": 30794
+    },
+    {
+        "tier": 3,
+        "title": "웰컴 키트",
+        "num": 30802
+    },
+    {
+        "tier": 2,
+        "title": "개표",
+        "num": 30868
+    },
+    {
+        "tier": 2,
+        "title": "Tren del Fin del Mundo",
+        "num": 30876
+    },
+    {
+        "tier": 3,
+        "title": "A+B - 10 (제1편)",
+        "num": 30917
+    },
+    {
+        "tier": 3,
+        "title": "서울사이버대학을 다니고",
+        "num": 30958
+    },
+    {
+        "tier": 2,
+        "title": "유치원생 파댕이 돌보기",
+        "num": 30979
+    },
+    {
+        "tier": 2,
+        "title": "민주주의",
+        "num": 30999
+    },
+    {
+        "tier": 2,
+        "title": "2023은 무엇이 특별할까?",
+        "num": 31090
+    },
+    {
+        "tier": 2,
+        "title": "Is Y a Vowel?",
+        "num": 31306
+    },
+    {
+        "tier": 2,
+        "title": "$A + B - C$",
+        "num": 31403
+    },
+    {
+        "tier": 2,
+        "title": "엘리스 트랙 매칭",
+        "num": 31428
+    },
+    {
+        "tier": 1,
+        "title": "SUAPC 2023 Summer",
+        "num": 31429
+    },
+    {
+        "tier": 1,
+        "title": "Everyone is a winner",
+        "num": 31450
+    },
+    {
+        "tier": 3,
+        "title": "갈래의 색종이 자르기",
+        "num": 31472
+    },
+    {
+        "tier": 2,
+        "title": "그게 무슨 코드니..",
+        "num": 31495
+    },
+    {
+        "tier": 5,
+        "title": "전주 듣고 노래 맞히기",
+        "num": 31562
+    },
+    {
+        "tier": 1,
+        "title": "果物 (Fruit)",
+        "num": 31606
+    },
+    {
+        "tier": 1,
+        "title": "飴の袋詰め (Drops Packing)",
+        "num": 31610
+    },
+    {
+        "tier": 1,
+        "title": "火曜日 (Tuesday)",
+        "num": 31611
+    },
+    {
+        "tier": 1,
+        "title": "分 (Minutes)",
+        "num": 31614
+    },
+    {
+        "tier": 3,
+        "title": "가지 한 두름 주세요",
+        "num": 31628
+    },
+    {
+        "tier": 1,
+        "title": "Adding Trouble",
+        "num": 31654
+    },
+    {
+        "tier": 2,
+        "title": "특별한 가지",
+        "num": 31668
+    },
+    {
+        "tier": 2,
+        "title": "SciComLove (2024)",
+        "num": 31746
+    },
+    {
+        "tier": 2,
+        "title": "글로벌 포닉스",
+        "num": 31775
+    },
+    {
+        "tier": 2,
+        "title": "학식 사주기",
+        "num": 31821
+    },
+    {
+        "tier": 2,
+        "title": "재수강",
+        "num": 31822
+    },
+    {
+        "tier": 2,
+        "title": "홀짝홀짝",
+        "num": 31867
+    },
+    {
+        "tier": 2,
+        "title": "이 대회는 이제 제 겁니다",
+        "num": 31922
+    },
+    {
+        "tier": 2,
+        "title": "등교",
+        "num": 31962
+    },
+    {
+        "tier": 2,
+        "title": "강당 대관",
+        "num": 31994
+    },
+    {
+        "tier": 2,
+        "title": "체육은 수학과목 입니다",
+        "num": 32025
+    },
+    {
+        "tier": 4,
+        "title": "보물 찾기",
+        "num": 32068
+    },
+    {
+        "tier": 1,
+        "title": "SUAPC 2024 Winter",
+        "num": 32154
+    },
+    {
+        "tier": 2,
+        "title": "코드마스터 2024",
+        "num": 32215
+    },
+    {
+        "tier": 1,
+        "title": "A + B",
+        "num": 32260
+    },
+    {
+        "tier": 2,
+        "title": "선택 가능성이 가장 높은 자료형",
+        "num": 32278
+    },
+    {
+        "tier": 2,
+        "title": "바코드 닉네임",
+        "num": 32288
+    },
+    {
+        "tier": 1,
+        "title": "Christmas Tree Adapter",
+        "num": 32314
+    },
+    {
+        "tier": 1,
+        "title": "Conveyor Belt Sushi",
+        "num": 32326
+    },
+    {
+        "tier": 2,
+        "title": "양파 실험",
+        "num": 32369
+    },
+    {
+        "tier": 1,
+        "title": "사랑은 고려대입니다",
+        "num": 32384
+    },
+    {
+        "tier": 1,
+        "title": "Just Round Down",
+        "num": 32458
+    },
+    {
+        "tier": 1,
+        "title": "Call for Problems",
+        "num": 32498
+    },
+    {
+        "tier": 2,
+        "title": "당구 좀 치자 제발",
+        "num": 32642
+    },
+    {
+        "tier": 2,
+        "title": "인간은 무엇인가",
+        "num": 32651
+    },
+    {
+        "tier": 2,
+        "title": "장기",
+        "num": 32684
+    },
+    {
+        "tier": 2,
+        "title": "구구단표",
+        "num": 32710
+    },
+    {
+        "tier": 1,
+        "title": "가희와 4시간의 벽 1",
+        "num": 32775
+    },
+    {
+        "tier": 1,
+        "title": "UOS 문자열",
+        "num": 32929
+    },
+    {
+        "tier": 2,
+        "title": "왜 맘대로 예약하냐고",
+        "num": 32941
+    },
+    {
+        "tier": 1,
+        "title": "AI 선도대학",
+        "num": 32951
+    },
+    {
+        "tier": 3,
+        "title": "아 맞다 마늘",
+        "num": 32978
+    },
+    {
+        "tier": 1,
+        "title": "鉛筆 2 (Pencils 2)",
+        "num": 33161
+    },
+    {
+        "tier": 1,
+        "title": "徒競走 (Footrace)",
+        "num": 33165
+    },
+    {
+        "tier": 1,
+        "title": "所持金 (Money On Me)",
+        "num": 33169
+    },
+    {
+        "tier": 1,
+        "title": "ブラックジャック (Blackjack)",
+        "num": 33170
+    },
+    {
+        "tier": 1,
+        "title": "Micromasters",
+        "num": 33178
+    },
+    {
+        "tier": 1,
+        "title": "노트북 세 대를 가지고 왔다",
+        "num": 33515
+    },
+    {
+        "tier": 2,
+        "title": "구멍",
+        "num": 33571
+    },
+    {
+        "tier": 1,
+        "title": "피갤컵",
+        "num": 33612
+    },
+    {
+        "tier": 2,
+        "title": "새천년관",
+        "num": 33701
+    },
+    {
+        "tier": 2,
+        "title": "레퓨닛의 덧셈",
+        "num": 33964
+    },
+    {
+        "tier": 1,
+        "title": "체육은 수학과목 입니다 2",
+        "num": 34052
+    },
+    {
+        "tier": 2,
+        "title": "DORO",
+        "num": 34073
+    },
+    {
+        "tier": 1,
+        "title": "찾아오시는 길",
+        "num": 34217
+    },
+    {
+        "tier": 2,
+        "title": "2, 4, 6, 8",
+        "num": 34509
+    },
+    {
+        "tier": 1,
+        "title": "가희와 교통 요금",
+        "num": 34665
+    },
+    {
+        "tier": 1,
+        "title": "대전과학고등학교를 사랑하십니까?",
+        "num": 34691
+    },
+    {
+        "tier": 1,
+        "title": "역사를 걸으면 동국이 보이고",
+        "num": 34721
+    },
+    {
+        "tier": 1,
+        "title": "이중 반복문",
+        "num": 34849
+    },
+    {
+        "tier": 1,
+        "title": "덕후",
+        "num": 34921
+    },
+    {
+        "tier": 1,
+        "title": "채플이 너무해",
+        "num": 34945
+    }
+]

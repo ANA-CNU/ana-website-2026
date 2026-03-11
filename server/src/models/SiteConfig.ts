@@ -72,6 +72,7 @@ const SiteConfigSchema = new Schema({
         defualt: [
             { tier: 'Bronze IV', linkUrl: 'https://www.acmicpc.net/problem/21633', title: 'Bank Transfer' },
             { tier: 'Bronze II', linkUrl: 'https://www.acmicpc.net/problem/3040', title: '백설 공주와 일곱 난쟁이' },
+            { tier: 'Gold IV', linkUrl: 'https://www.acmicpc.net/problem/12869', title: '뮤탈리스크' },
             { tier: 'Gold IV', linkUrl: 'https://www.acmicpc.net/problem/12869', title: '뮤탈리스크' }
         ]
     }
