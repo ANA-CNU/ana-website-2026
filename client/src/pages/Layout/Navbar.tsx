@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
             <div className="flex justify-between items-center py-3 px-4">
 
                 <Link to='/' className="flex flex-row items-end ml-2 font-mulmaru">
-                    <span className="text-3xl font-extrabold tracking-tight leading-none">A N A</span>
+                    <span className="text-3xl font-extrabold tracking-tight leading-none">A R G O S</span>
                     <span className="text-xs opacity-80 font-light ml-2">Algorithm & <br className='sm:hidden' />Application</span>
                 </Link>
 
