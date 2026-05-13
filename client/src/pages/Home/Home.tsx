@@ -68,6 +68,12 @@ const Home: React.FC = () => {
     return (
         <main className="container mx-auto max-w-6xl p-4 space-y-5">
 
+            <Link to="/anagetdon2026">
+                <img
+                    src="images/anagetdon2026_banner.png"
+                    className="w-full mb-5 rounded-md"
+                />
+            </Link>
             {/* ========== Banner ========== */}
             <div className="card lg:card-side bg-base-100 shadow-md">
                 {loading ? (
