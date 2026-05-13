@@ -112,7 +112,7 @@ const SiteConfigEditor = () => {
 
             <div className="space-y-8">
                 {/* Banner Section */}
-                <div className="bg-base-100 p-6 rounded-lg shadow">
+                <div className="bg-base-100 p-6 rounded-md shadow">
                     <h3 className="text-xl font-semibold mb-4">배너 설정</h3>
                     <div className="grid grid-cols-1 gap-4">
                         <div className="form-control">
@@ -155,7 +155,7 @@ const SiteConfigEditor = () => {
                 </div>
 
                 {/* Today's Problem Section */}
-                {/* <div className="bg-base-100 p-6 rounded-lg shadow">
+                {/* <div className="bg-base-100 p-6 rounded-md shadow">
                     <h3 className="text-xl font-semibold mb-4">오늘의 문제</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="form-control">
@@ -189,7 +189,7 @@ const SiteConfigEditor = () => {
                 </div> */}
 
                 {/* Information Stats Section */}
-                <div className="bg-base-100 p-6 rounded-lg shadow">
+                <div className="bg-base-100 p-6 rounded-md shadow">
                     <div className="flex justify-between items-center mb-4">
                         <h3 className="text-xl font-semibold">정보 통계</h3>
                         <button className="btn btn-sm btn-primary" onClick={addInfo}>항목 추가</button>

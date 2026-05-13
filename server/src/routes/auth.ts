@@ -14,9 +14,6 @@ import telegramMessage from '../Utils/telegramMessage';
 const router: Router = express.Router();
 
 
-const JWT_SECRET: string = process.env.JWT_SECRET as string;
-
-
 const generateRegisterToken = (user: TokenUser): string => {
     const payload: TokenUser = {
         name: user.name,

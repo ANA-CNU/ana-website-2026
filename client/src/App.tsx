@@ -5,7 +5,6 @@ import Layout from './pages/Layout/Layout';
 import Home from './pages/Home/Home';
 const LazyAbout = lazy(() => import('./pages/About/About'));
 import History from './pages/History';
-import Recruit from './pages/EventPage/Recruit';
 
 import BoardList from './pages/Board/BoardList';
 import PostDetail from './pages/Board/PostDetail';
@@ -21,7 +20,9 @@ import Register from './pages/Auth/Register';
 import SocialRegister from './pages/Auth/SocialRegister';
 import LoginSuccess from './pages/Auth/LoginSuccess';
 
+import Recruit from './pages/EventPage/Recruit';
 import ErrorPage from './pages/EventPage/ErrorPage';
+import Anagetdon2026 from './pages/EventPage/Anagetdon2026';
 
 import Admin from './pages/Admin/Admin';
 
@@ -61,6 +62,7 @@ function App() {
                     <Route path='/board/:urlid' element={<PostDetail />} />
 
                     <Route path='/recruit' element={<Recruit />} />
+                    <Route path='/anagetdon2026' element={<Anagetdon2026 />} />
                 </Route>
             </Routes>
             <Toast />
