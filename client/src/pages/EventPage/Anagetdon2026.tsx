@@ -100,10 +100,10 @@ const Anagetdon2026: React.FC = () => {
                     className="text-center py-10 px-5 bg-linear-to-bl from-indigo-900 via-slate-900 to-teal-900 rounded-lg"
                     initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} variants={fadeInUp}
                 >
-                    <h2 className="text-6xl sm:text-7xl mb-6 bg-linear-to-bl from-orange-200 to-sky-200 bg-clip-text text-transparent">
+                    <h2 className="text-4xl sm:text-6xl mb-6 bg-linear-to-bl from-orange-200 to-sky-200 bg-clip-text text-transparent">
                         ANAGETDON
                     </h2>
-                    <p className="text-xl bg-linear-to-bl from-orange-200 to-sky-200 bg-clip-text text-transparent mb-8">
+                    <p className="text-lg bg-linear-to-bl from-orange-200 to-sky-200 bg-clip-text text-transparent mb-8">
                         ANA에서 개최하는<br />팀 프로그래밍 대회
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
