@@ -68,18 +68,18 @@ const Home: React.FC = () => {
     return (
         <main className="container mx-auto max-w-6xl p-4 space-y-5">
 
-            <Link to="/anagetdon2026">
+            {/* <Link to="/anagetdon2026">
                 <img
                     src="images/anagetdon2026_banner.png"
                     className="w-full mb-5 rounded-md"
                 />
-            </Link>
+            </Link> */}
             {/* ========== Banner ========== */}
             <div className="card lg:card-side bg-base-100 shadow-md">
                 {loading ? (
-                    <figure className=" skeleton lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1] min-w-0" />
+                    <figure className=" skeleton lg:w-2/3 bg-gray-300 min-h-240px aspect-2/1 min-w-0" />
                 ) : (
-                    <figure className="lg:w-2/3 bg-gray-300 min-h-[240px] aspect-[2/1] min-w-0">
+                    <figure className="lg:w-2/3 bg-gray-300 min-h-240px aspect-2/1 min-w-0">
                         <img src={banner?.imageUrl} alt="Banner" className="w-full h-full object-cover" />
                     </figure>
                 )}
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
                         <div className="bg-success text-success-content p-2 px-4 text-sm font-bold">
                             오늘의 문제
                         </div>
-                        <div className='divide-y-1 divide-base-200'>
+                        <div className='divide-y divide-base-200'>
                             {loading ? (
                                 <div className="p-4 text-sm">
                                     <span className="badge badge-outline badge-sm mb-1 skeleton skeleton-text">Loading</span>
@@ -166,18 +166,24 @@ const Home: React.FC = () => {
                         <div className="bg-secondary text-secondary-content p-2 px-4 text-sm font-bold">
                             주간 챌린지
                         </div>
-                        <div className='divide-y-1 divide-base-200'>
+                        <div className='divide-y divide-base-200'>
                             {loading ? (
                                 <div className="p-4 text-sm">
                                     <span className="badge badge-outline badge-sm mb-1 skeleton skeleton-text">Loading</span>
                                     <p className="font-bold truncate skeleton skeleton-text">Loading</p>
                                     <button className='btn btn-primary btn-block btn-sm btn-disabled'><span className="loading loading-spinner loading-sm"></span></button>
                                 </div>
-                            ) : (
+                            ) : todayProblem.length >= 4 ? (
                                 <div className="p-4 text-sm" key={`problem_3`}>
                                     <span className="badge badge-outline badge-sm mb-1">{todayProblem[3].tier}</span>
                                     <p className="font-bold truncate">{todayProblem[3].title}</p>
                                     <Link to={todayProblem[3].linkUrl} className='btn btn-primary btn-block btn-sm mt-3'>도전하기</Link>
+                                </div>
+                            ) : (
+                                <div className="p-4 text-sm" key={`problem_3`}>
+                                    <span className="badge badge-outline badge-sm mb-1">undefined</span>
+                                    <p className="font-bold truncate">서버 오류로 로딩되지 않았습니다</p>
+                                    <button className='btn btn-disabled btn-sm btn-block mt-3'>X</button>
                                 </div>
                             )}
                         </div>

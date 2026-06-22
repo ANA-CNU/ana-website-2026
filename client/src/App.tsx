@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
+
 import Layout from './pages/Layout/Layout';
 
 import Home from './pages/Home/Home';

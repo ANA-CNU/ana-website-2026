@@ -110,38 +110,40 @@ const About: React.FC = () => {
                                 {sections.map((section) => {
                                     const isActiveMain = section.id === activeId || section.items.some(item => item.id === activeId)
 
-                                    return <li key={section.id}>
-                                        <button
-                                            onClick={() => scrollToSection(section.id)}
-                                            className={`text-3xl text-left transition-all duration-300 ${isActiveMain
-                                                ? `${section.color} font-bold scale-110 translate-x-1 border-l-4  pl-2 -ml-6`
-                                                : 'text-gray-500 hover:text-gray-800'
-                                                }`}
-                                        >
-                                            {section.title}
-                                        </button>
+                                    return (
+                                        <li key={section.id}>
+                                            <button
+                                                onClick={() => scrollToSection(section.id)}
+                                                className={`text-3xl text-left transition-all duration-300 ${isActiveMain
+                                                    ? `${section.color} font-bold scale-110 translate-x-1 border-l-4  pl-2 -ml-6`
+                                                    : 'text-gray-500 hover:text-gray-800'
+                                                    }`}
+                                            >
+                                                {section.title}
+                                            </button>
 
-                                        {isActiveMain && (
-                                            <ul className="mt-3 space-y-1 pl-2 animate-fade-in">
-                                                {section.items.map((sub) => (
-                                                    <li key={sub.id}>
-                                                        <button
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                scrollToSection(sub.id);
-                                                            }}
-                                                            className={`text-xl text-left transition-colors duration-200 block py-1 ${activeId === sub.id
-                                                                ? 'text-gray-900 font-bold scale-110 origin-left'
-                                                                : 'text-gray-400 hover:text-gray-600'
-                                                                }`}
-                                                        >
-                                                            - {sub.title}
-                                                        </button>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </li>
+                                            {isActiveMain && (
+                                                <ul className="mt-3 space-y-1 pl-2 animate-fade-in">
+                                                    {section.items.map((sub) => (
+                                                        <li key={sub.id}>
+                                                            <button
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    scrollToSection(sub.id);
+                                                                }}
+                                                                className={`text-xl text-left transition-colors duration-200 block py-1 ${activeId === sub.id
+                                                                    ? 'text-gray-900 font-bold scale-110 origin-left'
+                                                                    : 'text-gray-400 hover:text-gray-600'
+                                                                    }`}
+                                                            >
+                                                                - {sub.title}
+                                                            </button>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    )
                                 })}
                             </ul>
                         </div>

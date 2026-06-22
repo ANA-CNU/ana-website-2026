@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response, Router } from 'express';
+import express, { CookieOptions, NextFunction, Request, Response, Router } from 'express';
 import jwt from 'jsonwebtoken';
 import passport, { authenticate } from 'passport';
 import bcrypt from 'bcrypt';
@@ -10,8 +10,17 @@ import { TokenUser } from '../types/jwt';
 import { ExpressError } from '../Utils/ExpressError';
 import telegramMessage from '../Utils/telegramMessage';
 
-
 const router: Router = express.Router();
+
+const isProduction = process.env.ENVIRONMENT === 'production'
+
+const cookieConfig: CookieOptions = {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 14,
+    secure: isProduction,
+    sameSite: 'lax',
+    path: '/'
+}
 
 
 const generateRegisterToken = (user: TokenUser): string => {
@@ -137,7 +146,7 @@ router.post(
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
+        res.cookie('refreshToken', refreshToken, cookieConfig);
         res.json({ success: true, accessToken });
     }
 )
@@ -161,7 +170,7 @@ router.get('/google/callback', (req, res, next) => {
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
+        res.cookie('refreshToken', refreshToken, cookieConfig);
         res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
@@ -180,7 +189,7 @@ router.get('/github/callback', (req, res, next) => {
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
-        res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
+        res.cookie('refreshToken', refreshToken, cookieConfig);
         res.redirect(`${process.env.CLIENT_URL as string}/login/success?accessToken=${accessToken}`);
     })(req, res, next);
 })
@@ -220,96 +229,9 @@ router.post('/social/register', validateSocialRegister, async (req: Request, res
     const accessToken = generateAccessToken(tokenUser);
     const refreshToken = generateRefreshToken(tokenUser);
 
-    res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
+    res.cookie('refreshToken', refreshToken, cookieConfig);
     res.json({ success: true, accessToken: accessToken });
 })
-
-/*
-router.get(
-    '/google/login',
-    passport.authenticate('google-login', { session: false, scope: ['profile'] })
-)
-
-router.get(
-    '/google/login/callback',
-    (req, res, next) => {
-        passport.authenticate('google-login', { session: false }, (error: any, user: TokenUser) => {
-            if (error || !user) { return res.redirect(`${CLIENT_URL}/login?error=${ encodeURIComponent(error.message || '로그인 실패') }`); }
-
-            const accessToken = generateAccessToken(user);
-            const refreshToken = generateRefreshToken(user);
-
-            res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
-            res.redirect(`${ CLIENT_URL }/login/success?accessToken=${ accessToken }`);
-        })(req, res, next);
-    }
-)
-
-router.get(
-    '/google/connect',
-    passport.authenticate('jwt', { session: false }),
-    (req, res, next) => {
-        const user = req.user as TokenUser;
-        res.cookie('connect_userid', user.userid, { maxAge: 1000*60*10 });
-        return next();
-    }, 
-    passport.authenticate('google-connect', { session: false, scope: ['profile'] })
-)
-
-router.get(
-    '/google/connect/callback', 
-    (req, res, next) => {
-        passport.authenticate('google-connect', { session: false }, (error: any, user: TokenUser) => {
-            res.clearCookie('connect_userid');
-            if (error || !user) { return res.redirect(`${CLIENT_URL}/settings?error=${ encodeURIComponent(error.message || '로그인 실패') }`); }
-            res.redirect(`${ CLIENT_URL }/settings?success=google_connected`);
-        })(req, res, next)
-    }
-)
-
-router.get(
-    '/github/login',
-    passport.authenticate('github-login', { session: false, scope: ['user:email'] })
-)
-
-router.get(
-    '/github/login/callback',
-    (req, res, next) => {
-        passport.authenticate('github-login', { session: false }, (error: any, user: TokenUser) => {
-            if (error || !user) { return res.redirect(`${CLIENT_URL}/login?error=${ encodeURIComponent(error.message || '로그인 실패') }`); }
-
-            const accessToken = generateAccessToken(user);
-            const refreshToken = generateRefreshToken(user);
-
-            res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 14 });
-            res.redirect(`${ CLIENT_URL }/login/success?accessToken=${ accessToken }`);
-        })(req, res, next);
-    }
-)
-
-router.get(
-    '/github/connect',
-    passport.authenticate('jwt', { session: false }),
-    (req, res, next) => {
-        const user = req.user as TokenUser;
-        res.cookie('connect_userid', user.userid, { maxAge: 1000*60*10 });
-        return next();
-    }, 
-    passport.authenticate('github-connect', { session: false, scope: ['user:email'] })
-)
-
-router.get(
-    '/github/connect/callback', 
-    (req, res, next) => {
-        passport.authenticate('github-connect', { session: false }, (error: any, user: TokenUser) => {
-            res.clearCookie('connect_userid');
-            if (error || !user) { return res.redirect(`${CLIENT_URL}/settings?error=${ encodeURIComponent(error.message || '로그인 실패') }`); }
-            res.redirect(`${ CLIENT_URL }/settings?success=github_connected`);
-        })(req, res, next)
-    }
-)
-*/
-
 
 // ========== 아나 회원 관리 ==========
 
